@@ -1,0 +1,156 @@
+@import '~antd/dist/antd.css';
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+.ReactModal__Overlay {
+    opacity: 0;
+    transition: opacity 200ms linear ;
+}
+
+.ReactModal__Overlay--after-open{
+    opacity: 1;
+}
+
+.ReactModal__Overlay--before-close{
+    opacity: 0;
+}
+.site-card-border-less-wrapper {
+  padding: 30px;
+  background: #ececec;
+}
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+#components-layout-demo-custom-trigger .trigger {
+  font-size: 18px;
+  line-height: 64px;
+  padding: 0 24px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+#components-layout-demo-custom-trigger .trigger:hover {
+  color: #1890ff;
+}
+
+#components-layout-demo-custom-trigger .logo {
+  height: 32px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 16px;
+}
+
+.site-header  {
+  background: rgba(172, 142, 124, .7) ;
+
+}
+
+p{
+  color: white;
+}
+.strip{
+  background-color: rgba(172, 142, 124, .5)
+}
+.homeButtons{
+  background-color: rgba(172, 142, 124, .7);
+  color: white;
+}
+.homeButtons{
+  background-color: rgba(172, 142, 124, .7);
+  color: white;
+}
+.homeButtons:hover{
+  background-color: rgba(172, 142, 124, .5);
+  color: black;
+  border-color: black;
+
+}
+.start-now{
+  position:absolute;
+  background-color:#F3DDD1;
+color:black;
+fontSize:16
+}
+.start-now:hover{
+  position:absolute;
+  background-color:#F3DDD1;
+color:black;
+fontSize:16;
+  border-color:black;
+}
+
+.site-header
+{
+  box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2), 0 20px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+.title{
+  color: white;
+  font-family: Courier;
+
+}
+h6{
+  color: white;
+}
+Title{
+  color: white;
+}
+@media  screen
+  and (min-device-width: 1400px)
+  and (max-device-width: 1600px ) {
+  .home-boxes{
+margin-right: 0px
+  }
+  .two-box{
+    border-style:solid;
+    padding:10px;
+  }
+}
+
+
+@media  screen
+  and (max-device-width: 520px)
+  and (min-device-width: 220px) {
+  .two-box{
+    border-style: none;
+    padding:0 ;
+    margin:0;
+    width: 100vw;
+  }
+  .home-boxes{
+    margin-right: 0;
+  }
+
+}
