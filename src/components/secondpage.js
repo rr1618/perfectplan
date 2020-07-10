@@ -61,7 +61,7 @@ const Parts = ()=>
                       </Col>
 
                     </Row>
-                    <DownOutlined style={ { fontSize:50,color:"black"}} />
+
 
                 </Col>
             </Col>
