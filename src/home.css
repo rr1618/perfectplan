@@ -1,0 +1,39 @@
+@media only  screen and
+(max-device-width: 1600px ) {
+  .home-boxes{
+margin-right: 0px
+  }
+  .two-box{
+    border-style:solid;
+    padding:10px;
+  }
+
+
+  .bold-heading{
+   font-size:52px;
+color:white;
+  }
+    .homeButtons{
+  background-color: rgba(172, 142, 124, .7);
+  color: white;
+}
+}
+
+@media only screen
+and (max-device-width : 800px)
+{
+  .two-box{
+    border-style: none;
+    padding:0 ;
+    margin:0;
+    width: 100vw;
+  }
+  .home-boxes{
+    margin-right: 0;
+  }
+  .bold-heading {
+    font-size: 72px;
+    color: white;
+  }
+
+}

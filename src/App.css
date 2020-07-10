@@ -82,14 +82,7 @@ p{
 .strip{
   background-color: rgba(172, 142, 124, .5)
 }
-.homeButtons{
-  background-color: rgba(172, 142, 124, .7);
-  color: white;
-}
-.homeButtons{
-  background-color: rgba(172, 142, 124, .7);
-  color: white;
-}
+
 .homeButtons:hover{
   background-color: rgba(172, 142, 124, .5);
   color: black;
@@ -127,35 +120,9 @@ h6{
 Title{
   color: white;
 }
-@media  screen
-  and (min-device-width: 1400px)
-  and (max-device-width: 1600px ) {
-  .home-boxes{
-margin-right: 0px
-  }
-  .two-box{
-    border-style:solid;
-    padding:10px;
-  }
-}
 
-
-@media  screen
-  and (max-device-width: 520px)
-  and (min-device-width: 220px) {
-  .two-box{
-    border-style: none;
-    padding:0 ;
-    margin:0;
-    width: 100vw;
-  }
-  .home-boxes{
-    margin-right: 0;
-  }
-
-}
-.bold-heading{
-   font-size:52px;
-color:white;
+hr.rounded {
+  border-top: 3px solid #7F7473;
+  border-radius: 5px;
 
 }
