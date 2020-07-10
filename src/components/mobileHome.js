@@ -11,8 +11,6 @@ const MoblieHome =()=>
 {
     return (
         <Col>
-
-
         <Col  style={{
                     minHeight: '100vh',
                     width:'100vw',
@@ -21,7 +19,7 @@ const MoblieHome =()=>
                         }}
 
     >
-            <Col className="site-header" style={{ width: '100%',position: 'fixed'}}>
+            <Col className="site-header" style={{ width: '100%',position: 'fixed', zIndex:1}}>
         <Row justify='center' >
             <Col className="navbar"  >
                 <img  src={Logo} style={{height:30}} alt=""/>
@@ -74,6 +72,7 @@ const MoblieHome =()=>
                     width:'100vw',
                     backgroundImage: "url("+`${MobBack}`+")",
                     backgroundSize: '100%',
+                zIndex:-1
 
 
                         }}
