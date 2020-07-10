@@ -37,7 +37,7 @@ const Parts = ()=>
 
         <animated.div style={trail}>
                 <Col className={classes.Content} >
-                <Col className={classes.SubContent} style={{marginBottom:50}} >
+                <Col className={classes.SubContent} style={{marginBottom:110}} >
                     <UpOutlined style={ { fontSize:50,color:"white" }} />
                     <Row className='two-box' >
 
@@ -92,7 +92,10 @@ const Middle =()=>
         Your browser does not support HTML5 video.
 
       </video>
-        <Parts/>
+
+            <Parts/>
+
+
 
 
 

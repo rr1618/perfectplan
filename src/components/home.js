@@ -1,10 +1,7 @@
 import { Row,Col,Button} from 'antd';
 import React from 'react';
-import {useSpring ,animated,useTransition} from 'react-spring'
-
 import TweenOne from 'rc-tween-one';
 import Background from '../background.png';
-import Middle from './secondpage'
 import Logo from '../logo.png';
 import {
 DownOutlined ,
@@ -31,10 +28,10 @@ return (
         </Row>
     </Col>
 
-        <Row  justify='center'>
+        <Row  justify='center' >
 
-            <Col className="home-boxes"  style={{marginRight:20,marginTop:150}}>
-                <h1 style={{textAlign:"right",fontSize:60,color:"white"}}><strong>Get Ready <br />For You<br/>Dream Career</strong></h1>
+            <Col className="home-boxes"  style={{marginRight:20,marginTop:80}}>
+                <h2   className='bold-heading' style={{textAlign:"right",}}><strong>Get Ready <br />For You<br/>Dream Career</strong></h2>
                 <h4 style={{color:"white",textAlign:"right"}}>Learn, Grow and become leaders of Tomorrow</h4>
                 <p style={{lineHeight:"20px",fontSize:17,textAlign:"right"}}>Python<br/>
                     Data Structure<br/>
@@ -47,7 +44,7 @@ return (
             </Col>
 
             <Col   className="strip" >
-            <div style={{marginTop: 150,marginLeft: 20 }}>
+            <div style={{marginTop: 80,marginLeft: 20 }}>
                 <Button className="homeButtons" size="large" style={ {width:200,borderColor: "#fffff",marginBottom:10,color:"black" }} >
                     <strong>Get Plan B Now</strong></Button>
                     <p style={{lineHeight:"20px",fontSize:17}}>Website/App Development<br/>
@@ -57,7 +54,7 @@ return (
                     Tax Advisory<br />
                     Sales and Marketing</p>
                     <h4 style={{color:"white"}}>One Stop Solution to help Grow Your Business</h4>
-                    <h1 style={{fontSize:60}}><strong>Grow Your <br /> Business To <br/>10 Times</strong></h1>
+                    <h2 className='bold-heading' ><strong>Grow Your <br /> Business To <br/>10 Times</strong></h2>
             </div>
             </Col>
             </Row>

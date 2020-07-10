@@ -5,7 +5,7 @@ import { FullPage, Slide } from 'react-full-page';
 import {Col,Row} from 'antd'
 import Home from './components/home'
 import Middle from "./components/secondpage";
-import Footer from "./components/footer"
+
 import Media from 'react-media';
 
 class App extends React.Component {
@@ -38,7 +38,6 @@ class App extends React.Component {
               </Fragment>
           )}
         </Media>
-
     );
   }
 }
