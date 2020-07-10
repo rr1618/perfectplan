@@ -82,7 +82,9 @@ p{
 .strip{
   background-color: rgba(172, 142, 124, .5)
 }
-
+.homeButtons{
+  background-color: transparent;
+}
 .homeButtons:hover{
   background-color: rgba(172, 142, 124, .5);
   color: black;
@@ -124,5 +126,42 @@ Title{
 hr.rounded {
   border-top: 3px solid #7F7473;
   border-radius: 5px;
+
+}
+.bold-heading {
+    font-size: 72px;
+    color: white;
+  }
+
+@media screen and (min-width: 100px)
+and (max-width:500px){
+  .two-box{
+    border-style: none;
+    padding:0 ;
+    margin:0;
+    width: 100vw;
+  }
+  .home-boxes{
+    margin-right: 0;
+  }
+  .bold-heading {
+    font-size: 22px;
+    color: #e3d0c5;
+
+  }
+  .home-buttons{
+    float:left;
+    margin-top:15px;
+    width:140px;
+    height:33px;
+    border-color: #e3d0c5;
+    color:#e3d0c5;
+    background-color: transparent;
+    border-width:2px;
+    font-size:13px;
+  }
+  .home-buttons:hover{
+    background-color: transparent;
+  }
 
 }

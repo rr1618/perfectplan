@@ -8,7 +8,7 @@ import icon2 from '../icon2.png'
 import classes from '../BackgroundVideo.module.css';
 
 import {
-    DownOutlined ,
+
     UpOutlined ,
 } from '@ant-design/icons';
 

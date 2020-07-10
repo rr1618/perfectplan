@@ -22,13 +22,14 @@ class App extends React.Component {
           {matches => (
             <Fragment>
               {matches.small && <Col>
-                  {console.log(matches.small)}
+                  {console.log("device width",matches.small)}
                   <MobileHome/>
 
 
               </Col>}
               {matches.medium && <h1>I am medium!</h1>}
                 {matches.large && <Col>
+                    {console.log("device width",matches.large)}
                     <FullPage>
                         <Slide>
                             <Home/>

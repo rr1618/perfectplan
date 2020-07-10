@@ -22,7 +22,7 @@ return (
 
     <Col className="site-header" style={{ width: '100%'}}>
         <Row justify="center">
-            <Col className="navbar"  >
+            <Col className="navbar" style={{}} >
                 <img className="center" src={Logo} style={{height:50}} alt=""/>
             </Col>
         </Row>
@@ -40,7 +40,7 @@ return (
                     Enterpreneurship<br/>
                     Personal Development<br /></p>
                 <Button className="homeButtons" size="large" style={{float:"right",marginTop:15,width:200,borderColor: "#fffff"}}>
-                <strong>Enroll For Free</strong></Button>
+                <strong style={{color:'white'}}>Enroll For Free</strong></Button>
             </Col>
 
             <Col   className="strip" >
