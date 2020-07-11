@@ -1,10 +1,10 @@
 import React from 'react'
 import {useSpring ,animated} from 'react-spring'
 import {Row,Col,Button,Space} from 'antd';
-import SecondBackground from '../back2.png'
-import BackgroundVideo from '../vid1.mp4'
-import icon1 from '../icon1.png'
-import icon2 from '../icon2.png'
+import SecondBackground from '../images/back2.png'
+import BackgroundVideo from '../images/vid1.mp4'
+import icon1 from '../images/icon1.png'
+import icon2 from '../images/icon2.png'
 import classes from '../BackgroundVideo.module.css';
 
 import {

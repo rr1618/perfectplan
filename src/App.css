@@ -129,10 +129,46 @@ hr.rounded {
 
 }
 .bold-heading {
-    font-size: 72px;
+    font-size: 52px;
     color: white;
   }
+.course-names-icons{
+  height: 60px;
+  width: 60px;
+  margin:20px;
+}
+.course-topics{
+  margin-top: 20px;
+  margin-left: 20px;
+    color: white;
+  font-weight: bold;
+}
+hr.new {
+  border-top: 6px solid #715335;
+  border-radius: 2%;
+}
+.search-input
+{
+  width:500px;
+  background-color:#FBF1E7;
+  background-size:30px 30px;
+  background-position:8px center;
+  background-repeat: no-repeat;
+  border-radius:40px;
+  margin-top: 8px;
+  padding-left: 40px;
+  margin-left: 100px;
+  height:40px;
+  outline:none;
+}
 
+.course-button{
+  background-color: #E5D2C7;
+    border: transparent;
+  height: 35px;
+  margin-right: 5px;
+
+}
 @media screen and (min-width: 100px)
 and (max-width:500px){
   .two-box{
@@ -164,4 +200,16 @@ and (max-width:500px){
     background-color: transparent;
   }
 
+}
+#components-form-demo-normal-login .login-form {
+  max-width: 300px;
+}
+#components-form-demo-normal-login .login-form-forgot {
+  float: right;
+}
+#components-form-demo-normal-login .ant-col-rtl .login-form-forgot {
+  float: left;
+}
+#components-form-demo-normal-login .login-form-button {
+  width: 100%;
 }

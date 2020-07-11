@@ -7,6 +7,7 @@ import {Col,Row} from 'antd'
 import Home from './components/home'
 import MobileHome from './components/mobileHome'
 import Middle from "./components/secondpage";
+import CoursePage from "./components/course";
 
 import Media from 'react-media';
 
@@ -23,7 +24,8 @@ class App extends React.Component {
             <Fragment>
               {matches.small && <Col>
                   {console.log("device width",matches.small)}
-                  <MobileHome/>
+                  {/*<MobileHome/>*/}
+                  <CoursePage/>
 
 
               </Col>}
@@ -32,10 +34,11 @@ class App extends React.Component {
                     {console.log("device width",matches.large)}
                     <FullPage>
                         <Slide>
-                            <Home/>
+                            <CoursePage/>
+                            {/*<Home/>*/}
                         </Slide>
                         <Slide>
-                            <Middle/>
+                            {/*<Middle/>*/}
                         </Slide>
                     </FullPage>
                 </Col>}

@@ -1,13 +1,21 @@
-import { Row,Col,Button} from 'antd';
-import React from 'react';
+import {Row, Col, Button} from 'antd';
+import React,{useState} from 'react';
+import LoginModal from "./login";
+import { useAuth0 } from "@auth0/auth0-react";
 import TweenOne from 'rc-tween-one';
-import Background from '../background.png';
+import Background from '../images/background.png';
 import Logo from '../logo.png';
 import {
 DownOutlined ,
 } from '@ant-design/icons';
 
 const Home =()=> {
+     const [modal,setModal] = useState(false)
+     const { loginWithRedirect } = useAuth0();
+    const rahul=()=>
+    {
+        setModal(false)
+    }
 return (
 
 
@@ -39,8 +47,11 @@ return (
                     Digital Marketing<br />
                     Enterpreneurship<br/>
                     Personal Development<br /></p>
-                <Button className="homeButtons" size="large" style={{float:"right",marginTop:15,width:200,borderColor: "#fffff"}}>
+                <Button className="homeButtons" size="large" style={{float:"right",marginTop:15,width:200,borderColor: "#fffff"}}
+                onClick={()=>loginWithRedirect()}>
                 <strong style={{color:'white'}}>Enroll For Free</strong></Button>
+                 {modal&&<LoginModal show={modal} greet={rahul}/>}
+
             </Col>
 
             <Col   className="strip" >
