@@ -4,12 +4,14 @@ import './home.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FullPage, Slide } from 'react-full-page';
 import {Col,Row} from 'antd'
+import {BrowserRouter, Route} from 'react-router-dom'
 import Home from './components/home'
 import MobileHome from './components/mobileHome'
 import Middle from "./components/secondpage";
 import CoursePage from "./components/course";
 
 import Media from 'react-media';
+
 
 class App extends React.Component {
   render() {
@@ -24,24 +26,30 @@ class App extends React.Component {
             <Fragment>
               {matches.small && <Col>
                   {console.log("device width",matches.small)}
-                  {/*<MobileHome/>*/}
-                  <CoursePage/>
-
-
+                  <BrowserRouter >
+                            <Route exact path="/"  component={MobileHome}/>
+                            <Route exact path="/dashboard" component={CoursePage}/>
+                  </BrowserRouter>
               </Col>}
               {matches.medium && <h1>I am medium!</h1>}
-                {matches.large && <Col>
-                    {console.log("device width",matches.large)}
-                    <FullPage>
-                        <Slide>
-                            <CoursePage/>
-                            {/*<Home/>*/}
-                        </Slide>
-                        <Slide>
-                            {/*<Middle/>*/}
-                        </Slide>
-                    </FullPage>
-                </Col>}
+                {matches.large &&
+                    <Col>
+                         <BrowserRouter >
+
+                             <Route exact  path="/">
+                                 <FullPage>
+                                     <Slide><Home/></Slide>
+                                     <Slide><Row><Middle/></Row></Slide>
+                                 </FullPage>
+                                 </Route>
+
+                    <Route exact path="/dashboard" >
+                        <CoursePage/>
+                    </Route>
+
+</BrowserRouter>
+                </Col>
+                     }
               </Fragment>
           )}
         </Media>
