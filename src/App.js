@@ -9,10 +9,7 @@ import Home from './components/home'
 import MobileHome from './components/mobileHome'
 import Middle from "./components/secondpage";
 import CoursePage from "./components/course";
-
 import Media from 'react-media';
-
-
 class App extends React.Component {
   render() {
     return (
