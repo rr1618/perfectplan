@@ -7,6 +7,7 @@ import Logo from '../images/mobilelogo.png';
 import MobBack from '../images/mobileBack2.png';
 import SecondBackground from "../images/back2.png";
 import icon2 from "../images/icon2.png";
+import {Link} from "react-router-dom";
 const MoblieHome =()=>
 {
     const [modal,setModal] = useState(false)
@@ -30,6 +31,7 @@ const rahul=()=>
                 <img  src={Logo} style={{height:30}} alt=""/>
             </Col>
         </Row>
+                 <Row><Link to='/dashboard'>Dashboard</Link></Row>
     </Col>
 
 

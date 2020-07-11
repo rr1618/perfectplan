@@ -1,6 +1,7 @@
 import {Row, Col, Button} from 'antd';
 import React,{useState} from 'react';
 import LoginModal from "./login";
+import {Link} from 'react-router-dom'
 import { useAuth0 } from "@auth0/auth0-react";
 import TweenOne from 'rc-tween-one';
 import Background from '../images/background.png';
@@ -34,6 +35,7 @@ return (
                 <img className="center" src={Logo} style={{height:50}} alt=""/>
             </Col>
         </Row>
+        <Row><Link to='/dashboard'>Dashboard</Link></Row>
     </Col>
 
         <Row  justify='center' >
