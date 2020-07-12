@@ -44,20 +44,17 @@
     color: #AE998D;
 }
 .heading{
-    position:absolute;
-    bottom:0px;
+    position: absolute;
+    bottom:0;
     color:white;
 
 
 }
 .course-slide1:hover .heading{
-    position:static;
-    margin-top: 30px;
-    margin-bottom:10px;
-
+    top:0;
     display: block;
     color: #796051;
-    transform: scale(1,.7);
+    transform: scale(1,.5);
 
 
 }
@@ -65,7 +62,7 @@
     display: block;
     position: absolute;
     bottom: 0;
-    transform: scale(1,.7);
+    transform: scale(1,.5);
 }
 .course-slide1-down:hover .heading{
     position:static;

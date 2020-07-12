@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import {Row, Col, Button,Space,Divider} from 'antd';
+import {Row, Col} from 'antd';
 import ID from "../images/idcard.png";
 import Hand from "../images/hand.png";
 import People from "../images/people.png";
@@ -79,13 +79,6 @@ const CoursePageSlide1=()=>
                             </Col>
                           </Row>
                       </Col>
-
-
-
-
-                   
-
-
                 </Row>
 
                 <Col style={{backgroundColor:'#E5D2C7',marginBottom:10}} justify={'center'}>
@@ -127,7 +120,8 @@ const CoursePageSlide1=()=>
                             <Row justify={'center'}>
                                 <h5 className={'heading'} >Digital Marketing</h5>
                             </Row>
-                            <Row justify={'center'}>
+                            <Row justify={'center'} align={'bottom'}>
+
                                 <h6 className={'details'}>Digital Marketing is the component<br />
                                 of marketing that utilizes internet<br />
                                 and online based digital technologies<br />

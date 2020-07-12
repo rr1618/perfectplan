@@ -17,8 +17,7 @@ class App extends React.Component {
 
         <Media queries={{
           small: "(min-width: 220px) and (max-width: 599px)",
-          medium: "(min-width: 600px) and (max-width: 1199px)",
-          large: "(min-width: 1200px) and (max-width:1600px)"
+          large: "(min-width: 600px) "
         }}>
           {matches => (
             <Fragment>
@@ -29,7 +28,6 @@ class App extends React.Component {
                             <Route exact path="/dashboard" component={MobileCoursePage}/>
                   </BrowserRouter>
               </Col>}
-              {matches.medium && <h1>I am medium!</h1>}
                 {matches.large &&
                     <Col>
                          <BrowserRouter >
