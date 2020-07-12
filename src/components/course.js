@@ -1,5 +1,7 @@
 import {Row, Col, Button} from 'antd';
 import React,{useState} from 'react';
+import { FullPage, Slide } from 'react-full-page';
+import CoursePageSlide1 from "./course2ndslide";
 import Laptop from "../images/brightlaptop.png";
 import LogoDark from '../images/logodark.png'
 import SecondBackground from "../images/back2.png";
@@ -13,20 +15,24 @@ import Software from "../images/software.png";
 import Placement from "../images/placement.png";
 import icon2 from "../images/icon2.png";
 import Certification from '../images/badge.png'
+
 import { SearchOutlined } from '@ant-design/icons';
 import Background from "../images/background.png";
 
 const CoursePage =()=>
 {
     return (
-        <Col  style={{
+        <FullPage>
+
+        <Slide>
+             <Col  style={{
 
             backgroundSize:'100vw 65vh',
             backgroundRepeat: 'no-repeat',
                     backgroundImage: "url("+`${Laptop}`+")",
                         }}
     >
-             <Col className="site-header" style={{ width: '100%',backgroundColor:'white'}}>
+             <Col className="site-header" style={{ width: '100%',backgroundColor:'white',position: 'fixed',zIndex:2}}>
         <Row >
             <Col className="navbar" >
                 <img  src={LogoDark} style={{height:40}} alt=""/>
@@ -41,9 +47,8 @@ const CoursePage =()=>
 
         </Row>
     </Col>
-
-            <Row>
-                <Col span={8} style={{margin:30}}>
+            <Row >
+                <Col span={8} style={{margin:30,marginTop:100}}>
                 <h1 className='bold-heading' style={{color:'#e3d0c5'}} ><strong>LEARN NOW <br /> PAY LATER</strong><br /></h1>
                 <Button className="homeButtons" size="large" style={{float:"left",marginTop:15,width:200,borderColor: "#fffff",borderWidth:2.5}}>
                 <strong style={{color:'white'}}>Enroll For Free</strong></Button>
@@ -97,7 +102,7 @@ const CoursePage =()=>
                                     <h5 className='course-topics'>SOFT SKILLS<br /> TRAINING</h5>
                                   </Row>
                               </Col>
-                                 
+
 
                           </Row>
                     <Row>
@@ -127,10 +132,13 @@ const CoursePage =()=>
 
                 <h3 style={ { color:'#715335' }}>Get your first job/internship or hike in your CTC by 40% to 60%</h3>
             </Row>
-
-
-
         </Col>
+        </Slide>
+            <Slide>
+                <CoursePageSlide1/>
+            </Slide>
+
+                    </FullPage>
     )
 }
 
