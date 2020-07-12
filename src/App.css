@@ -91,6 +91,9 @@ p{
   border-color: black;
 
 }
+  .homeButtons:focus{
+    background-color: transparent;
+  }
 .start-now{
   position:absolute;
   background-color:#F3DDD1;
@@ -171,6 +174,21 @@ hr.new {
 }
 @media screen and (min-width: 100px)
 and (max-width:500px){
+  .homeButtons:focus{
+    background-color: transparent;
+  }
+.course-names-icons{
+  height: 35px;
+  width: 35px;
+  margin:5px;
+}
+.course-topics{
+  margin-top: 12px;
+
+    color: white;
+  font-weight: bold;
+  font-size: 12px;
+}
   .two-box{
     border-style: none;
     padding:0 ;
@@ -185,6 +203,37 @@ and (max-width:500px){
     color: #e3d0c5;
 
   }
+  .course-button{
+  background-color: #E5D2C7;
+    border: transparent;
+  height: 25px;
+  margin-right: 5px;
+
+}
+  .course-button:visited{
+  background-color: #E5D2C7;
+    border: transparent;
+  height: 25px;
+  margin-right: 5px;
+}
+.text-in-button{
+  font-size:11px;
+  color:black;
+  padding-top:5px;
+}
+.search-input
+{
+  width:70vw;
+  background-color:#FBF1E7;
+  background-size:20px 20px;
+  background-position:8px center;
+  background-repeat: no-repeat;
+  border-radius:10px;
+  margin-top: 16px;
+  height:30px;
+  outline:none;
+  margin-left:8px;
+}
   .home-buttons{
     float:left;
     margin-top:15px;

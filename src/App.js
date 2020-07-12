@@ -9,6 +9,7 @@ import Home from './components/home'
 import MobileHome from './components/mobileHome'
 import Middle from "./components/secondpage";
 import CoursePage from "./components/course";
+import MobileCoursePage from "./components/mobileCourse";
 import Media from 'react-media';
 class App extends React.Component {
   render() {
@@ -25,7 +26,7 @@ class App extends React.Component {
                   {console.log("device width",matches.small)}
                   <BrowserRouter >
                             <Route exact path="/"  component={MobileHome}/>
-                            <Route exact path="/dashboard" component={CoursePage}/>
+                            <Route exact path="/dashboard" component={MobileCoursePage}/>
                   </BrowserRouter>
               </Col>}
               {matches.medium && <h1>I am medium!</h1>}
