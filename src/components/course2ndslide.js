@@ -5,12 +5,47 @@ import Hand from "../images/hand.png";
 import People from "../images/people.png";
 import '../course2slide.css'
 import { LeftOutlined,RightOutlined } from '@ant-design/icons';
+const CourseDetail=(props)=>
+{
+    return(
+        <Col style={{backgroundColor:'#E5D2C7'}} justify={'center'}>
+                     <Row justify="center">
+                         <h3 style={{color:'#796051'}}>{props.detail}</h3>
+                     </Row>
+                     <Row justify={'center'}>
+                         <a><Col><LeftOutlined style={{fontSize:70,position: 'relative',top:70,right:20}}/></Col></a>
+                     <a><Col className={'course-slide1-down'}>
+                          <Row justify={'center'}>
+                                <h5 className={'heading'}>TensorFlow Introduction</h5>
+                            </Row>
+                            <h6 className={'details'} ></h6>
+
+                     </Col></a>
+                     <a><Col className={'course-slide1-down'}>
+                         <Row justify={'center'}>
+                                <h5 className={'heading'}>Convolurional Neural Network</h5>
+                            </Row>
+                            <h6 className={'details'} ></h6>
+
+                     </Col></a>
+                     <a><Col className={'course-slide1-down'}>
+                         <Row justify={'center'}>
+                                <h5 className={'heading'}>Natural Language Processing</h5>
+                            </Row>
+                            <h6 className={'details'} ></h6>
+
+                     </Col></a>
+                     <a ><Col><RightOutlined style={{fontSize:70,position: 'relative',top:70,left:20}} /></Col></a>
+                     </Row>
+                </Col>
+    )
+}
 const CoursePageSlide1=()=>
 {
-    const [detail,setDetail] =useState('ml',false)
+    const [detail,setDetail] =useState('Machine Learning')
     return (<Col span={24}>
             <Col style={{marginTop:58}}>
-                <Row style={{backgroundColor:'#E5D2C7'}} justify="center" >
+                <Row style={{backgroundColor:'#E5D2C7',marginBottom:10,paddingBottom:5}} justify="center" >
 
 
                             <Col span={6}  style={{borderRightStyle:'solid',borderColor:'#CEB8AB',borderRightWidth:3,marginRight:30}}>
@@ -52,11 +87,17 @@ const CoursePageSlide1=()=>
 
 
                 </Row>
-                <Row style={{backgroundColor:'#E5D2C7'}} justify={'center'}>
-                    <a><Col><LeftOutlined style={{fontSize:70,position: 'relative',top:80}}/></Col></a>
-                    <Row>
 
-                        <a ><Col  className={'course-slide1' }  >
+                <Col style={{backgroundColor:'#E5D2C7',marginBottom:10}} justify={'center'}>
+                    <Row justify={'center'}>
+                        <h3  style={{color:'#796051'}}>Course Categories</h3>
+                    </Row>
+                    <Row justify={'center'}>
+                        <a><Col><LeftOutlined style={{fontSize:70,position: 'relative',top:70,right:20}}/></Col></a>
+
+                    <Row >
+
+                        <a onClick={()=>{setDetail('Machine Learning')}}><Col  className={'course-slide1' }  >
 
                             <Row justify={'center'}>
                                 <h5 className={'heading'}>Machine Learning</h5>
@@ -65,7 +106,7 @@ const CoursePageSlide1=()=>
 
                     </Col></a>
                     <Col>
-                        <a ><Col  className={'course-slide1'} style={{height:90,width:170,margin:0,marginBottom:8,marginTop:20}}>
+                        <a onClick={()=>{setDetail('Python')}} ><Col  className={'course-slide1'} style={{height:75,width:170,margin:0,marginBottom:8,marginTop:20}}>
 
                                 <Row justify={'center'}>
                                 <h5 className={'heading'} >Python</h5>
@@ -74,7 +115,7 @@ const CoursePageSlide1=()=>
                                     <h6 className={'details'} ></h6>
                                 </Row>
                             </Col></a>
-                        <a ><Col className={'course-slide1'} style={{height:100,width:170,margin:0,}} >
+                        <a onClick={()=>{setDetail('Data Structures')}}><Col className={'course-slide1'} style={{height:75,width:170,margin:0,}} >
                          <Row justify={'center'}>
                                 <h5 className={'heading'} >Data Structures</h5>
                             </Row>
@@ -82,7 +123,7 @@ const CoursePageSlide1=()=>
                     </Col>
                     </Row>
                     <Row>
-                        <a> <Col className={'course-slide1'} >
+                        <a onClick={()=>{setDetail('Digital Marketing')}}> <Col className={'course-slide1'} >
                             <Row justify={'center'}>
                                 <h5 className={'heading'} >Digital Marketing</h5>
                             </Row>
@@ -95,12 +136,12 @@ const CoursePageSlide1=()=>
                             </Row>
                         </Col></a>
                      <Col>
-                         <a ><Col className={'course-slide1'} style={{height:90,width:170,margin:0,marginBottom:8,marginTop:20}} >
+                         <a onClick={()=>{setDetail('Entrepreneurship')}} ><Col className={'course-slide1'} style={{height:75,width:170,margin:0,marginBottom:8,marginTop:20}} >
                                 <Row justify={'center'}>
                                 <h5 className={'heading'} style={{position:'absolute',bottom:0,color:'white'}}>Entrepreneurship</h5>
                             </Row>
                             </Col></a>
-                         <a ><Col className={'course-slide1'} style={{height:100,width:170,margin:0}} >
+                         <a onClick={()=>{setDetail('Soft Skills')}} ><Col className={'course-slide1'} style={{height:75,width:170,margin:0}} >
                         <Row justify={'center'}>
                                 <h5 className={'heading'} style={{position:'absolute',bottom:0,color:'white'}}>Soft Skills</h5>
                             </Row>
@@ -108,34 +149,11 @@ const CoursePageSlide1=()=>
                     </Col>
                     </Row>
 
-                    <a ><Col><RightOutlined style={{fontSize:70,position: 'relative',top:80}} /></Col></a>
+                    <a ><Col><RightOutlined style={{fontSize:70,position: 'relative',top:70,left:20}} /></Col></a>
+                    </Row>
 
-                </Row>
-                 <Row style={{backgroundColor:'#E5D2C7'}} justify={'center'}>
-                     <a><Col><LeftOutlined style={{fontSize:70,position: 'relative',top:80}}/></Col></a>
-                     <a><Col className={'course-slide1-down'}>
-                          <Row justify={'center'}>
-                                <h5 className={'heading'}>TensorFlow Introduction</h5>
-                            </Row>
-                            <h6 className={'details'} ></h6>
-
-                     </Col></a>
-                     <a><Col className={'course-slide1-down'}>
-                         <Row justify={'center'}>
-                                <h5 className={'heading'}>Convolurional Neural Network</h5>
-                            </Row>
-                            <h6 className={'details'} ></h6>
-
-                     </Col></a>
-                     <a><Col className={'course-slide1-down'}>
-                         <Row justify={'center'}>
-                                <h5 className={'heading'}>Natural Language Processing</h5>
-                            </Row>
-                            <h6 className={'details'} ></h6>
-
-                     </Col></a>
-                     <a ><Col><RightOutlined style={{fontSize:70,position: 'relative',top:80}} /></Col></a>
-                </Row>
+                </Col>
+                 <CourseDetail detail={detail}/>
 
             </Col>
     </Col>)

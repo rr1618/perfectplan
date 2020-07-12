@@ -2,17 +2,19 @@
 
 .course-slide1{
     background-color: #AE998D;
-    height:200px;
-    width:350px;
+    height:160px;
+    width:340px;
     margin:20px;
     border-radius:5px;
+    border-style: solid;
+    border-color: #AE998D;
     transition: .5s;
 }
 .course-slide1-down{
 
   background-color: #AE998D;
-    height:200px;
-    width:350px;
+    height:160px;
+    width:340px;
     margin:10px;
     border-radius:5px;
     transition: .5s;
@@ -46,28 +48,36 @@
     bottom:0px;
     color:white;
 
+
 }
 .course-slide1:hover .heading{
-    margin-top: 50px;
     position:static;
+    margin-top: 30px;
+    margin-bottom:10px;
+
     display: block;
     color: #796051;
+    transform: scale(1,.7);
+
 
 }
 .course-slide1:hover .details{
     display: block;
     position: absolute;
     bottom: 0;
+    transform: scale(1,.7);
 }
 .course-slide1-down:hover .heading{
     position:static;
     color: #796051;
+    transform: scale(1,.7);
 
 }
 .course-slide1-down:hover .details{
     display: block;
     position: absolute;
     bottom: 0;
+     transform: scale(1,.7);
 }
 
 
