@@ -9,7 +9,7 @@ const CourseDetail=(props)=>
 {
     return(
         <Row justify={'center'}>
-            <Col style={{backgroundColor:'#E5D2C7',borderStyle:'solid',borderColor:'black',position:'absolute',bottom:'1vh',width:'100vw',height:'35vh'}} justify={'center'}>
+            <Col style={{backgroundColor:'#E5D2C7',position:'absolute',top:'55vh',width:'100vw',height:'40vh'}} justify={'center'}>
                      <Row justify="center">
                          <h3 style={{color:'#796051'}}>{props.detail}</h3>
                      </Row>
@@ -46,7 +46,7 @@ const CourseDetail=(props)=>
 const CoursePageSlide1=()=>
 {
     const [detail,setDetail] =useState('Machine Learning')
-    return (<Col style={{borderStyle:'solid',borderColor:'black',height:'100vh'}}>
+    return (<Col style={{height:'100vh'}}>
                 <Row style={{backgroundColor:'#E5D2C7',marginBottom:'4vh',paddingBottom:'10px',marginTop:'8vh'}} justify="center" >
                             <Col span={6}  >
                                 <Row >
@@ -81,7 +81,7 @@ const CoursePageSlide1=()=>
                       </Col>
                 </Row>
 
-                <Col style={{backgroundColor:'#E5D2C7',marginBottom:'4vh',borderStyle:'solid',borderColor:'black',height:'35vh',position:'static'}} justify={'center'}>
+                <Col style={{backgroundColor:'#E5D2C7',marginBottom:'4vh',height:'35vh',position:'static'}} justify={'center'}>
                     <Row justify={'center'}>
                         <h3  style={{color:'#796051',fontSize:'2vw'}}>Course Categories</h3>
                     </Row>
