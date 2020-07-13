@@ -100,6 +100,14 @@ p{
 color:black;
 fontSize:16
 }
+.two-box img{
+  height:20vh;
+  width:10vw;
+  border-radius:60%;
+  border-style:solid;
+  border-color:white;
+  margin-top:2vh
+}
 .start-now:hover{
   position:absolute;
   background-color:#F3DDD1;

@@ -36,35 +36,44 @@ const Parts = ()=>
     return(
 
         <animated.div style={trail}>
-                <Col className={classes.Content} >
-                <Col className={classes.SubContent} style={{marginBottom:110}} >
-                    <UpOutlined style={ { fontSize:50,color:"white" }} />
+                <Row   justify="center" >
+                <Col style={{position:'absolute',top:'12vh'}}  >
+                    <Row justify={'center'}>
+                        <UpOutlined style={ { fontSize:'10vh',color:"white" }} />
+                    </Row>
+
                     <Row className='two-box' >
 
-                        <Col  style={{backgroundImage:"url("+`${SecondBackground}`+")",height:490,width:360,marginRight:10}}>
-                          <img src={icon2} style={{height:150,width:150}} alt=""/>
-                          <h1 style={{}}><strong>E-Learning</strong></h1>
+                        <Col  style={{backgroundImage:"url("+`${SecondBackground}`+")",height:'60vh',width:'22vw',marginRight:'1vw'}}>
+                            <Row justify={'center'}>
+                                <img src={icon2}  alt=""/>
+                          <h1 style={{}}><strong>E-LEARNING</strong></h1>
                           <h4 style={{color:'white'}}>We help you learn,<br />
                           grow and become<br />
                           the leaders of<br />
                           tomorrow</h4>
-                          <Button className='start-now' style={{position:'absolute',right:125}} ><strong>Start Now</strong></Button>
+                          <Button className='start-now' style={{position:'absolute',bottom:'6vh'}} ><strong>Start Now</strong></Button>
+                            </Row>
+
                       </Col>
-                    <Col  style={{backgroundImage:"url("+`${SecondBackground}`+")" ,height:490,width:360}}>
-                          <img src={icon1} style={{height:150,width:150}} alt=""/>
-                          <h1 style={{}}><strong>E-Business</strong></h1>
+                    <Col  style={{backgroundImage:"url("+`${SecondBackground}`+")" ,height:'60vh',width:'22vw'}}>
+                        <Row justify={'center'}>
+                                <img src={icon1}  alt=""/>
+                          <h1 style={{}}><strong>E-BUSINESS</strong></h1>
                           <h4 style={{color:'white'}}>We provide the <br />
                           one-step solution<br/>
                           to help grow your<br/>
                           business</h4>
-                          <Button  className="start-now"  style={{position:'absolute',right:125}}><strong>Start Now</strong></Button>
+                          <Button  className="start-now"  style={{position:'absolute',bottom:'6vh'}}><strong>Start Now</strong></Button>
+                        </Row>
+
                       </Col>
 
                     </Row>
 
 
                 </Col>
-            </Col>
+            </Row>
         </animated.div>
 
 
@@ -79,32 +88,17 @@ const Middle =()=>
 
 
   return (
-
-<Row justify='center'>
-
-    <Col style={{postion:'absoute'}}>
+<Col style={{height:'100vh'}}>
+    <Col style={{postion:'absolute'}}>
         <video autoPlay muted loop id="myVideo" className="video"
-               style={ {width:'100%'}
+               style={ {width:'100vw'}
                  }>
       <source src={BackgroundVideo} type="video/mp4"/>
-
-
         Your browser does not support HTML5 video.
-
       </video>
-
-            <Parts/>
-
-
-
-
-
-
-
-
 </Col>
-
-</Row>
+    <Parts/>
+    </Col>
   )
 }
 export default Middle;

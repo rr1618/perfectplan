@@ -24,11 +24,11 @@ return (
         <Col  style={{
                     minHeight: '100vh',
                     width:'100vw',
+                    height:'100vh',
                     backgroundImage: "url("+`${Background}`+")",
 
                         }}
     >
-
 
     <Col className="site-header" style={{ width: '100%'}}>
         <Row justify="center">
