@@ -2,13 +2,36 @@
 
 .course-slide1{
     background-color: #AE998D;
-    height:160px;
-    width:340px;
+    height:25vh;
+    width:25vw;
     margin:20px;
+    margin-top: 0;
     border-radius:5px;
     border-style: solid;
     border-color: #AE998D;
     transition: .5s;
+}
+.course-slide1-sm-box{
+    background-color: #AE998D;
+    height:11vh;
+    width:11vw;
+    margin:20px;
+    margin-top: 0;
+    border-radius:5px;
+    border-style: solid;
+    border-color: #AE998D;
+    transition: .5s;
+}
+.course-slide1-sm-box h5{
+    position:absolute;
+    bottom: 0;
+    font-size: 1vw;
+    color: white;
+}.course-slide1-sm-box h5{
+    position:absolute;
+    bottom: 0;
+    font-size: 1vw;
+    color: white;
 }
 .course-slide1-down{
 
@@ -22,6 +45,16 @@
 }
 
 .course-slide1:hover{
+
+    background-color: #F3E3DA;
+    transform: matrix(1,0,0,1.5,0,50);
+    /*margin:20px;*/
+    border-radius:10px;
+    border-color: #796051 ;
+    z-index: 3;
+
+}
+.course-slide1-sm-box:hover{
 
     background-color: #F3E3DA;
     transform: matrix(1,0,0,1.5,0,50);
@@ -50,7 +83,7 @@
 
 
 }
-.course-slide1:hover .heading{
+.course-slide1:hover .heading {
     top:0;
     display: block;
     color: #796051;
@@ -79,9 +112,9 @@
 
 
 .img-slide1{
-    height:80px;
-    width:80px;
-    margin-right: 7px;
+    height:10vh;
+    width:10vh;
+    margin-right: 2vw;
 }
 
 
