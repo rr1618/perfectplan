@@ -132,6 +132,8 @@ const CourseDetail=(props)=>
                                 arrowRight={ArrowRight}
                                 itemStyle={{outline:'none'}}
                                 transition={1}
+                                inertiaScrolling={true}
+                                inertiaScrollingSlowdown={1.5}
                             />
                 </Col>
         </Row>
@@ -303,6 +305,8 @@ const MobileCoursePage3=()=>
                                 arrowRight={ArrowRight}
                                 itemStyle={{outline:'none'}}
                                 transition={1}
+                                inertiaScrolling={true}
+                                inertiaScrollingSlowdown={1.5}
 
                             />
                             <Companies/>
