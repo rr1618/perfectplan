@@ -32,6 +32,7 @@ position:relative;
 @media screen and (min-width: 100px)
 and (max-width:500px) {
 .img{
+    margin-top: 5px;
     height:50px;
 width:50px;
 border-radius:30px;
@@ -42,9 +43,7 @@ position:relative;
 
     top:-3.2vh
 }
-    .img-card{
-        width:90vw;
-    }
+
     .img-card h2{
         padding-right:15px;
         padding-left:15px;

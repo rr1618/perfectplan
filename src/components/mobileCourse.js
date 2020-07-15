@@ -43,7 +43,7 @@ const MobileCoursePage2=()=>
     {
     const CourseList=(props)=>{
     return(
-                <Col  className={'course-slide1' } key={props.name} onClick={()=>{setSelected(props.name)}}  >
+                <Col  className={'course-slide1' } key={props.name}   >
 
                             <Row justify={'center'}>
                                 <h5 className={'heading'}>{props.name}</h5>
@@ -89,7 +89,10 @@ const MobileCoursePage2=()=>
                                 arrowLeft={ArrowLeft}
                                 arrowRight={ArrowRight}
                                 style={{height:'30vh'}}
-
+                                scrollBy={1}
+                                transition={1}
+                                inertiaScrolling={true}
+                                inertiaScrollingSlowdown={1.5}
                                 itemStyle={{outline:'none'}}
                             />
 
@@ -128,6 +131,7 @@ const CourseDetail=(props)=>
                                 arrowLeft={ArrowLeft}
                                 arrowRight={ArrowRight}
                                 itemStyle={{outline:'none'}}
+                                transition={1}
                             />
                 </Col>
         </Row>
@@ -265,28 +269,28 @@ const MobileCoursePage =()=>
 
 const MobileCoursePage3=()=>
 {
-    const CourseList=(props)=>{
+    const ReviewList=(props)=>{
     return(
                 <Col  className={'img-card' } key={props.name}   >
 
                             <Row  justify={'center'} >
-                                <Row >
+                                        <Row >
                                             <h2>Student </h2>
                                         <img className={'img'} src={People} alt=""/>
                                          <h2 >Reviews </h2>
-                                </Row>
+                                        </Row>
 
 
                             </Row>
-                            <p style={{textAlign: 'center'}}>I am  perfet plan b<br/>
-                            I m a new startup and <br />
-                            and  Mr. Ishaan is my owner</p>
-                            <h6 className={'details'} ></h6>
+                                <p style={{textAlign: 'center'}}>I am  perfet plan b<br/>
+                                            I m a new startup and <br />
+                                            and  Mr. Ishaan is my owner</p>
+                                        <h6 className={'details'} ></h6>
 
-                        </Col>
+                </Col>
     )
 }
-        const detail=( list.map((name)=><CourseList key={name.name} name={name.name}/>))
+        const detail=( list.map((name)=><ReviewList key={name.name+'course'} name={name.name}/>))
 
 
 
@@ -295,20 +299,16 @@ const MobileCoursePage3=()=>
                             <Row justify={'center'}><h1 style={{color:'#796051',fontSize:'3vh'}}>Success Stories</h1></Row>
                     <ScrollMenu
                                 data={detail}
-                                itemStyle={{outline:'none'}}
                                 arrowLeft={ArrowLeft}
                                 arrowRight={ArrowRight}
-
+                                itemStyle={{outline:'none'}}
+                                transition={1}
 
                             />
+                            <Companies/>
                 </Col>
 
-                <Col style={{backgroundColor:'#E5D2C7',marginTop:'2vh',height:'35vh'}} justify={'center'}>
-                    <Row justify={'center'}>
-                        <h3  style={{color:'#796051',fontSize:'3vh',paddingTop:5}}>Hiring Companies</h3>
-                    </Row>
-                    <Companies/>
-                </Col>
+
 
 
 
@@ -318,7 +318,11 @@ const Companies=(props)=>
 {
 
     return(
-        <Row justify={'center'} style={{backgroundColor:'#E5D2C7',marginTop:'2vh',width:'100vw',height:'32vh'}}>
+        <Col style={{backgroundColor:'#E5D2C7',marginTop:'2vh',height:'35vh'}} justify={'center'}>
+                    <Row justify={'center'}>
+                        <h3  style={{color:'#796051',fontSize:'3vh',paddingTop:5}}>Hiring Companies</h3>
+                    </Row>
+             <Row justify={'center'} style={{backgroundColor:'#E5D2C7',marginTop:'2vh',width:'100vw',height:'32vh'}}>
                      <Row justify="center">
                                     <Button  icon={<DownloadOutlined />} style={{backgroundColor:'#796051',color:'white',width:'40vh',height:'7vh'}}>
           Download Placement Report
@@ -327,6 +331,9 @@ const Companies=(props)=>
 
 
         </Row>
+
+                </Col>
+
 
     )
 }
