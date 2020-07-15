@@ -287,7 +287,7 @@ const MobileCoursePage3=()=>
                             </Row>
                             <p style={{textAlign: 'center'}}>I am  perfet plan b<br/>
                             I m a new startup and <br />
-                            and ishaan is my owner</p>
+                            and  Mr. Ishaan is my owner</p>
                             <h6 className={'details'} ></h6>
 
                         </Col>
