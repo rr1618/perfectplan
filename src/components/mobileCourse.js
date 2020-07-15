@@ -12,7 +12,7 @@ import Resume from "../images/resume.png";
 import Software from "../images/software.png";
 import Placement from "../images/placement.png";
 import Certification from '../images/badge.png'
-import { MailOutlined,DownOutlined,DownloadOutlined } from '@ant-design/icons';
+import { MailOutlined,DownOutlined,DownloadOutlined,LeftOutlined,RightOutlined } from '@ant-design/icons';
 import People from "../images/people.png";
 import ID from "../images/idcard.png";
 import Hand from "../images/hand.png";
@@ -34,17 +34,10 @@ const list =[
 
 ]
 
-const Arrow = ({ text, className }) => {
-  return (
-    <a
-      className={className} style={{fontSize:50,margin:0}}
-    >{text}</a>
-  );
-};
 
 
-const ArrowLeft = Arrow({ text: '<', className: 'arrow-prev' });
-const ArrowRight = Arrow({ text: '>', className: 'arrow-next' });
+const ArrowLeft = <a style={{backgroundColor:'transparent',position: 'absolute',left:0,zIndex:3,fontSize:30}}><LeftOutlined/></a>
+const ArrowRight = <a style={{backgroundColor:'transparent',position: 'absolute',right:0,zIndex:3,fontSize:30}}><RightOutlined/></a>
 const MobileCoursePage2=()=>
 {
     {
@@ -303,7 +296,9 @@ const MobileCoursePage3=()=>
                     <ScrollMenu
                                 data={detail}
                                 itemStyle={{outline:'none'}}
-                                hideSingleArrow={true}
+                                arrowLeft={ArrowLeft}
+                                arrowRight={ArrowRight}
+
 
                             />
                 </Col>
