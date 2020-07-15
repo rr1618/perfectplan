@@ -2,7 +2,6 @@ import {Row, Col, Button} from 'antd';
 import React,{useState} from 'react';
 import LoginModal from "./login";
 import {Link} from 'react-router-dom'
-import { useAuth0 } from "@auth0/auth0-react";
 import TweenOne from 'rc-tween-one';
 import Background from '../images/background.png';
 import Logo from '../logo.png';
@@ -11,12 +10,8 @@ DownOutlined ,
 } from '@ant-design/icons';
 
 const Home =()=> {
-     const [modal,setModal] = useState(false)
-     const { loginWithRedirect } = useAuth0();
-    const rahul=()=>
-    {
-        setModal(false)
-    }
+
+
 return (
 
 
@@ -29,14 +24,12 @@ return (
 
                         }}
     >
-
     <Col className="site-header" style={{ width: '100%'}}>
         <Row justify="center">
             <Col className="navbar" style={{}} >
                 <img className="center" src={Logo} style={{height:50}} alt=""/>
             </Col>
         </Row>
-        <Row><Link to='/dashboard'>Dashboard</Link></Row>
     </Col>
 
         <Row  justify='center' style={{height:'75vh'}}>
@@ -50,11 +43,8 @@ return (
                     Digital Marketing<br />
                     Enterpreneurship<br/>
                     Personal Development<br /></p>
-                <Button className="homeButtons" size="large" style={{float:"right",marginTop:15,width:200,borderColor: "#fffff"}}
-                onClick={()=>loginWithRedirect()}>
-                <strong style={{color:'white'}}>Enroll For Free</strong></Button>
-                 {modal&&<LoginModal show={modal} greet={rahul}/>}
-
+                <Link to='/dashboard'><Button className="homeButtons" size="large" style={{float:"right",marginTop:15,width:200,borderColor: "#fffff"}}>
+                <strong style={{color:'white'}}>Enroll For Free</strong></Button></Link>
             </Col>
 
             <Col   className="strip" >

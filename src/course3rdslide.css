@@ -1,0 +1,32 @@
+@import '~antd/dist/antd.css';
+
+.img-card{
+background-color: #D5B08F ;
+    margin: 20px;
+
+    padding-left: 10px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+}
+.img-card .img-side{
+
+    padding-left:6px;
+    padding-right:6px;
+    color:#796051;
+    font-size: 2vw;
+
+}
+.img{
+    height:60px;
+width:60px;
+border-radius:50px;
+border-style:solid;
+    border-width: 5px;
+    border-color:#8A7162;
+position:relative;
+
+    top:-3.2vh
+
+
+
+}

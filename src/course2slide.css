@@ -3,74 +3,68 @@
 .course-slide1{
     background-color: #AE998D;
     height:25vh;
-    width:25vw;
-    margin:20px;
-    margin-top: 0;
+    width:20vw;
+    margin-right:40px;
+    margin-top: 10px;
     border-radius:5px;
     border-style: solid;
     border-color: #AE998D;
     transition: .5s;
+    z-index: 5;
+    outline: none;
+
 }
-.course-slide1-sm-box{
-    background-color: #AE998D;
-    height:11vh;
-    width:11vw;
-    margin:20px;
-    margin-top: 0;
-    border-radius:5px;
-    border-style: solid;
-    border-color: #AE998D;
-    transition: .5s;
+.menu-item {
+  padding: 0 40px;
+  margin: 5px 10px;
+  user-select: none;
+  cursor: pointer;
+  border: none;
 }
-.course-slide1-sm-box h5{
-    position:absolute;
-    bottom: 0;
-    font-size: 1vw;
-    color: white;
-}.course-slide1-sm-box h5{
-    position:absolute;
-    bottom: 0;
-    font-size: 1vw;
-    color: white;
+
+.menu-item.active {
+  border: 1px brown solid;
+}
+
+
+.scroll-menu-arrow {
+  padding: 20px;
+  cursor: pointer;
 }
 .course-slide1-down{
-
-  background-color: #AE998D;
-    height:160px;
-    width:340px;
-    margin:10px;
+   background-color: #AE998D;
+    height:25vh;
+    width:20vw;
+    margin-right:20px;
+    margin-top: 10px;
+    margin-bottom: 30px;
     border-radius:5px;
+    border-style: solid;
+    border-color: #AE998D;
     transition: .5s;
+    z-index: 5;
 
 }
 
 .course-slide1:hover{
 
     background-color: #F3E3DA;
-    transform: matrix(1,0,0,1.5,0,50);
-    /*margin:20px;*/
+    transform: scale(1.1);
+
     border-radius:10px;
     border-color: #796051 ;
-    z-index: 3;
+    z-index: 4;
 
 }
-.course-slide1-sm-box:hover{
 
-    background-color: #F3E3DA;
-    transform: matrix(1,0,0,1.5,0,50);
-    /*margin:20px;*/
-    border-radius:10px;
-    border-color: #796051 ;
-    z-index: 3;
-
-}
 .course-slide1-down:hover{
       background-color: #F3E3DA;
-    transform: matrix(1,0,0,1.5,0,-50);
+    /*transform: matrix(1,0,0,1,0,-50);*/
     /*margin:20px;*/
     border-radius:10px;
     border-color: #796051 ;
     z-index: 3;
+        transform: scale(1.1);
 }
 .details{
     display: none;
@@ -87,7 +81,7 @@
     top:0;
     display: block;
     color: #796051;
-    transform: scale(1,.5);
+    transform: scale(0.9);
 
 
 }
@@ -97,18 +91,7 @@
     bottom: 0;
     transform: scale(1,.5);
 }
-.course-slide1-down:hover .heading{
-    position:static;
-    color: #796051;
-    transform: scale(1,.7);
 
-}
-.course-slide1-down:hover .details{
-    display: block;
-    position: absolute;
-    bottom: 0;
-     transform: scale(1,.7);
-}
 
 
 .img-slide1{
