@@ -106,6 +106,48 @@
 
 @media screen and (min-width: 100px)
 and (max-width:500px){
+.course-slide1{
+    background-color: #AE998D;
+    height:25vh;
+    width:45vw;
+    margin-right:20px;
+    margin-top: 10px;
+    border-radius:5px;
+    border-style: solid;
+    border-color: #AE998D;
+    transition: .5s;
+    z-index: 5;
+    outline: none;
 
+}
+    .course-slide1-down{
+   background-color: #AE998D;
+    height:25vh;
+    width:45vw;
+    margin-right:20px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    border-radius:5px;
+    border-style: solid;
+    border-color: #AE998D;
+    transition: .5s;
+    z-index: 5;
+
+}
+    .second-slide-icon-mobile p{
+        font-size:12px;
+        text-align:center;
+        color:#796051;
+    }
+.img-slide1{
+    height:6vh;
+    width:6vh;
+    margin-right: 2vw;
+}
+
+    .scroll-menu-arrow {
+  padding: 0px;
+  cursor: pointer;
+}
 
     }

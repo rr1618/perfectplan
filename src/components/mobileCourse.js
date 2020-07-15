@@ -1,4 +1,4 @@
-import {Row, Col, Button} from 'antd';
+import {Row, Col, Button,Space} from 'antd';
 import React,{useState} from 'react';
 import Laptop from "../images/brightlaptop.png";
 import LogoDark from '../images/logodark.png'
@@ -12,7 +12,135 @@ import Resume from "../images/resume.png";
 import Software from "../images/software.png";
 import Placement from "../images/placement.png";
 import Certification from '../images/badge.png'
-import { MailOutlined,DownOutlined } from '@ant-design/icons';
+import { MailOutlined,DownOutlined,DownloadOutlined } from '@ant-design/icons';
+import People from "../images/people.png";
+import ID from "../images/idcard.png";
+import Hand from "../images/hand.png";
+import ScrollMenu from "react-horizontal-scrolling-menu";
+import '../course2slide.css'
+import '../course3rdslide.css'
+
+
+const list =[
+    {name:'Machine Learning'},
+    {name:'Algorithm'},
+    {name:'Data Science'},
+    {name:'history'},
+    {name:'civics'},
+    {name:'geo'},
+    {name:'geomath'},
+    {name:'geomathhiind'},
+
+
+]
+
+const Arrow = ({ text, className }) => {
+  return (
+    <a
+      className={className} style={{fontSize:50,margin:0}}
+    >{text}</a>
+  );
+};
+
+
+const ArrowLeft = Arrow({ text: '<', className: 'arrow-prev' });
+const ArrowRight = Arrow({ text: '>', className: 'arrow-next' });
+const MobileCoursePage2=()=>
+{
+    {
+    const CourseList=(props)=>{
+    return(
+                <Col  className={'course-slide1' } key={props.name} onClick={()=>{setSelected(props.name)}}  >
+
+                            <Row justify={'center'}>
+                                <h5 className={'heading'}>{props.name}</h5>
+                            </Row>
+                            <h6 className={'details'} ></h6>
+
+                        </Col>
+    )
+}
+        const detail=( list.map((name)=><CourseList key={name.name} name={name.name}/>))
+        const [selected,setSelected] = useState()
+
+
+    return (<Col className={'second-slide-icon-mobile'} style={{height:'100vh'}}>
+                <Row style={{backgroundColor:'#E5D2C7',marginTop:'8vh',paddingLeft:'3px',paddingRight:'3px'}}  >
+                        <Col span={8}><Row justify={'center'}>
+                            <img className={'img-slide1'} src={People} alt=""/>
+                            <p><strong>Number of Students <br/>110</strong></p>
+
+                        </Row></Col>
+                        <Col span={8}>
+                            <Row justify={'center'}>
+                            <img className={'img-slide1'} src={ID} alt=""/>
+                             <p ><strong>Placed students <br/>561</strong></p>
+                        </Row>
+                        </Col>
+                        <Col span={8}>
+                            <Row justify={'center'}>
+                            <img className={'img-slide1'} src={Hand} alt=""/>
+                             <p ><strong>Number of Students <br/>101</strong></p>
+                        </Row>
+                        </Col>
+                </Row>
+
+                <Col style={{backgroundColor:'#E5D2C7',marginTop:'2vh',height:'35vh',position:'static'}} justify={'center'}>
+                    <Row justify={'center'}>
+                        <h3  style={{color:'#796051',fontSize:'3vh'}}>Course Categories</h3>
+                    </Row>
+
+
+                             <ScrollMenu
+                                data={detail}
+                                arrowLeft={ArrowLeft}
+                                arrowRight={ArrowRight}
+                                style={{height:'30vh'}}
+
+                                itemStyle={{outline:'none'}}
+                            />
+
+
+
+                </Col>
+                 <CourseDetail detail={selected}/>
+
+
+    </Col>)
+}
+}
+const CourseDetail=(props)=>
+{
+
+    const Lessons =(props)=>{
+        return(
+            <Col className={'course-slide1-down'} key={props.name}>
+                          <Row justify={'center'}>
+                                <h5 className={'heading'}>{props.name}</h5>
+                            </Row>
+                            <h6 className={'details'} ></h6>
+
+                     </Col>
+        )
+    }
+    const details=( list.map((name)=><Lessons key={name.name+"lesson"} name={name.name}/>))
+    return(
+        <Row justify={'center'}>
+            <Col style={{backgroundColor:'#E5D2C7',marginTop:'2vh',position:'relative',width:'100vw',height:'35vh'}} justify={'center'}>
+                     <Row justify="center">
+                         <h3 style={{color:'#796051'}}>{props.detail}</h3>
+                     </Row>
+                             <ScrollMenu
+                                data={details}
+                                arrowLeft={ArrowLeft}
+                                arrowRight={ArrowRight}
+                                itemStyle={{outline:'none'}}
+                            />
+                </Col>
+        </Row>
+
+    )
+}
 const MobileCoursePage =()=>
 {
     return (
@@ -133,16 +261,78 @@ const MobileCoursePage =()=>
 
 
             </Row>
-            <Row justify='center'>
-                <Col>
-
-                </Col>
-
-            </Row>
 
 
+ <MobileCoursePage2/>
+ <MobileCoursePage3/>
 
         </Col>
+    )
+}
+
+const MobileCoursePage3=()=>
+{
+    const CourseList=(props)=>{
+    return(
+                <Col  className={'img-card' } key={props.name}   >
+
+                            <Row  justify={'center'} >
+                                <Row >
+                                            <h2>Student </h2>
+                                        <img className={'img'} src={People} alt=""/>
+                                         <h2 >Reviews </h2>
+                                </Row>
+
+
+                            </Row>
+                            <p style={{textAlign: 'center'}}>I am  perfet plan b<br/>
+                            I m a new startup and <br />
+                            and ishaan is my owner</p>
+                            <h6 className={'details'} ></h6>
+
+                        </Col>
+    )
+}
+        const detail=( list.map((name)=><CourseList key={name.name} name={name.name}/>))
+
+
+
+    return (<Col style={{height:'100vh'}}>
+                <Col style={{backgroundColor:'#E5D2C7',paddingBottom:'10px',paddingTop:'10px',marginTop:0}} justify="center" >
+                            <Row justify={'center'}><h1 style={{color:'#796051',fontSize:'3vh'}}>Success Stories</h1></Row>
+                    <ScrollMenu
+                                data={detail}
+                                itemStyle={{outline:'none'}}
+                                hideSingleArrow={true}
+
+                            />
+                </Col>
+
+                <Col style={{backgroundColor:'#E5D2C7',marginTop:'2vh',height:'35vh'}} justify={'center'}>
+                    <Row justify={'center'}>
+                        <h3  style={{color:'#796051',fontSize:'3vh',paddingTop:5}}>Hiring Companies</h3>
+                    </Row>
+                    <Companies/>
+                </Col>
+
+
+
+    </Col>)
+}
+const Companies=(props)=>
+{
+
+    return(
+        <Row justify={'center'} style={{backgroundColor:'#E5D2C7',marginTop:'2vh',width:'100vw',height:'32vh'}}>
+                     <Row justify="center">
+                                    <Button  icon={<DownloadOutlined />} style={{backgroundColor:'#796051',color:'white',width:'40vh',height:'7vh'}}>
+          Download Placement Report
+        </Button>
+                     </Row>
+
+
+        </Row>
+
     )
 }
 export default MobileCoursePage
