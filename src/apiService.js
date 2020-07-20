@@ -22,7 +22,9 @@ export default class API {
           first_name:body['name'],
           email:body['Email'],
           username:body['Email'],
-          password:body['Password']})
+          password:body['Password'],
+            mobile:body['Mobile'],
+            course:body['Course']},)
          return  res
     }
     static SocialAccount(body){

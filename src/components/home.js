@@ -37,13 +37,13 @@ return (
             <Col className="home-boxes"  style={{marginRight:20,marginTop:'1vh'}}>
                 <h2   className='bold-heading' style={{textAlign:"right",}}><strong>Get Ready <br />For You<br/>Dream Career</strong></h2>
                 <h4 style={{color:"white",textAlign:"right"}}>Learn, Grow and become leaders of Tomorrow</h4>
-                <p style={{lineHeight:"20px",fontSize:'1vw',textAlign:"right"}}>Python<br/>
+                <p>Python<br/>
                     Data Structure<br/>
                     Machine Learning<br/>
                     Digital Marketing<br />
                     Enterpreneurship<br/>
                     Personal Development<br /></p>
-                <Link to='/dashboard'><Button className="homeButtons" size="large" style={{float:"right",marginTop:15,width:200,borderColor: "#fffff"}}>
+                <Link to='/dashboard'><Button className="homeButtons" size="large" style={{float:"right",marginTop:15,width:'12vw',borderColor: "#fffff"}}>
                 <strong style={{color:'white'}}>Enroll For Free</strong></Button></Link>
             </Col>
 
@@ -71,7 +71,7 @@ return (
                         }}
         >
 
-                <Col   style={{}}>
+                <Col>
                 <DownOutlined style={ { fontSize:60,color:"white", }} />
             </Col>
 

@@ -31,7 +31,7 @@ const rahul=()=>
                 <img  src={Logo} style={{height:30}} alt=""/>
             </Col>
         </Row>
-                 <Row><Link to='/dashboard'>Dashboard</Link></Row>
+
     </Col>
 
 
@@ -45,12 +45,9 @@ const rahul=()=>
                     Personal Development<br /></p>
                 <h2   className='bold-heading' style={{textAlign:"left",fontSize:22}}><strong>GET READY FOR <br/> YOUR DREAM CAREER</strong></h2>
                 <h6 className='bold-heading' style={{textAlign:"left",fontSize:14}}>Learn, Grow and Become Leaders of Tomorrow</h6>
-                <Button className='home-buttons' onClick={()=>{setModal(true)
-                console.log("clicked",modal)}}
+                <Link to='/dashboard'><Button className='home-buttons'
                  size="large" >
-                <strong>ENROLL FOR FREE</strong></Button>
-
-                    {modal&&<LoginModal show={modal} greet={rahul}/>}
+                <strong>ENROLL FOR FREE</strong></Button></Link>
 
             </Col>
             <Col style={{width:200,marginLeft:60,marginTop:100}}>

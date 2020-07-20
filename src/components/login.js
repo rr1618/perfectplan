@@ -1,12 +1,12 @@
 import React ,{useState,useEffect,useContext}  from 'react'
-import { Form, Input, Button, Checkbox,Space ,Col,message} from 'antd';
+import { Form, Input, Select,Col,message,Row} from 'antd';
 import Modal from 'react-modal'
 import API from "../apiService";
 import {TokenContext} from "../index";
 import {ModalContext} from "../index";
 import { GoogleLogin } from 'react-google-login';
 import { UserOutlined, LockOutlined,MailOutlined } from '@ant-design/icons';
-
+const { Option } = Select;
 
 const customStyles = {
   content : {
@@ -16,7 +16,10 @@ const customStyles = {
     bottom                : 'auto',
     marginRight           : '-50%',
     transform             : 'translate(-50%, -50%)',
-    color                 :'red'
+      backgroundColor: '#F5E2CF',
+      height:'75vh',
+      width:'60vh'
+
 
   }
 };
@@ -51,6 +54,7 @@ function LoginModal(props){
           }
       },[token])
         const onFinish = values => {
+            console.log("register",values)
         if(loginOrSignup)
             API.loginUser({'username':values.username,'password':values.password}).then(res=>{
                             setToken({'token':res.data['token'],'user':res.data['username']})
@@ -77,7 +81,14 @@ function LoginModal(props){
             const SignUp=()=>
                 {
                   return (
-                      <Form
+                      <Col>
+                            <Col  style={{textAlign: 'center' ,marginBottom:15}}>
+                                    <p style={{color:'#8F6952'}}>Home>Enroll Now</p>
+                                    <h2 style={{color:'#8F6952'}}><strong> Sign Up</strong></h2>
+                                    <h6 style={{color:'#8F6952'}} >Get Ready for your Dream Career</h6>
+
+                        </Col>
+                          <Form
                       name="normal_login"
                       className="login-form"
                       initialValues={{
@@ -86,6 +97,7 @@ function LoginModal(props){
                       onFinish={onFinish}
                       onFinishFailed={onFinishFailed}
                     >
+                              <h6 className={'form-labels'} >Your Name(Required)</h6>
                       <Form.Item
                         name="name"
                         rules={[
@@ -94,9 +106,12 @@ function LoginModal(props){
                             message: 'Please input your name!',
                           },
                         ]}
+                        style={{margin:0}}
                       >
-                        <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Name" />
+                        <Input
+                        className={'input-fields'}/>
                       </Form.Item>
+                              <h6 className={'form-labels'} >Your Email(Required)</h6>
                       <Form.Item
                         name="Email"
                         rules={[
@@ -105,13 +120,16 @@ function LoginModal(props){
                             message: 'Please input your Email!',
                           },
                         ]}
+                        style={{margin:0}}
                       >
                         <Input
-                          prefix={<MailOutlined className="site-form-item-icon" />}
+                            className={'input-fields'}
+
                           type="email"
-                          placeholder="Email"
+
                         />
                       </Form.Item>
+                                   <h6 className={'form-labels'} >Your Password(Required)</h6>
                                <Form.Item
                         name="Password"
                         rules={[
@@ -120,19 +138,56 @@ function LoginModal(props){
                             message: 'Please input your Password!',
                           },
                         ]}
+                        style={{margin:0}}
                       >
                         <Input
-                          prefix={<LockOutlined className="site-form-item-icon" />}
+                            className={'input-fields'}
                           type="password"
-                          placeholder="password"
+                        />
+
+                      </Form.Item>
+                              <h6 className={'form-labels'} >Your Mobile(Required)</h6>
+                              <Form.Item
+                        name="Mobile"
+                        rules={[
+                          {
+                            required: true,
+                            message: 'Please input your Mobile Number!',
+                          },
+                        ]}
+                        style={{margin:0}}
+                      >
+                        <Input
+                            className={'input-fields'}
+                          type="number"
                         />
                       </Form.Item>
+                              <h6 className={'form-labels'} >What do you wish to grow into</h6>
+                              <Form.Item
+                        name="Course"
+                        rules={[
+                          {
+                            required: false,
+                            message: '',
+                          },
+                        ]}
+                        style={{marginBottom:8}}
+                      >
+                                  <Select  className={'input-fields'} style={{borderWidth:1}} bordered={false} >
+                                      <Option value="python" > Python</Option>
+                                      <Option value="data structure">Data structure</Option>
+                                  </Select>
+                      </Form.Item>
                       <Form.Item>
-                        <Button type="primary" htmlType="submit" className="login-form-button">
-                          Sign Up
-                        </Button>
+                          <Row justify={'center'}>
+                              <button className={'form-buttons'}  type="submit" >
+                          <strong style={{color:'white'}}>ENROLL NOW</strong>
+                        </button>
+                          </Row>
+
                       </Form.Item>
                     </Form>
+                      </Col>
                   )
                 }
             const Login=()=>{
@@ -144,7 +199,15 @@ function LoginModal(props){
                                 })
                 };
 
-                return(<Form
+                return(<Col >
+
+                        <Col  style={{textAlign: 'center' ,marginBottom:20}}>
+                                    <p style={{color:'#8F6952'}}>Home>Login</p>
+                                    <h2 style={{color:'#8F6952'}}><strong> Login</strong></h2>
+                                    <h6 style={{color:'#8F6952'}} >Login to your account and start learning!</h6>
+
+                        </Col>
+                    <Form
                       name="normal_login"
                       className="login-form"
                       initialValues={{
@@ -152,8 +215,10 @@ function LoginModal(props){
                       }}
                       onFinish={onFinish}
                     >
+                        <h6 style={{color:'#8F6952'}}>Your Email(Required)</h6>
                       <Form.Item
                         name="username"
+
                         rules={[
                           {
                             required: true,
@@ -161,9 +226,11 @@ function LoginModal(props){
                           },
                         ]}
                       >
-                        <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Username" />
+                        <Input type='email' className={'input-fields'}  />
                       </Form.Item>
+                          <h6 style={{color:'#8F6952'}}>Your Password(Required)</h6>
                       <Form.Item
+
                         name="password"
                         rules={[
                           {
@@ -172,44 +239,44 @@ function LoginModal(props){
                           },
                         ]}
                       >
-                        <Input
-                          prefix={<LockOutlined className="site-form-item-icon" />}
+                        <Input className={'input-fields'}
+
                           type="password"
-                          placeholder="Password"
+
                         />
                       </Form.Item>
-                      <Form.Item>
-                        <Form.Item name="remember" valuePropName="checked" noStyle>
-                          <Checkbox>Remember me</Checkbox>
-                        </Form.Item>
 
-                        <a className="login-form-forgot" href="">
-                          Forgot password
-                        </a>
-                      </Form.Item>
 
                       <Form.Item>
-                        <Space>
-                          <Button type="primary" htmlType="submit" className="login-form-button">
-                          Log in
-                        </Button>
 
-                        Or <a onClick={()=>{setLoginOrSignup(false)}}>register now!</a><br />
-                        </Space>
+                        <Row justify={'center'}>
+
+                                <button className={'form-buttons'}  type="submit"
+                                         style={{marginRight:10
+                                         }}>
+                          <strong style={{color:"white"}}>LOGIN</strong>
+                        </button>
+                         <button className={'form-buttons'} style={{marginLeft:10
+                                         }} onClick={()=>{setLoginOrSignup(false)}}><strong style={{color:"white"}}>SIGNUP</strong></button><br />
+
+                        </Row>
                         <div style={{marginLeft:30,marginTop:20}}>
-
-                         <GoogleLogin
+                        <Row justify={'center'}>
+                             <GoogleLogin
                                         clientId="613674576814-a3u6c823erg54v0c46rpotn0bvvs61c3.apps.googleusercontent.com"
                                         buttonText="Google Login"
                                         onSuccess={responseGoogle}
                                         onFailure={responseGoogle}
-                                    /><br/>
+                                    />
+                        </Row>
+                        <br/>
                         <p style={{color:'red'}}>{message}</p>
 
                         </div>
 
                       </Form.Item>
-                    </Form>)
+                    </Form>
+                </Col>)
 
 }
 
@@ -224,17 +291,19 @@ function LoginModal(props){
 
   }
 
+
             return (
               <div>
+
                 <Modal
-                  isOpen={modal}
+                  isOpen={true}
                   onAfterOpen={afterOpenModal}
                   onRequestClose={closeModal}
                   style={customStyles}
                   contentLabel="Example Modal"
 
                 >
-                   <Col>
+                   <Col style={{backgroundColor:'#F5E2CF'}}>
                      {loginOrSignup&& <Login/> }
                      {!loginOrSignup&& <SignUp/>}
                     </Col>

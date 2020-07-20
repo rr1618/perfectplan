@@ -1,5 +1,5 @@
 import {Row, Col, Button,Space} from 'antd';
-import React,{useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import Laptop from "../images/brightlaptop.png";
 import LogoDark from '../images/logodark.png'
 import SecondBackground from "../images/back2.png";
@@ -19,6 +19,9 @@ import Hand from "../images/hand.png";
 import ScrollMenu from "react-horizontal-scrolling-menu";
 import '../course2slide.css'
 import '../course3rdslide.css'
+import {ModalContext, TokenContext} from "../index";
+import API from "../apiService";
+import LoginModal from "./login";
 
 
 const list =[
@@ -34,7 +37,12 @@ const list =[
 
 ]
 
-
+const experlist =[
+    {name:'Amit Khaturia',exp:'9',company:'Adobe'},
+    {name:'Jyoti Chutani',exp:'5',company:'Naukri.com'},
+    {name:'Ishan Gupta',exp:'9',company:'CEO'},
+    {name:'Rashul Chutani',exp:'2',company:'IIT Delhi'},
+]
 
 const ArrowLeft = <a style={{backgroundColor:'transparent',position: 'absolute',left:0,zIndex:3,fontSize:30}}><LeftOutlined/></a>
 const ArrowRight = <a style={{backgroundColor:'transparent',position: 'absolute',right:0,zIndex:3,fontSize:30}}><RightOutlined/></a>
@@ -142,6 +150,18 @@ const CourseDetail=(props)=>
 }
 const MobileCoursePage =()=>
 {
+    var sessionUser = sessionStorage.getItem('username')
+    var sessionToken = sessionStorage.getItem('token')
+      const {token,setToken} = useContext(TokenContext)
+    const {modal,setModal} = useContext(ModalContext)
+    useEffect(()=>{
+        console.log("useeffetc",sessionToken,sessionUser)
+        API.checkToken({'user':sessionUser,'token':sessionToken}).then(res=>{
+            console.log(res.data)
+            if (res.data!==true)
+                sessionStorage.clear()
+        })
+    },[])
     return (
         <Col  style={{
 
@@ -152,17 +172,21 @@ const MobileCoursePage =()=>
     >
              <Col span={24} className="site-header" style={{ width: '100%',backgroundColor:'white'}}>
                  <Row>
-                     <Col span={10} className="navbar" >
+                     <Col span={9} className="navbar" >
 
                 <img  src={LogoDark} style={{height:25,width:120}} alt=""/>
             </Col>
-                      <Col span={14} style={{paddingTop:10}}>
-                          <Row justify='right' style={{marginLeft:20}}>
-                              <button className='course-button' size="small" >
-                                  <p className='text-in-button' >E-SCHOOL</p></button>
-            <button className='course-button' size='small'><p className='text-in-button'>LOGIN/ENROLL</p></button>
-                          </Row>
-
+                      <Col style={{marginTop: 10}}>
+                    <button className='course-button' ><strong>E-SCHOOL</strong></button>
+                {sessionToken?<button className='course-button' style={{backgroundColor: '#E5D2C7'}} onClick={() => {
+                    sessionStorage.clear()
+                    window.location.reload()
+                }}>
+                    <strong>Logout</strong></button>:<button className='course-button' style={{backgroundColor: '#E5D2C7'}} onClick={()=> {
+                    setModal(true)
+                }}>
+                    <strong>LOGIN\ENROLL</strong></button>}
+                {modal&&<LoginModal show={modal}/>}
             </Col>
                  </Row>
     </Col>
@@ -171,6 +195,7 @@ const MobileCoursePage =()=>
                 <input className='search-input' placeholder=' Explore our Courses' style={{backgroundImage:"url("+`${Magnifier}`+")",
                  }} />
                 <Col span={24} style={{margin:15}}>
+                     <h3 style={{color:'white'}}>{sessionUser}</h3>
                 <h2 className='bold-heading' style={{color:'#e3d0c5',fontSize:42}} ><strong>LEARN NOW <br /> PAY LATER</strong><br /></h2>
                 <Button className="homeButtons" size="large" style={{float:"left",borderWidth:3,marginTop:5}}>
                 <strong style={{color:'white'}}>Enroll For Free</strong></Button>
@@ -271,6 +296,35 @@ const MobileCoursePage =()=>
 
 const MobileCoursePage3=()=>
 {
+    const ExpertList=(props)=>{
+    return(
+                <Col  className={'img-card' } key={props.name.name}   >
+
+
+                                <Row justify={'center'}>
+                                            <h2 className={'img-side'} >Expert</h2>
+                                        <img className={'img'} src={People} alt="" style={{}}/>
+                                         <h2 className={'img-side'} >Guides </h2>
+                                </Row>
+                    <Row>
+                        <Space size={'large'}>
+                        <Col>
+                            <img src={People} alt=""/>
+                        </Col>
+                        <Col>
+                                     <h3>{props.name.name}</h3>
+                                <h4>{props.name.exp} +years Experience</h4>
+                               <h5>{props.name.company}</h5>
+
+                                </Col>
+                            </Space>
+
+                    </Row>
+
+
+                        </Col>
+    )
+}
     const ReviewList=(props)=>{
     return(
                 <Col  className={'img-card' } key={props.name}   >
@@ -293,6 +347,7 @@ const MobileCoursePage3=()=>
     )
 }
         const detail=( list.map((name)=><ReviewList key={name.name+'course'} name={name.name}/>))
+    const expertlist=( experlist.map((name)=><ExpertList key={name.name} name={name}/>))
 
 
 
@@ -309,8 +364,21 @@ const MobileCoursePage3=()=>
                                 inertiaScrollingSlowdown={1.5}
 
                             />
-                            <Companies/>
+
                 </Col>
+        <Col style={{backgroundColor:'#E5D2C7',paddingBottom:'10px',paddingTop:'10px',marginTop:'6vh'}} justify="center" >
+                            <Row justify={'center'}><h1 style={{color:'#796051',fontSize:'1.5em'}}>Our Experts</h1></Row>
+                    <ScrollMenu
+                                data={expertlist}
+                                arrowLeft={ArrowLeft}
+                                arrowRight={ArrowRight}
+                                itemStyle={{outline:'none'}}
+                                innerWrapperStyle={{height:'300px',paddingTop:10}}
+                                wrapperStyle={{height:'300px'}}
+
+                            />
+                </Col>
+         <Companies/>
 
 
 

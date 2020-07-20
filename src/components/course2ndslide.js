@@ -5,7 +5,6 @@ import Hand from "../images/hand.png";
 import People from "../images/people.png";
 import '../course2slide.css'
 import ScrollMenu from 'react-horizontal-scrolling-menu';
-import { LeftOutlined,RightOutlined } from '@ant-design/icons';
 
 
 const list =[
@@ -52,7 +51,7 @@ const CoursePageSlide2=()=>
         const [selected,setSelected] = useState()
 
 
-    return (<Col style={{height:'87vh'}}>
+    return (<Col  style={{height:'87vh'}}>
                 <Row style={{backgroundColor:'#E5D2C7',paddingBottom:'10px',paddingTop:'10px',marginTop:'8vh'}} justify="center" >
                             <Col span={6}  >
                                 <Row >

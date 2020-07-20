@@ -1,11 +1,10 @@
-import React,{useState,useEffect} from 'react'
-import {Row, Col,Button} from 'antd';
-import ID from "../images/idcard.png";
-import Hand from "../images/hand.png";
+import React from 'react'
+import {Row, Col,Button,Space} from 'antd';
+
 import People from "../images/people.png";
 import '../course3rdslide.css'
 import ScrollMenu from 'react-horizontal-scrolling-menu';
-import { LeftOutlined,RightOutlined ,DownloadOutlined} from '@ant-design/icons';
+import {DownloadOutlined} from '@ant-design/icons';
 
 
 const list =[
@@ -19,6 +18,12 @@ const list =[
     {name:'geomathhiind'},
 
 
+]
+const experlist =[
+    {name:'Amit Khaturia',exp:'9',company:'Adobe'},
+    {name:'Jyoti Chutani',exp:'5',company:'Naukri.com'},
+    {name:'Ishan Gupta',exp:'9',company:'CEO'},
+    {name:'Rashul Chutani',exp:'2',company:'IIT Delhi'},
 ]
 
 const Arrow = ({ text, className }) => {
@@ -40,7 +45,7 @@ const CoursePageSlide3=()=>
     return(
                 <Col  className={'img-card' } key={props.name}   >
 
-                            <Row  >
+
                                 <Row justify={'center'}>
                                             <h2 className={'img-side'} >Student </h2>
                                         <img className={'img'} src={People} alt="" style={{}}/>
@@ -48,9 +53,11 @@ const CoursePageSlide3=()=>
                                 </Row>
 
 
-                            </Row>
+
                             <p>I am  perfet plan b<br/>
                             I m a new startup and <br />
+                            I m a new startup and <br />
+
                             and ishaan is my owner</p>
                             <h6 className={'details'} ></h6>
 
@@ -58,7 +65,36 @@ const CoursePageSlide3=()=>
     )
 }
         const detail=( list.map((name)=><CourseList key={name.name} name={name.name}/>))
+    const ExpertList=(props)=>{
+    return(
+                <Col  className={'img-card' } key={props.name.name}   >
 
+
+                                <Row justify={'center'}>
+                                            <h2 className={'img-side'} >Expert</h2>
+                                        <img className={'img'} src={People} alt="" style={{}}/>
+                                         <h2 className={'img-side'} >Guides </h2>
+                                </Row>
+                    <Row>
+                        <Space size={'large'}>
+                        <Col>
+                            <img src={People} alt=""/>
+                        </Col>
+                        <Col>
+                                     <h3>{props.name.name}</h3>
+                                <h4>{props.name.exp} +years Experience</h4>
+                               <h5>{props.name.company}</h5>
+
+                                </Col>
+                            </Space>
+
+                    </Row>
+
+
+                        </Col>
+    )
+}
+const expertlist=( experlist.map((name)=><ExpertList key={name.name} name={name}/>))
 
 
     return (<Col style={{height:'87vh'}}>
@@ -69,6 +105,20 @@ const CoursePageSlide3=()=>
                                 arrowLeft={ArrowLeft}
                                 arrowRight={ArrowRight}
                                 itemStyle={{outline:'none'}}
+                                innerWrapperStyle={{height:'300px',paddingTop:10}}
+                                wrapperStyle={{height:'300px'}}
+
+                            />
+                </Col>
+        <Col style={{backgroundColor:'#E5D2C7',paddingBottom:'10px',paddingTop:'10px',marginTop:'6vh'}} justify="center" >
+                            <Row justify={'center'}><h1 style={{color:'#796051',fontSize:'2vw'}}>Our Experts</h1></Row>
+                    <ScrollMenu
+                                data={expertlist}
+                                arrowLeft={ArrowLeft}
+                                arrowRight={ArrowRight}
+                                itemStyle={{outline:'none'}}
+                                innerWrapperStyle={{height:'300px',paddingTop:10}}
+                                wrapperStyle={{height:'300px'}}
 
                             />
                 </Col>

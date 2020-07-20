@@ -172,7 +172,23 @@ hr.new {
   height:6vh;
   outline:none;
 }
-
+.input-fields{
+  border-style:solid;
+border-color:#8F6952;
+border-radius:10px;
+  background-color:#FBF1E7
+}
+.form-buttons{
+  background-color:#8F6952;
+  width:120px;
+  height:40px;
+  border-width:0;
+  border-radius:10px;
+}
+.form-labels{
+  color:#8F6952;
+  margin:3px;
+}
 .course-button{
   background-color: #E5D2C7;
     border: transparent;
@@ -180,6 +196,11 @@ hr.new {
   margin-right: 5px;
 
 }
+  .home-boxes p{
+    line-height:20px;
+    font-size:1vw;
+    text-align:right;
+  }
 @media screen and (min-width: 100px)
 and (max-width:500px){
   .homeButtons:focus{
@@ -206,6 +227,7 @@ and (max-width:500px){
   .home-boxes{
     margin-right: 0;
   }
+
   .bold-heading {
     font-size: 22px;
     color: #e3d0c5;

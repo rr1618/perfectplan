@@ -1,6 +1,5 @@
 import {Row, Col, Button} from 'antd';
 import React, {useState,useContext,useEffect} from 'react';
-import { FullPage, Slide } from 'react-full-page';
 import CoursePageSlide2 from "./course2ndslide";
 import CoursePageSlide3 from "./course3rdslide";
 import Laptop from "../images/brightlaptop.png";
@@ -9,7 +8,6 @@ import {TokenContext} from "../index";
 import {ModalContext} from "../index";
 import API from "../apiService";
 import Magnifier from "../images/magnifier.png";
-
 import Block1 from "../images/BLOCK1.png";
 import Block2 from "../images/BLOCK2.png";
 import LoginModal from "./login";
@@ -61,18 +59,17 @@ height:'100vh',
 
         </Row>
     </Col>
-                 <Col >
+
                      <Row >
                 <Col span={8} style={{margin:30,marginBottom:'3.5vh',marginTop:'15vh',height:'33vh'}}>
-                    {console.log()}
+
                     <h3 style={{color:'white'}}>{sessionUser}</h3>
                 <h1 className='bold-heading' style={{color:'#e3d0c5'}} ><strong>LEARN NOW <br /> PAY LATER</strong><br /></h1>
                 <Button className="homeButtons" size="large" style={{float:"left",marginTop:'2vh',width:'12vw',borderColor: "#fffff",borderWidth:2.5}}>
-                <strong style={{color:'white'}}>Enroll For Free</strong></Button>
+                <strong style={{color:'white',fontSize:'1.3vw'}}>Enroll For Free</strong></Button>
                 </Col>
             </Row>
-                 </Col>
-                <Col>
+
                     <Row justify={'center'}>
                         <Col><img src={Block1} style={
                             {width:'25vw',marginRight:'2vw'}
@@ -81,7 +78,7 @@ height:'100vh',
                     <Col><img src={Block2}  style={ { width:'25vw' }} alt=""/></Col>
                     </Row>
 
-                </Col>
+
 
                  <Row justify="center">
             <Col style={{position:'absolute',bottom:'2vh'}}  >
