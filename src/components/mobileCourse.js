@@ -12,7 +12,7 @@ import Resume from "../images/resume.png";
 import Software from "../images/software.png";
 import Placement from "../images/placement.png";
 import Certification from '../images/badge.png'
-import { MailOutlined,DownOutlined,DownloadOutlined,LeftOutlined,RightOutlined } from '@ant-design/icons';
+import { DownOutlined,DownloadOutlined,LeftOutlined,RightOutlined } from '@ant-design/icons';
 import People from "../images/people.png";
 import ID from "../images/idcard.png";
 import Hand from "../images/hand.png";
@@ -23,7 +23,21 @@ import {ModalContext, TokenContext} from "../index";
 import API from "../apiService";
 import LoginModal from "./login";
 
+const customStylesMobile = {
+  content : {
+    top                   : '50%',
+    left                  : '50%',
+    right                 : 'auto',
+    bottom                : 'auto',
+    marginRight           : '-50%',
+    transform             : 'translate(-50%, -50%)',
+      backgroundColor: '#F5E2CF',
+      height:'60vh',
+      width:'80vw'
 
+
+  }
+};
 const list =[
     {name:'Machine Learning'},
     {name:'Algorithm'},
@@ -186,7 +200,7 @@ const MobileCoursePage =()=>
                     setModal(true)
                 }}>
                     <strong>LOGIN\ENROLL</strong></button>}
-                {modal&&<LoginModal show={modal}/>}
+                {modal&&<LoginModal show={modal} cstyle={customStylesMobile}/>}
             </Col>
                  </Row>
     </Col>
@@ -375,6 +389,9 @@ const MobileCoursePage3=()=>
                                 itemStyle={{outline:'none'}}
                                 innerWrapperStyle={{height:'300px',paddingTop:10}}
                                 wrapperStyle={{height:'300px'}}
+                                transition={1}
+                                inertiaScrolling={true}
+                                inertiaScrollingSlowdown={1.5}
 
                             />
                 </Col>

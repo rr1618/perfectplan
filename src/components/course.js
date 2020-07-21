@@ -12,6 +12,22 @@ import Block1 from "../images/BLOCK1.png";
 import Block2 from "../images/BLOCK2.png";
 import LoginModal from "./login";
 
+
+const customStyles = {
+  content : {
+    top                   : '50%',
+    left                  : '50%',
+    right                 : 'auto',
+    bottom                : 'auto',
+    marginRight           : '-50%',
+    transform             : 'translate(-50%, -50%)',
+      backgroundColor: '#F5E2CF',
+      height:'75vh',
+      width:'30vw'
+
+
+  }
+};
 const CoursePage =()=>
 {
     var sessionUser = sessionStorage.getItem('username')
@@ -54,7 +70,7 @@ height:'100vh',
                     setModal(true)
                 }}>
                     <strong>LOGIN\ENROLL</strong></button>}
-                {modal&&<LoginModal show={modal}/>}
+                {modal&&<LoginModal show={modal} cstyle={customStyles}/>}
             </Col>
 
         </Row>

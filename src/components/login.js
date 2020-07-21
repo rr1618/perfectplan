@@ -5,24 +5,9 @@ import API from "../apiService";
 import {TokenContext} from "../index";
 import {ModalContext} from "../index";
 import { GoogleLogin } from 'react-google-login';
-import { UserOutlined, LockOutlined,MailOutlined } from '@ant-design/icons';
 const { Option } = Select;
 
-const customStyles = {
-  content : {
-    top                   : '50%',
-    left                  : '50%',
-    right                 : 'auto',
-    bottom                : 'auto',
-    marginRight           : '-50%',
-    transform             : 'translate(-50%, -50%)',
-      backgroundColor: '#F5E2CF',
-      height:'75vh',
-      width:'50vh'
 
-
-  }
-};
 const layout = {
   labelCol: {
     span: 8,
@@ -282,7 +267,7 @@ function LoginModal(props){
 
   const afterOpenModal=()=> {
     // references are now sync'd and can be accessed.
-    customStyles.content.color = 'transparent';
+    props.cstyle.content.color = 'transparent';
 
   }
 
@@ -299,7 +284,7 @@ function LoginModal(props){
                   isOpen={true}
                   onAfterOpen={afterOpenModal}
                   onRequestClose={closeModal}
-                  style={customStyles}
+                  style={props.cstyle}
                   contentLabel="Example Modal"
 
                 >
