@@ -1,70 +1,69 @@
 import React from 'react'
+import Logo from './logo.png'
 import { Layout ,Row,Col,Button,Collapse,Space,Divider} from 'antd';
 import {
     TwitterOutlined,
-FacebookOutlined,
-InstagramOutlined,
-LinkedinOutlined,
-    MobileOutlined ,
-    MailOutlined ,
-    HomeOutlined ,
-CaretRightOutlined} from '@ant-design/icons';
+FacebookFilled,
+InstagramFilled,
+LinkedinFilled,
+    MobileFilled ,
+    MailFilled ,
+    HomeFilled ,
+CaretRightFilled} from '@ant-design/icons';
 
 const { Panel } = Collapse;
 
-const Footer = ()=>
+const Cfooter = ()=>
 {
     return (
-        <Footer style={{ textAlign: 'center',backgroundColor:'#262626',position:'fixed',bottom:0 }}>
-             <Row  >
-                <Col xs={24} lg={8} style={{textAlign:"left" ,marginTop:60}}>
-                    <h5  className='title'>There's no force higher than an Enterpreneur determined to get started and Plan B is the way to get started!!!</h5>
-                 <Button type='primary' style={{width:280}} ><h5>Get Plan</h5></Button>
+        <Col className={'footer'}  style={{backgroundColor:'#777676'}}>
+            <Col style={{backgroundColor:'#9C8273',paddingLeft:30,paddingRight:30,paddingBottom:20}}>
+            <Row justify="center">
+                <img src={Logo} height={60}/>
+            </Row>
+            <Col className={'footer-anchors'} style={{color:'white'}}>
+
+                <a >About us</a>
+                <a >Blog</a>
+                <a >Featured Courses</a>
+                <a >Perfect PlanB for Business</a>
+                <a >Teach on Perfect Plan B</a>
+                <a >Career</a>
+                <a >Help and Support</a>
+                <a >Affliate</a>
+                <a >Terms</a>
+                <a >Privacy Policy</a>
+                <a >Cookie Policy</a>
+                <a >Cookie Refund Policy</a>
+                <a >Media Policy</a>
+                <a >Sitemap</a>
+
+            </Col>
+                </Col>
+        <Row style={{paddingLeft:50,paddingRight:20,paddingBottom:20,paddingTop:20}}>
+            <Col  xs={24} lg={8} style={{textAlign:"left" }}>
+                <Space direction={'vertical'}>
+                <img src={Logo} height={50}/>
+                <h4 >Learn,Grow and Become Leaders of Tomorrow</h4>
+                <Button style={{backgroundColor:'#DDDDDD' ,width:250,height:45,marginBottom:20,marginTop:20}}><strong style={{color:'#777676',fontSize:'1.5em'}}>Enroll For Free</strong></Button>
+                    <h5  >"In a time of drastic change it is<br />
+                    the learners who inherit the future.<br />
+                    The learned usually find themselves<br/>
+                    equipped to live in a world<br />
+                    that no longer exists."</h5>
+                    </Space>
 
              </Col>
-
-             <Col  xs={24} lg={8} style={{marginBottom:30}}>
-                 <Space direction='vertical' size='large'>
-
-                 <h3 className='title'><strong>Contact Info</strong></h3>
-                 <h5 className='title'>Chase your vision and see success chase you!!!</h5>
-
-                     <div>
-                        <h3 className='title'><MobileOutlined style={{fontSize:25}}/> Phone number</h3>
-                 <h6>+918766312017</h6>
-                     </div>
-                 <div>
-                     <h3 className='title'><MailOutlined style={{fontSize:25}}/> Email</h3>
-                 <h6>info@perfectplanb.net</h6>
-                 </div>
-                 <div style={{marginBottom:30}}>
-                     <h3 className='title'><HomeOutlined style={{fontSize:25}}/> Address</h3>
-                 <h6>Office no 43 Sector 11D<br />
-                        Faridabad, Haryana<br />
-                        121006</h6>
-                 </div>
-                     </Space>
-                 <Row justify='center' >
-                     <Space direction='horizontal'>
-                        <TwitterOutlined style={{fontSize:30,color: '#fff'}}/>
-                     <FacebookOutlined style={{fontSize:30,color: '#fff'}}/>
-                     <InstagramOutlined style={{fontSize:30,color: '#fff'}}/>
-                     <LinkedinOutlined style={{fontSize:30,color: '#fff'}}/>
-                     </Space>
-
-                 </Row>
-             </Col>
-             <Col xs={24} lg={8}>
-                <h2 className='title'>FAQs</h2>
-                 <Collapse
+            <Col xs={24} lg={8} style={{textAlign:'center'}} >
+               <Collapse
                         bordered={false}
                         destroyInactivePanel={true}
-                        ghost={true}
-                        expandIcon={({ isActive }) => <CaretRightOutlined style={ { color:'white' }} rotate={isActive ? 90 : 0} />}
-                        className="site-collapse-custom-collapse" style={{backgroundColor:'#262626'}}
-                      >
-                        <Panel header={<h6>How Perfect Plan B would help me to get job after completing the Data Structure & Machine Learning course?</h6>} key="1" className="site-collapse-custom-panel" style={{color:'white'}} >
-                          <p style={{color:'white'}}>On completing the Data Structure & Machine Learning<br />
+
+                        expandIcon={({ isActive }) => <CaretRightFilled style={ { color:'white',marginLeft:60,fontSize:'2.5em' }} rotate={isActive ? 90 : 0} />}
+                        className="site-collapse-custom-collapse" style={{backgroundColor:'#777676'}}
+                      ghost>
+                        <Panel header={<h6>How Perfect Plan B would help<br/> me to get job after completing the<br/> Data Structure & Machine<br /> Learning course?</h6>} key="1" className="site-collapse-custom-panel" style={{color:'white'}} >
+                          <p style={{color:'white'}} >On completing the Data Structure & Machine Learning<br />
                           course, Perfect Plan B would help you build your<br />
                           resume on latest technologies, arrange mock<br />
                           interviews for you and further on, Perfect Plan B<br />
@@ -75,7 +74,7 @@ const Footer = ()=>
                           career.
                           </p>
                         </Panel>
-                        <Panel header={<h6>How do PerfectPlanB gives freelancing projects?:</h6>} key="2" className="site-collapse-custom-panel">
+                        <Panel header={<h6>How do PerfectPlanB gives<br /> freelancing projects?:</h6>} key="2" className="site-collapse-custom-panel">
                           <p>
                              Perfect Plan B takes projects by giving services to <br />
                               various clients and they give Paid Freelancing<br />
@@ -84,7 +83,7 @@ const Footer = ()=>
                               get the freelancing projects directly.
                           </p>
                         </Panel>
-                        <Panel header={<h6>What are the ideas behind a successful start-up?</h6>} key="3" className="site-collapse-custom-panel">
+                        <Panel header={<h6>What are the ideas behind<br /> a successful start-up?</h6>} key="3" className="site-collapse-custom-panel">
                           <p>
                               There are no great ideas or bad ideas. A successful<br />
                              venture depends on how well you execute your idea <br />
@@ -101,7 +100,7 @@ const Footer = ()=>
                               - Project Management<br />
                           </p>
                         </Panel>
-                     <Panel header={<h6>Apart from the online courses, Will I get Live classes also?</h6>} key="3" className="site-collapse-custom-panel">
+                     <Panel header={<h6>Apart from the online courses,<br /> Will I get Live classes also?</h6>} key="3" className="site-collapse-custom-panel">
                           <p>
                               Yes, once anyone enrolls in the Master plan, he/she<br />
                              gets following features along with the online video<br />
@@ -118,7 +117,7 @@ const Footer = ()=>
                             -Live projects<br />
                           </p>
                         </Panel>
-                     <Panel header={<h6>How does P2B helps me in getting new projects / placements?</h6>} key="3" className="site-collapse-custom-panel">
+                     <Panel header={<h6>How does P2B helps me in getting <br /> new projects / placements?</h6>} key="3" className="site-collapse-custom-panel">
                           <p>
                               <br/>
                               Perfect Plan B will be pleased to support and guide<br/>
@@ -130,11 +129,41 @@ const Footer = ()=>
                           </p>
                         </Panel>
                 </Collapse>
+
+                <Row justify='center' >
+                     <Space direction='horizontal'>
+                        <TwitterOutlined style={{fontSize:30,color: '#fff'}}/>
+                     <FacebookFilled style={{fontSize:30,color: '#fff'}}/>
+                     <InstagramFilled style={{fontSize:30,color: '#fff'}}/>
+                     <LinkedinFilled style={{fontSize:30,color: '#fff'}}/>
+                     </Space>
+
+                 </Row>
              </Col>
-             </Row>
+            <Col  xs={24} lg={8} style={{marginBottom:30,textAlign:'center'}}>
+                 <Space direction='vertical' size='large'>
 
+                 <h3><strong style={{color:'white'}}>Contact Us</strong></h3>
+                     <div>
+                        <h3 > Phone number</h3>
+                        <h6>+918766312017</h6>
+                     </div>
+                 <div>
+                     <h3 >Email</h3>
+                    <h6>info@perfectplanb.net</h6>
+                 </div>
+                 <div style={{marginBottom:30}}>
+                     <h3 > Address</h3>
+                        <h6>Office no 43 Sector 11D<br />
+                            Faridabad, Haryana<br />
+                            121006</h6>
+                 </div>
+                     </Space>
 
-         </Footer>
+             </Col>
+
+            </Row>
+         </Col>
     )
 }
-export default Footer
+export default Cfooter

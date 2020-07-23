@@ -32,12 +32,10 @@ const Arrow = ({ text, className }) => {
 const ArrowLeft = Arrow({ text: '<', className: 'arrow-prev' });
 const ArrowRight = Arrow({ text: '>', className: 'arrow-next' });
 
-
-const CoursePageSlide2=()=>
+const CourseCards=(props)=>
 {
-    const CourseList=(props)=>{
-    return(
-                <Col  className={'course-slide1' } key={props.name} onClick={()=>{setSelected(props.name)}}  >
+    return (
+        <Col  className={'course-slide1' } key={props.name}  >
 
                             <Row justify={'center'}>
                                 <h5 className={'heading'}>{props.name}</h5>
@@ -47,13 +45,14 @@ const CoursePageSlide2=()=>
                         </Col>
     )
 }
-        const detail=( list.map((name)=><CourseList key={name.name} name={name.name}/>))
-        const [selected,setSelected] = useState()
 
-
-    return (<Col  style={{height:'87vh'}}>
-                <Row style={{backgroundColor:'#E5D2C7',paddingBottom:'10px',paddingTop:'10px',marginTop:'8vh'}} justify="center" >
-                            <Col span={6}  >
+const CoursePageSlide2=()=>
+{
+    const CourseList=( list.map((name)=><CourseCards key={name.name} name={name.name}/>))
+    const CourseLessons=( list.map((name)=><CourseCards key={name.name+"lesson"} name={name.name}/>))
+    return (<Col >
+                <Row style={{backgroundColor:'#E5D2C7',paddingBottom:'10px',paddingTop:'10px'}} justify="center" >
+                            <Col span={6}  style={{borderRightStyle:'solid',borderColor:'#CEB8AB',borderRightWidth:3,marginRight:'5vw'}} >
                                 <Row >
                                         <img  className={'img-slide1'} src={People} />
                                         <Col>
@@ -85,61 +84,32 @@ const CoursePageSlide2=()=>
                           </Row>
                       </Col>
                 </Row>
-
                 <Col style={{backgroundColor:'#E5D2C7',marginTop:'2vh',height:'35vh',position:'static'}} justify={'center'}>
                     <Row justify={'center'}>
                         <h3  style={{color:'#796051',fontSize:'2vw'}}>Course Categories</h3>
                     </Row>
-
-
                              <ScrollMenu
-                                data={detail}
+                                data={CourseList}
                                 arrowLeft={ArrowLeft}
                                 arrowRight={ArrowRight}
                                 style={{height:'30vh'}}
-
                                 itemStyle={{outline:'none'}}
                             />
-
-
-
                 </Col>
-                 <CourseDetail detail={selected}/>
-
-
-    </Col>)
-}
-const CourseDetail=(props)=>
-{
-
-    const Lessons =(props)=>{
-        return(
-            <Col className={'course-slide1-down'} key={props.name}>
-                          <Row justify={'center'}>
-                                <h5 className={'heading'}>{props.name}</h5>
-                            </Row>
-                            <h6 className={'details'} ></h6>
-
-                     </Col>
-        )
-    }
-    const details=( list.map((name)=><Lessons key={name.name+"lesson"} name={name.name}/>))
-    return(
-        <Row justify={'center'}>
-            <Col style={{backgroundColor:'#E5D2C7',marginTop:'2vh',position:'relative',width:'100vw',height:'35vh'}} justify={'center'}>
-                     <Row justify="center">
-                         <h3 style={{color:'#796051'}}>{props.detail}</h3>
-                     </Row>
+        <Col style={{backgroundColor:'#E5D2C7',marginTop:'2vh',height:'35vh',position:'static'}} justify={'center'}>
+                    <Row justify={'center'}>
+                        <h3  style={{color:'#796051',fontSize:'2vw'}}>Lessons</h3>
+                    </Row>
                              <ScrollMenu
-                                data={details}
+                                data={CourseLessons}
                                 arrowLeft={ArrowLeft}
                                 arrowRight={ArrowRight}
+                                style={{height:'30vh'}}
                                 itemStyle={{outline:'none'}}
                             />
                 </Col>
-        </Row>
-
-    )
+    </Col>)
 }
+
 
 export default CoursePageSlide2

@@ -1,5 +1,7 @@
 @import '~antd/dist/antd.css';
-
+:root{
+  --bg-color: rgba(172, 142, 124, .7)
+}
 .App {
   text-align: center;
 }
@@ -25,6 +27,7 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+
 
 .App-link {
   color: #61dafb;
@@ -60,7 +63,51 @@
   cursor: pointer;
   transition: color 0.3s;
 }
+.about h6{
+  color: #8A7162 ;
+}
+.about button{
+  background-color: #E5D2C7 ;
+  border-radius: 5px;
+  margin:5px;
+  width: 350px;
+  border-width: 0;
+  padding: 5px;
 
+}
+.about button:hover{
+  background-color: #E5D2C7 ;
+  outline: #8A7162;
+
+}
+.footer  h5{
+  color: #DDDDDD;
+}
+.footer  h6{
+  color: #DDDDDD;
+}
+.footer  h4{
+  color: #A8A8A8;
+}
+.footer  h3{
+  color: #A8A8A8;
+}
+.footer  h2{
+  color: #DDDDDD;
+}
+.footer-anchors a{
+  font-size: 1.3em;
+  margin: 5px;
+  padding: 10px;
+}
+[data-theme='compact'] .site-collapse-custom-collapse .site-collapse-custom-panel,
+.site-collapse-custom-collapse .site-collapse-custom-panel {
+  background: #777676;
+  border-radius: 2px;
+  margin-bottom: 4px;
+  border: 0px;
+  overflow: hidden;
+}
 #components-layout-demo-custom-trigger .trigger:hover {
   color: #1890ff;
 }
@@ -72,7 +119,7 @@
 }
 
 .site-header  {
-  background: rgba(172, 142, 124, .7) ;
+  background: var(--bg-color) ;
 
 }
 
@@ -80,17 +127,18 @@ p{
   color: white;
 }
 .strip{
-  background-color: rgba(172, 142, 124, .5)
+  background-color: var(--bg-color)
 }
 .homeButtons{
   background-color: transparent;
 }
 .homeButtons:hover{
-  background-color: rgba(172, 142, 124, .5);
+  background-color: var(--bg-color);
   color: black;
   border-color: black;
 
 }
+
   .homeButtons:focus{
     background-color: transparent;
   }
@@ -140,7 +188,7 @@ hr.rounded {
 
 }
 .bold-heading {
-    font-size: 4vw;
+    font-size: 4.5em;
     color: white;
   }
 .course-names-icons{
