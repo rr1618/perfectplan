@@ -1,7 +1,7 @@
 import axios from "axios";
 export default class API {
     static loginUser(body) {
-        var res = axios.create({baseURL: "http://localhost:8000/"})
+        var res = axios.create({baseURL: "https://perfectplanb.herokuapp.com/"})
             .post("auth/", {
                 username: body['username'],
                 password: body['password']
@@ -9,7 +9,7 @@ export default class API {
         return res
     }
     static checkToken(body) {
-        var res = axios.create({baseURL: "http://localhost:8000/"})
+        var res = axios.create({baseURL: "https://perfectplanb.herokuapp.com/"})
             .post("perfect/checkToken/get/", {
                 user: body['user'],
                 key: body['token']
@@ -17,7 +17,7 @@ export default class API {
         return res
     }
     static registerUser(body){
-        var res = axios.create({baseURL: "http://127.0.0.1:8000/"})
+        var res = axios.create({baseURL: "https://perfectplanb.herokuapp.com/"})
       .post("perfect/user/", {
           first_name:body['name'],
           email:body['Email'],
@@ -28,7 +28,7 @@ export default class API {
          return  res
     }
     static SocialAccount(body){
-        var res = axios.create({baseURL: "http://127.0.0.1:8000/"})
+        var res = axios.create({baseURL: "https://perfectplanb.herokuapp.com/"})
       .post("perfect/social/", {
           name:body['name'],
           email:body['email'],
