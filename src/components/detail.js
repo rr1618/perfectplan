@@ -1,12 +1,15 @@
 import {Row, Col, Button,Tabs} from 'antd';
 import React, {useState,useContext,useEffect} from 'react';
 import LogoDark from '../images/logodark.png'
-// import AboutBack from "../images/About.png"
+import aboutBack from "../images/aboutBack.png"
+import blogBack from "../images/blogBack.png"
+
 import CoursePage from "./course";
 import Laptop from "../images/brightlaptop.png";
 import Magnifier from "../images/magnifier.png";
 import LoginModal from "./login";
 import About from "./about";
+import Blog from "./blog";
 import {ModalContext, TokenContext} from "../index";
 import API from "../apiService";
 import Cfooter from "./footer";
@@ -27,6 +30,12 @@ const customStyles = {
 
   }
 };
+const backImages={
+'1':Laptop,
+    '2': aboutBack,
+    '3': blogBack,
+    '4': Laptop
+}
 function callback(key) {
   console.log(key);
 }
@@ -69,23 +78,25 @@ const NavBar=()=>
 }
 const DetailPage = ()=>
 {
+    const [background,setBackground] = useState(blogBack)
 
     return ( <Col>
             <NavBar />
-            <Col style={{backgroundImage: "url("+`${Laptop}`+")", backgroundSize:'100% 60vh',
+            <Col style={{backgroundImage: "url("+`${background}`+")",
+                backgroundSize:'100% 60vh',
             backgroundRepeat: 'no-repeat',padding:35}}>
-                <Tabs defaultActiveKey="2" onChange={callback} centered>
+                <Tabs defaultActiveKey="3"  size={'large'} onTabClick={(e)=>{setBackground(backImages[e])}}>
 
     <TabPane tab={<h6 >Home</h6>} key="1"   >
 
     </TabPane>
-    <TabPane tab={<h6>About</h6>} key="2"   >
+    <TabPane tab={<h6 >About</h6>} key="2"   >
         <About/>
     </TabPane>
-    <TabPane tab={<h6>Blog</h6>} key="3"   >
-
+    <TabPane tab={<h6 >Blog</h6>} key="3"   >
+        <Blog />
     </TabPane>
-    <TabPane tab={<h6>Courses</h6>} key="4"   >
+    <TabPane tab={<h6 >Courses</h6>} key="4"   >
         <CoursePage/>
     </TabPane>
     <TabPane tab={<h6>Career</h6>} key="5"   >
