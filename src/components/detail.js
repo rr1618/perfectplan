@@ -1,9 +1,8 @@
-import {Row, Col, Button,Tabs} from 'antd';
+import {Row, Col, Button} from 'antd';
 import React, {useState,useContext,useEffect} from 'react';
 import LogoDark from '../images/logodark.png'
 import aboutBack from "../images/aboutBack.png"
 import blogBack from "../images/blogBack.png"
-
 import CoursePage from "./course";
 import Laptop from "../images/brightlaptop.png";
 import Magnifier from "../images/magnifier.png";
@@ -13,8 +12,8 @@ import Blog from "./blog";
 import {ModalContext, TokenContext} from "../index";
 import API from "../apiService";
 import Cfooter from "./footer";
+import blogBackImg from "../images/blogBackimg.png";
 
-const { TabPane } = Tabs;
 const customStyles = {
   content : {
     top                   : '50%',
@@ -30,15 +29,42 @@ const customStyles = {
 
   }
 };
-const backImages={
-'1':Laptop,
-    '2': aboutBack,
-    '3': blogBack,
-    '4': Laptop
+const tabContent={
+    home:{
+        content:()=>{return(<CoursePage/>)},
+        background:Laptop,
+        img:'',
+        title: ()=>{return (<h1 className='bold-heading' style={{color:'white'}} ><strong>LEARN NOW<br />PAY LATER</strong></h1>)},
+        subtitle: ()=>{return (<div></div>)},
+        buttonText:'ENROLL NOW'
+    },
+    about:{
+        content:()=>{return(<About/>)},
+        background:aboutBack,
+        img:'',
+        title: ()=>{return (<h1 className='bold-heading' style={{color:'white'}} ><strong>PERFECT ONE-STOP<br />SOLUTION</strong></h1>)},
+        subtitle: ()=>{return (<div></div>)},
+        buttonText:'EXPLORE SERVICES'
+    },
+    blog:{
+        content: ()=>{return(<Blog/>)},
+        background:blogBack,
+        img:blogBackImg,
+        title: ()=>{return (<h1 className='bold-heading' style={{color:'#6A4E3D'}} ><strong>Blog</strong></h1>)},
+        subtitle: ()=>{return(<h4 style={{color:'#6A4E3D'}}>Follow our blog and get to know about the latest upadates<br />
+                    in the fields of technology, enterpreneurship,etc</h4>)},
+        buttonText:'SHARE NOW'
+    },
+    course:{
+        content:()=>{return(<CoursePage/>)},
+        background:Laptop,
+        img:'',
+        title: ()=>{return (<h1 className='bold-heading' style={{color:'white'}} ><strong>LEARN NOW<br />PAY LATER</strong></h1>)},
+        subtitle: ()=>{return (<div></div>)},
+        buttonText:'ENROLL NOW'
+    }
 }
-function callback(key) {
-  console.log(key);
-}
+
 const NavBar=()=>
 {
     var sessionUser = sessionStorage.getItem('username')
@@ -76,39 +102,57 @@ const NavBar=()=>
         </Row>)
 
 }
+
 const DetailPage = ()=>
 {
-    const [background,setBackground] = useState(blogBack)
+    const [content,setContent] = useState(tabContent['home'])
+
+    const Background=(props)=>
+        {
+    return (<Col>
+        <Row className={'background-nav'}>
+            <a key={'home'} id={'home'} style={{color:'white'}} onClick={(e)=>{setContent(tabContent[e.target.id])
+                                                            }}>Home</a>
+            <a key={'about'} id={'about'} style={{color:'white'}} onClick={(e)=>{setContent(tabContent[e.target.id])
+                                                            }}>About</a>
+            <a key={'blog'} id={'blog'} style={{color:'white'}} onClick={(e)=>{setContent(tabContent[e.target.id])
+                                                            }}>Blog</a>
+            <a key={'course'} id={'course'} style={{color:'white'}} onClick={(e)=>{setContent(tabContent[e.target.id])
+                                                                }}>Courses</a>
+            <a key={'career'} id={'career'} style={{color:'white'}} onClick={(e)=>{setContent(tabContent[e.target.id])
+                                                                }}>Career</a>
+            <a key={'help'} id={'help'} style={{color:'white'}} onClick={(e)=>{setContent(tabContent[e.target.id])
+                                                                }}>Help and Support</a>
+        </Row>
+         <Row>
+
+                    <Col>
+                        {props.detail.title()}<br />
+                    {props.detail.subtitle()}
+                         <Button className="homeButtons" size="large" style={{backgroundColor:'#6A4E3D',float:"left",marginTop:'1.2em',width:200,borderStyle:'none',padding:5}}>
+                <strong style={{color:'white',fontSize:'1.3em',}}>{props.detail.buttonText}</strong></Button>
+                    </Col>
+                    <Col span={10} >
+                        <img src={props.detail.img}  style={{float:'right'}}  height={250}  alt=""/>
+                    </Col>
+                </Row>
+    </Col>)
+}
+
 
     return ( <Col>
             <NavBar />
-            <Col style={{backgroundImage: "url("+`${background}`+")",
-                backgroundSize:'100% 60vh',
+            <Col style={{backgroundImage: "url("+`${content.background}`+")",
+
             backgroundRepeat: 'no-repeat',padding:35}}>
-                <Tabs defaultActiveKey="3"  size={'large'} onTabClick={(e)=>{setBackground(backImages[e])}}>
 
-    <TabPane tab={<h6 >Home</h6>} key="1"   >
+               <Background detail={content} />
+</Col>
+            {content.content()}
 
-    </TabPane>
-    <TabPane tab={<h6 >About</h6>} key="2"   >
-        <About/>
-    </TabPane>
-    <TabPane tab={<h6 >Blog</h6>} key="3"   >
-        <Blog />
-    </TabPane>
-    <TabPane tab={<h6 >Courses</h6>} key="4"   >
-        <CoursePage/>
-    </TabPane>
-    <TabPane tab={<h6>Career</h6>} key="5"   >
 
-    </TabPane>
-    <TabPane tab={<h6>Help and Support</h6>} key="6" >
-
-    </TabPane>
-  </Tabs>
-            </Col>
             <Cfooter/>
         </Col>
     )
 }
-export default DetailPage
+export  {DetailPage,NavBar}

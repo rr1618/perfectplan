@@ -11,7 +11,8 @@ import Middle from "./components/secondpage";
 import CoursePage from "./components/course";
 import MobileCoursePage from "./components/mobileCourse";
 import Media from 'react-media';
-import DetailPage from "./components/detail";
+import {DetailPage} from "./components/detail";
+import CourseDetail from "./components/courseDetail";
 class App extends React.Component {
   render() {
     return (
@@ -42,6 +43,9 @@ class App extends React.Component {
 
                     <Route exact path="/dashboard" >
                         <DetailPage/>
+                    </Route>
+                    <Route exact path="/dashboard/detail/:courses" >
+                        <CourseDetail />
                     </Route>
 
 </BrowserRouter>

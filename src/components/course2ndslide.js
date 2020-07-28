@@ -1,10 +1,12 @@
-import React,{useState,useEffect} from 'react'
+import React, {useEffect,useState} from 'react'
 import {Row, Col} from 'antd';
 import ID from "../images/idcard.png";
 import Hand from "../images/hand.png";
+import {Link} from 'react-router-dom'
 import People from "../images/people.png";
 import '../course2slide.css'
 import ScrollMenu from 'react-horizontal-scrolling-menu';
+import API from "../apiService";
 
 
 const list =[
@@ -48,8 +50,21 @@ const CourseCards=(props)=>
 
 const CoursePageSlide2=()=>
 {
-    const CourseList=( list.map((name)=><CourseCards key={name.name} name={name.name}/>))
+    const [listi,setListi]=useState('')
+    useEffect(() => {
+        console.log("called")
+        API.courseFetch('').then(res=>{
+            setListi(res.data)
+            console.log(res.data)
+
+        })
+        .catch(err=>{console.log(err)})
+
+    }, []);
+
     const CourseLessons=( list.map((name)=><CourseCards key={name.name+"lesson"} name={name.name}/>))
+
+
     return (<Col >
                 <Row style={{backgroundColor:'#E5D2C7',paddingBottom:'10px',paddingTop:'10px'}} justify="center" >
                             <Col span={6}  style={{borderRightStyle:'solid',borderColor:'#CEB8AB',borderRightWidth:3,marginRight:'5vw'}} >
@@ -88,13 +103,14 @@ const CoursePageSlide2=()=>
                     <Row justify={'center'}>
                         <h3  style={{color:'#796051',fontSize:'2vw'}}>Course Categories</h3>
                     </Row>
-                             <ScrollMenu
-                                data={CourseList}
+                    {listi&&
+                    <ScrollMenu
+                                data={listi.map((name)=><Link to={`/dashboard/detail/${name.heading}`}><CourseCards key={name.heading} name={name.heading} /></Link>)}
                                 arrowLeft={ArrowLeft}
                                 arrowRight={ArrowRight}
                                 style={{height:'30vh'}}
                                 itemStyle={{outline:'none'}}
-                            />
+                            />}
                 </Col>
         <Col style={{backgroundColor:'#E5D2C7',marginTop:'2vh',height:'35vh',position:'static'}} justify={'center'}>
                     <Row justify={'center'}>

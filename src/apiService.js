@@ -1,7 +1,14 @@
 import axios from "axios";
+const base="http://localhost:8000/"
 export default class API {
+    static courseFetch(body){
+        var res =axios.create({baseURL: base})
+            .get("perfect/course/", {params: {course: body.course}})
+        return res
+    }
+
     static loginUser(body) {
-        var res = axios.create({baseURL: "http://localhost:8000/"})
+        var res = axios.create({baseURL: base  })
             .post("auth/", {
                 username: body['username'],
                 password: body['password']
@@ -9,7 +16,7 @@ export default class API {
         return res
     }
     static checkToken(body) {
-        var res = axios.create({baseURL: "http://localhost:8000/"})
+        var res = axios.create({baseURL: base})
             .post("perfect/checkToken/get/", {
                 user: body['user'],
                 key: body['token']
@@ -17,7 +24,7 @@ export default class API {
         return res
     }
     static registerUser(body){
-        var res = axios.create({baseURL: "http://127.0.0.1:8000/"})
+        var res = axios.create({baseURL: base})
       .post("perfect/user/", {
           first_name:body['name'],
           email:body['Email'],
@@ -28,7 +35,7 @@ export default class API {
          return  res
     }
     static SocialAccount(body){
-        var res = axios.create({baseURL: "http://127.0.0.1:8000/"})
+        var res = axios.create({baseURL: base})
       .post("perfect/social/", {
           name:body['name'],
           email:body['email'],

@@ -1,4 +1,4 @@
-import {Row, Col, Button} from 'antd';
+import {Row, Col} from 'antd';
 import React from 'react';
 import CoursePageSlide2 from "./course2ndslide";
 import CoursePageSlide3 from "./course3rdslide";
@@ -13,23 +13,15 @@ const CoursePage =(props)=>
     return (
         <Col>
 
-             <Col  style={{ marginBottom:50
+             <Col  style={{ marginBottom:50,position: 'relative',top:-110
                         }}
     >
-                    <Row >
-                <Col span={8}>
-                    <h3 style={{color:'white'}}>{props.user}</h3>
-                <h1 className='bold-heading' style={{color:'#e3d0c5'}} ><strong>LEARN NOW <br /> PAY LATER</strong><br /></h1>
-                <Button className="homeButtons" size="large" style={{float:"left",marginTop:'1.2em',width:200,borderColor: "#fffff",borderWidth:2.5}}>
-                <strong style={{color:'white',fontSize:'1.3em'}}>Enroll For Free</strong></Button>
-                </Col>
-            </Row>
                     <Row justify={'center'}>
                         <Col><img src={Block1} style={
-                            {width:'25vw',marginRight:'2vw'}
+                            {width:450,marginRight:'2vw'}
                         }/></Col>
 
-                    <Col><img src={Block2}  style={ { width:'25vw' }} alt=""/></Col>
+                    <Col><img src={Block2}  style={ { width:450 }} alt=""/></Col>
                     </Row>
                     <Row justify="center">
             <Col style={{position:'relative',top:40}}  >
