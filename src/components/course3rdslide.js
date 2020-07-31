@@ -5,7 +5,13 @@ import People from "../images/people.png";
 import '../course3rdslide.css'
 import ScrollMenu from 'react-horizontal-scrolling-menu';
 import {DownloadOutlined} from '@ant-design/icons';
-import Recruitment from"../images/recruitment.png"
+
+import Adobe from '../images/adobe.png'
+import Hcl from '../images/hcl.png'
+import Microsoft from '../images/microsoft.png'
+import Sapient from '../images/sapient.png'
+import Nagaro from '../images/nagaro.png'
+import Tcs from '../images/tcs.png'
 
 
 const list =[
@@ -119,17 +125,28 @@ const Companies=()=>
 
     return(<Col>
             <Row justify={'center'} style={{backgroundColor:'#E5D2C7',marginTop:'2vh',width:'100%'}}>
-                     <Row justify="center">
+
+
+
+                             <Col className={'hiring'} style={{margin:20}}><img src={Sapient}  alt=""/>
+                             <img src={Hcl}  alt=""/>
+                             <img src={Tcs}  alt=""/>
+                             <img src={Adobe}  alt=""/>
+                             <img src={Microsoft}  alt=""/>
+                             <img src={Nagaro}  alt=""/>
+                             </Col>
+                <Row justify="center">
                                     <Button  icon={<DownloadOutlined />} style={{backgroundColor:'#796051',color:'white',width:'40vw',height:50,marginBottom:20}}>
           Download Placement Report
         </Button>
-                     </Row>
+
+                     </Row >
+
+
 
 
         </Row>
-            <Row>
-                <img src={Recruitment} alt="" width="100%"/>
-            </Row>
+
         </Col>
 
 

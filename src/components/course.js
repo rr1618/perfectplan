@@ -1,4 +1,4 @@
-import {Row, Col, Button} from 'antd';
+import {Row, Col} from 'antd';
 import React, {useEffect} from 'react';
 import CoursePageSlide2 from "./course2ndslide";
 import CoursePageSlide3 from "./course3rdslide";
@@ -10,8 +10,8 @@ import Cfooter from "./footer";
 import {
 DownOutlined ,
 } from '@ant-design/icons';
-import TweenOne from "rc-tween-one";
 import {Link} from "react-router-dom";
+import Recruitment from "../images/recruitment.png";
 
 const CoursePage =(props)=>
 {
@@ -68,6 +68,9 @@ const CoursePage =(props)=>
 
                 </Col>
         <CoursePageSlide2/>
+          <Row style={{marginTop:20}}>
+                <img src={Recruitment} alt="" width="100%"/>
+            </Row>
         <CoursePageSlide3/>
         <Cfooter/>
         </Col>

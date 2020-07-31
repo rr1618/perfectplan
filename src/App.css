@@ -171,7 +171,10 @@ p{
   background-color: var(--bg-color);
   padding:30px;
 }
-
+.hiring img{
+  margin:20px;
+  height: 60px;
+}
 .homeButtons{
   background-color: transparent;
   margin-top:15px;
