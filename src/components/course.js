@@ -11,6 +11,7 @@ import {
 DownOutlined ,
 } from '@ant-design/icons';
 import TweenOne from "rc-tween-one";
+import {Link} from "react-router-dom";
 
 const CoursePage =(props)=>
 {
@@ -29,9 +30,9 @@ const CoursePage =(props)=>
 
                 <Row >
                     <Col >
-                    <h1 className='bold-heading' style={{color:'white'}} ><strong>LEARN NOW<br />PAY LATER</strong></h1>
-            <Button className="homeButtons" size="large" style={{backgroundColor:'#6A4E3D',float:"left",marginTop:'1.2em',width:200,borderStyle:'none',padding:5}}>
-                <strong style={{color:'white',fontSize:'1.3em',}}>ENROLL NOW</strong></Button>
+                    <h1 className='bold-heading' style={{color:'#E5D2C7'}} ><strong>LEARN NOW<br />PAY LATER</strong></h1>
+            <Link to='/course'><button className="homeButtons" style={{float:"left",width:220,borderColor: "#fffff",padding:10}}>
+                <strong >ENROLL FOR FREE</strong></button></Link>
                 </Col>
                 </Row>
                         <Row justify={'center'} style={{position: 'relative',bottom:-75}}>

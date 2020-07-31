@@ -64,21 +64,24 @@
   transition: color 0.3s;
 }
 .about h6{
-  color: #8A7162 ;
-}
-.about button{
+  color: #5B4233 ;
+  font-weight: bolder;
   background-color: #E5D2C7 ;
-  border-radius: 5px;
-  margin:5px;
-  width: 350px;
-  border-width: 0;
-  padding: 5px;
-
+  padding:10px;
+  border-radius: 10px;
+  margin: 0;
 }
-.about button:hover{
-  background-color: #E5D2C7 ;
-  outline: #8A7162;
-
+.about-strip{
+  background-color:rgba(122,83,63, .9);
+ padding:20px;
+  border-radius: 15px;
+  margin-right:30px;
+font-weight:bolder;
+text-align: center;
+  width:450px;
+}
+.about a{
+  margin:0;
 }
 .footer  h5{
   color: #DDDDDD;
@@ -101,6 +104,27 @@
   padding: 10px;
   color:white;
 }
+.element {
+  height: 1000px;
+  background-color: #ededed;
+  font-size: 45px;
+  border-top: 1px solid #000;
+  padding-top: 55px;
+  padding-left: 10px;
+}
+
+.element.no-padding {
+  padding-top: 0;
+}
+.links{
+  background-color: #F5E2CF;
+  border-radius:10px;
+}
+.active {
+  background-color: #F5E2CF;
+  border-radius:10px;
+}
+
 .sticky {
   position: fixed;
   top: 0;
@@ -108,8 +132,14 @@
 }
 .stickyContents{
   position: fixed;
-  top: 50px;
-  width: 23%;
+  top: 100px;
+  right: 125px;
+  width: 100%;
+   background-color:#6A4E3D;
+
+  height: 550px;
+ margin-right:20px;
+ border-radius:10px;
 }
 [data-theme='compact'] .site-collapse-custom-collapse .site-collapse-custom-panel,
 .site-collapse-custom-collapse .site-collapse-custom-panel {
@@ -139,10 +169,17 @@ p{
 }
 .strip{
   background-color: var(--bg-color);
-  padding:20px;
+  padding:30px;
 }
+
 .homeButtons{
   background-color: transparent;
+  margin-top:15px;
+  border-style: solid;
+  border-width: 3px;
+  border-color: #E5D2C7;
+  color: #E5D2C7;
+  font-size: 1.2em;
 }
 .homeButtons:hover{
   background-color: var(--bg-color);
@@ -201,13 +238,14 @@ hr.rounded {
 
 }
 .bold-heading {
-    font-size: 4.5em;
-    color: white;
+    font-size: 3.8em;
+    color: #E5D2C7;
   }
 .courseContents{
  background-color:#6A4E3D;
  position:relative;
- top:-120px;
+ top:-200px;
+  height: 550px;
  margin-right:20px;
  border-radius:10px;
 
@@ -223,10 +261,16 @@ hr.rounded {
     color: white;
   font-weight: bold;
 }
-hr.new {
-  border-top: 6px solid #715335;
-  border-radius: 2%;
+
+.hildu{
+  width: 200px;
+  border-style: solid;
+  border-color: #E5D2C7 ;
+  border-width: 0px 0px 4px 0px;
+  margin-bottom: 20px;
+
 }
+
 .search-input
 {
   width:50vw;
@@ -267,7 +311,7 @@ border-radius:10px;
 }
   .home-boxes p{
     line-height:20px;
-    font-size:1vw;
+    font-size:1.2em;
     text-align:right;
   }
   .article{
@@ -314,6 +358,7 @@ border-radius:10px;
   font-size: 18px;
   font-weight: normal;
 }
+
 
 
 

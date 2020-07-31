@@ -1,6 +1,6 @@
 import axios from "axios";
-// const base=" https://perfectplanb.herokuapp.com/"
-const base=" http://127.0.0.1:8000/"
+const base=" https://perfectplanb.herokuapp.com/"
+// const base=" http://127.0.0.1:8000/"
 export default class API {
     static courseFetch(body){
         var res =axios.create({baseURL: base})

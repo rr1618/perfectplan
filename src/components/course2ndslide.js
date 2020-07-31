@@ -9,18 +9,6 @@ import ScrollMenu from 'react-horizontal-scrolling-menu';
 import API from "../apiService";
 
 
-const list =[
-    {name:'Machine Learning'},
-    {name:'Algorithm'},
-    {name:'Data Science'},
-    {name:'history'},
-    {name:'civics'},
-    {name:'geo'},
-    {name:'geomath'},
-    {name:'geomathhiind'},
-
-
-]
 
 const Arrow = ({ text, className }) => {
   return (
@@ -50,19 +38,29 @@ const CourseCards=(props)=>
 
 const CoursePageSlide2=()=>
 {
-    const [listi,setListi]=useState('')
+    const [courseName,setCourseName]=useState('')
+    const [topics,setTopics] = useState('')
+    const [course,setCourse]=useState('Python')
     useEffect(() => {
-        console.log("called")
         API.courseFetch('').then(res=>{
-            setListi(res.data)
-            console.log(res.data)
-
+            setCourseName(res.data.map((name)=>
+                <CourseCards onClick={()=>{CreateLesson(name.heading)
+                setCourse(name.heading)}}  key={name.heading} name={name.heading} />
+        ))
+            CreateLesson('Python')
         })
         .catch(err=>{console.log(err)})
 
     }, []);
+    const CreateLesson=(courseName)=>
+    {
 
-    const CourseLessons=( list.map((name)=><CourseCards key={name.name+"lesson"} name={name.name}/>))
+        API.courseFetch({course:courseName}).then(res=>{res.data[0].topics.map(c=>{
+            setTopics ([...topics,<Link to={`/course/${courseName}`}><CourseCards key={c.topics+"lesson"} name={c.topics}/></Link>])
+        })})
+
+
+    }
 
 
     return (<Col >
@@ -103,23 +101,23 @@ const CoursePageSlide2=()=>
                     <Row justify={'center'}>
                         <h3  style={{color:'#796051',fontSize:'2vw'}}>Course Categories</h3>
                     </Row>
-                    {listi&&
+
                     <ScrollMenu
-                                data={listi.map((name)=><Link to={`/dashboard/detail/${name.heading}`}><CourseCards key={name.heading} name={name.heading} /></Link>)}
+                                data={courseName}
                                 arrowLeft={ArrowLeft}
                                 arrowRight={ArrowRight}
                                 itemStyle={{outline:'none'}}
                                 scrollBy={1}
                                 transition={1}
 
-                            />}
+                            />
                 </Col>
         <Col style={{backgroundColor:'#E5D2C7',marginTop:'2vh',position:'static'}} justify={'center'}>
                     <Row justify={'center'}>
-                        <h3  style={{color:'#796051',fontSize:'2vw'}}>Lessons</h3>
+                        <h3  style={{color:'#796051',fontSize:'2vw'}}>{course}</h3>
                     </Row>
                              <ScrollMenu
-                                data={CourseLessons}
+                                data={topics}
                                 arrowLeft={ArrowLeft}
                                 arrowRight={ArrowRight}
                                 itemStyle={{outline:'none'}}

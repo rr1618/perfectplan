@@ -67,8 +67,8 @@ const Card = (props)=>
 
                                             <Col style={{marginBottom:30}}>
                                                 <Row justify={'center'} >
-                                                    <h2 className={'img-side'} style={{paddingRight:50,marginLeft:10}}>{props.heading1}  </h2>
-                                                    <h2 className={'img-side'} style={{paddingLeft:50,paddingRight:20}} >{props.heading2}</h2>
+                                                    <h2 className={'img-side'} style={{paddingRight:40,color:'#D5B08F',fontWeight:'bolder'}}>{props.heading1}  </h2>
+                                                    <h2 className={'img-side'} style={{paddingLeft:40,color:'#D5B08F',fontWeight:'bolder'}} >{props.heading2}</h2>
                                             </Row>
                                             <Row justify={'center'}>
                                                     <img className={'img'}  src={People} alt=""/>
@@ -95,9 +95,9 @@ const Card = (props)=>
 
 const CoursePageSlide3=()=>
 {
-    const detail=( list.map((name)=><Card key={name.name} name={name.name} type={false} heading1={'Student'} heading2={'Reviews'}/>))
+    const detail=( list.map((name)=><Card key={name.name} name={name.name} type={false} heading1={'STUDENT'} heading2={'REVIEWS'}/>))
 
-    const expertlist=( experlist.map((name)=><Card key={name.name} name={name} type={true} heading1={'Expert'} heading2={'Guides'}/>))
+    const expertlist=( experlist.map((name)=><Card key={name.name} name={name} type={true} heading1={'EXPERT'} heading2={'GUIDES'}/>))
 
 
     return (<Col>

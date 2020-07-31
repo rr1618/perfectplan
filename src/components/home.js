@@ -18,7 +18,7 @@ return (
 
         <Col  style={{
                     minHeight: '100vh',
-                    width:'100vw',
+                    width:'100%',
                     height:'100vh',
                     backgroundImage: "url("+`${Background}`+")",
 
@@ -32,34 +32,36 @@ return (
         </Row>
     </Col>
 
-        <Row  justify='center'>
+        <Row  justify='center' >
 
-            <Col className="home-boxes"  style={{marginRight:20,marginTop:40}}>
-                <h2   className='bold-heading' style={{textAlign:"right",}}>
-                    <strong>Get Ready <br />For You<br/>Dream Career</strong></h2>
-                <h4 style={{color:"white",textAlign:"right"}}>Learn, Grow and become leaders of Tomorrow</h4>
+            <Col className="home-boxes"  style={{marginRight:20,marginTop:40,paddingTop:40}}>
+                <h3   className='bold-heading' style={{textAlign:"right",}}>
+                    <strong>Get Ready <br />For You<br/>Dream Career</strong></h3>
+                <h4 style={{textAlign:"right",color:'white'}}>Learn, Grow and become leaders of Tomorrow</h4>
                 <p>Python<br/>
                     Data Structure<br/>
                     Machine Learning<br/>
                     Digital Marketing<br />
                     Enterpreneurship<br/>
                     Personal Development<br /></p>
-                <Link to='/course'><Button className="homeButtons" size="large" style={{float:"right",marginTop:15,width:'12vw',borderColor: "#fffff"}}>
-                <strong style={{color:'white'}}>Enroll For Free</strong></Button></Link>
+                <Link to='/course'><button className="homeButtons" style={{float:"right",width:220,borderColor: "#fffff",padding:10}}>
+                <strong >ENROLL FOR FREE</strong></button></Link>
             </Col>
 
-            <Col   className="strip" >
+            <Col   className="strip" style={{paddingTop:50,paddingBottom:10}} >
             <div style={{marginLeft: 20,marginTop:40 }}>
-                <Button className="homeButtons" size="large" style={ {width:200,borderColor: "#fffff",marginBottom:10,color:"black" }} >
-                    <strong>Get Plan B Now</strong></Button>
-                    <p style={{lineHeight:"20px",fontSize:17}}>Website/App Development<br/>
+                <Row>
+                    <Link to='/course'><button className="homeButtons" style={{float:"left",width:250,borderColor: "black",padding:10,color:'black',marginBottom:15}}>
+                <strong >GET PLAN B NOW</strong></button></Link>
+                </Row>
+                    <p style={{lineHeight:"20px",fontSize:'1.2em'}}>Website/App Development<br/>
                     Digital Marketing<br/>
                     Software Development<br />
                     Project Management<br/>
                     Tax Advisory<br />
                     Sales and Marketing</p>
                     <h4 style={{color:"white"}}>One Stop Solution to help Grow Your Business</h4>
-                    <h2 className='bold-heading' ><strong>Grow Your <br /> Business To <br/>10 Times</strong></h2>
+                    <h3 className='bold-heading' style={{color:'black'}} ><strong>Grow Your <br /> Business To <br/>10 Times</strong></h3>
             </div>
             </Col>
             </Row>
@@ -76,7 +78,7 @@ return (
         >
 
                 <Col >
-                <DownOutlined style={ { fontSize:60,color:"white", }} />
+                <DownOutlined style={ { fontSize:40,color:"white", }} />
             </Col>
 
 

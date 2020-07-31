@@ -37,15 +37,17 @@ const tabContent={
         img:'',
         title: ()=>{return (<h1 className='bold-heading' style={{color:'white'}} ><strong>LEARN NOW<br />PAY LATER</strong></h1>)},
         subtitle: ()=>{return (<div></div>)},
-        buttonText:'ENROLL NOW'
+        customButton: ()=>{return(<Link to='/course'><button className="homeButtons" style={{float:"left",width:220,borderColor: "#fffff",padding:10}}>
+                <strong >ENROLL FOR FREE</strong></button></Link>)}
     },
     about:{
         content:()=>{return(<About/>)},
         background:aboutBack,
         img:'',
-        title: ()=>{return (<h1 className='bold-heading' style={{color:'white'}} ><strong>PERFECT ONE-STOP<br />SOLUTION</strong></h1>)},
+        title: ()=>{return (<h1 className='bold-heading' style={{color:'#E5D2C7'}} ><strong>PERFECT ONE-STOP<br />SOLUTION</strong></h1>)},
         subtitle: ()=>{return (<div></div>)},
-        buttonText:'EXPLORE SERVICES'
+        customButton: ()=>{return(<Link to='/course'><button className="homeButtons" style={{float:"left",width:220,borderColor: "#fffff",padding:10}}>
+                <strong >EXPLORE SERVICES</strong></button></Link>)}
     },
     blog:{
         content: ()=>{return(<Blog/>)},
@@ -54,7 +56,10 @@ const tabContent={
         title: ()=>{return (<h1 className='bold-heading' style={{color:'#6A4E3D'}} ><strong>Blog</strong></h1>)},
         subtitle: ()=>{return(<h4 style={{color:'#6A4E3D'}}>Follow our blog and get to know about the latest upadates<br />
                     in the fields of technology, enterpreneurship,etc</h4>)},
-        buttonText:'SHARE NOW'
+        customButton: ()=>{return(<Link to='/course'><button className="homeButtons" style={{float:"left",width:220,borderStyle:'none',
+            backgroundColor:'#6A4E3D',color:'white',padding:10,
+            borderRadius:'10px'}}>
+                <strong >SHARE NOW</strong></button></Link>)}
     },
     course:{
         content:()=>{return(<CoursePage/>)},
@@ -62,7 +67,8 @@ const tabContent={
         img:'',
         title: ()=>{return (<h1 className='bold-heading' style={{color:'white'}} ><strong>LEARN NOW<br />PAY LATER</strong></h1>)},
         subtitle: ()=>{return (<div></div>)},
-        buttonText:'ENROLL NOW'
+        customButton: ()=>{return(<Link to='/course'><button className="homeButtons" style={{float:"left",width:220,borderColor: "#fffff",padding:10}}>
+                <strong >ENROLL NOW</strong></button></Link>)}
     }
 }
 
@@ -126,8 +132,8 @@ const DetailPage = ()=>
                     <Col>
                         {props.detail.title()}<br />
                     {props.detail.subtitle()}
-                         <Button className="homeButtons" size="large" style={{backgroundColor:'#6A4E3D',float:"left",marginTop:'1.2em',width:200,borderStyle:'none',padding:5}}>
-                <strong style={{color:'white',fontSize:'1.3em',}}>{props.detail.buttonText}</strong></Button>
+                        {props.detail.customButton()}
+
                     </Col>
                     <Col span={10} >
                         <img src={props.detail.img}  style={{float:'right'}}  height={250}  alt=""/>
@@ -141,7 +147,7 @@ const DetailPage = ()=>
             <NavBar />
             <Col style={{backgroundImage: "url("+`${content.background}`+")",
 
-            backgroundRepeat: 'no-repeat',padding:35}}>
+            backgroundRepeat: 'no-repeat',padding:35,paddingBottom:70}}>
 
                <Background detail={content} />
 </Col>

@@ -11,6 +11,7 @@ import {
 
     UpOutlined ,
 } from '@ant-design/icons';
+import {Link} from "react-router-dom";
 
 const Parts = ()=>
 {
@@ -37,9 +38,9 @@ const Parts = ()=>
 
         <animated.div style={trail}>
                 <Row   justify="center" >
-                <Col style={{position:'absolute',top:100}}  >
+                <Col style={{position:'absolute',top:40}}  >
                     <Row justify={'center'}>
-                        <UpOutlined style={ { fontSize:'10vh',color:"white" }} />
+                        <UpOutlined style={ { fontSize:'4em',color:"white" }} />
                     </Row>
 
                     <Row className='two-box' style={{borderStyle:'solid',borderColor:'white'}} >
@@ -49,13 +50,15 @@ const Parts = ()=>
                                 <Row justify={'center'}>
                                     <img src={icon2}  alt=""/>
                                 </Row>
-                          <h1 style={{textAlign:'center',marginBottom:10}}><strong>E-LEARNING</strong></h1>
+                          <h1 style={{textAlign:'center',marginBottom:10,color:'#4F3B33'}}><strong>E-LEARNING</strong></h1>
                           <h4 style={{color:'white',textAlign:'center',marginBottom:20}}>We help you learn,<br />
                           grow and become<br />
                           the leaders of<br />
                           tomorrow</h4>
                             <Row justify={'center'}>
-                                <Button className='start-now' ><strong>Start Now</strong></Button>
+                                <Link to='/course'><button className="homeButtons" style={{float:"right",width:150,
+                                borderStyle:'none',backgroundColor:'#F3DDD1',padding:10,color:'#8A7162 '}}>
+                <strong >STRAT NOW</strong></button></Link>
                             </Row>
 
 
@@ -66,13 +69,15 @@ const Parts = ()=>
                                 <Row justify={'center'}>
                                     <img src={icon1}  alt=""/>
                                 </Row>
-                          <h1 style={{textAlign:'center',marginBottom:10}}><strong>E-BUSINESS</strong></h1>
+                          <h1 style={{textAlign:'center',marginBottom:10,color:'#4F3B33'}}><strong>E-BUSINESS</strong></h1>
                           <h4 style={{color:'white',textAlign:'center',marginBottom:20}}>We provide the <br />
                           one-step solution<br/>
                           to help grow your<br/>
                           business</h4>
                         <Row justify={'center'}>
-                            <Button  className="start-now"  ><strong>Start Now</strong></Button>
+                            <Link to='/course'><button className="homeButtons" style={{float:"right",width:150,
+                                borderStyle:'none',backgroundColor:'#F3DDD1',padding:10,color:'#8A7162 '}}>
+                <strong >STRAT NOW</strong></button></Link>
                         </Row>
 
 
@@ -98,10 +103,10 @@ const Middle =()=>
 
 
   return (
-<Col style={{height:'100vh'}}>
+<Col >
     <Col style={{postion:'absolute'}}>
         <video autoPlay muted loop id="myVideo" className="video"
-               style={ {width:'100vw'}
+               style={ {width:'100%'}
                  }>
       <source src={BackgroundVideo} type="video/mp4"/>
         Your browser does not support HTML5 video.

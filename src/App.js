@@ -13,6 +13,7 @@ import MobileCoursePage from "./components/mobileCourse";
 import Media from 'react-media';
 import {DetailPage} from "./components/detail";
 import CourseDetail from "./components/courseDetail";
+import Section from "./components/scrollp";
 class App extends React.Component {
   render() {
     return (
@@ -41,12 +42,16 @@ class App extends React.Component {
                                      <Slide><Row><Middle/></Row></Slide>
                                  </FullPage>
                                  </Route>
+                              <Route exact path="/test" >
+                        <Section/>
+
+                    </Route>
 
                     <Route exact path="/course" >
                         <CoursePage/>
 
                     </Route>
-                    <Route exact path="/dashboard/detail/:courses" >
+                    <Route exact path="/course/:courses" >
                         <CourseDetail />
                     </Route>
                              <Route exact path="/:page" >

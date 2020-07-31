@@ -4,10 +4,20 @@ import API from '../apiService'
 import YouTube from 'react-youtube';
 import {useParams} from "react-router-dom";
 import blogBack from "../images/blogBack.png"
+import Cfooter from "./footer";
+import {
+  Link,
+
+  Element,
+  Events,
+  animateScroll as scroll,
+  scrollSpy,
+  scroller
+} from "react-scroll";
 import {NavBar} from './detail'
 const { Panel } = Collapse;
-const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)
-const useMountEffect = (fun) => useEffect(fun, [])
+// const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)
+// const useMountEffect = (fun) => useEffect(fun, [])
 
 const CourseDetail=(props)=>{
     let {courses} = useParams();
@@ -15,30 +25,50 @@ const CourseDetail=(props)=>{
     const [description,setDescription] = useState('')
     const [highlight,setHighlight] = useState('')
     const [curriculum,setCurriculum] =useState([])
-    useMountEffect(() => scrollToRef(descRef)) // Scroll on mount
-    const descRef = useRef(null)
-    const curriRef = useRef(null)
-    const highRef = useRef(null)
+
     const navRef = useRef(null)
 
 
     useEffect(() => {
+        window.scrollTo(0,0)
         const header = document.getElementById("menus");
         const contents = document.getElementById("courseContents");
+        const lastElement = document.getElementById("lastElement");
+        const highlight = document.getElementById("highlight");
+        const description = document.getElementById("description");
         const sticky = header.offsetTop
         const contentSticky = header.offsetTop
+        const last = lastElement.offsetTop
+        const high = highlight.offsetTop
+
+
         const scrollCallBack=window.addEventListener("scroll",()=>{
-            if(window.pageYOffset>sticky+300){
+            if(window.pageYOffset>sticky+450){
                 header.classList.add("sticky")
             }
             else{
                 header.classList.remove("sticky")
             }
-            if(window.pageYOffset>contentSticky+150){
+            if(window.pageYOffset>contentSticky+60){
+                contents.classList.remove("courseContents")
                 contents.classList.add("stickyContents")
             }
             else{
+                contents.classList.add("courseContents")
                 contents.classList.remove("stickyContents")
+            }
+            if(window.pageYOffset>last+300)
+            {
+                contents.classList.add("courseContents")
+                contents.classList.remove("stickyContents")
+            }
+            if(window.pageYOffset<800){
+                description.classList.add("links")
+
+            }
+            else
+            {
+                    description.classList.remove("links")
             }
         })
 
@@ -61,47 +91,88 @@ const CourseDetail=(props)=>{
     return (<Col>
         <NavBar/>
         <Col style={{backgroundImage: "url("+`${blogBack}`+")",padding:30,borderStyle:'solid',borderWidth:0,borderBottomWidth:1,paddingTop:80}}>
-            <Breadcrumb separator=">">
-                <Breadcrumb.Item href="/course">Courses</Breadcrumb.Item>
+            <Breadcrumb separator=">" style={{fontSize:'1.5em'}}>
+                <Breadcrumb.Item href="/course" >Courses</Breadcrumb.Item>
                 <Breadcrumb.Item >{course}</Breadcrumb.Item>
             </Breadcrumb>
             <h1 className='bold-heading' style={{color:'#6A4E3D'}} ><strong>{course} Certification</strong></h1>
             <h4 style={{color:'#6A4E3D'}}>Learn Python, right from the basics to the advanced and jumpstart<br />
             your programming career</h4>
-            <button style={{borderStyle:'none',color:'white',padding:8,borderRadius:5,backgroundColor:'#6A4E3D'}}>ENROLL NOW</button>
+            <button style={{borderStyle:'none',color:'white',padding:8,borderRadius:5,backgroundColor:'#6A4E3D',fontWeight:'bolder'}}>ENROLL NOW</button>
         </Col>
         <Row>
             <Col span={16}>
                 <div ref={navRef} id={'menus'} style={{zIndex:3}}>
-                <Row className='blog' style={{borderStyle:'solid',borderWidth:0,borderBottomWidth:1,paddingTop:5,backgroundColor:'white'}} >
-            <button style={{marginLeft:100}} onClick={()=>scrollToRef(descRef)} >DESCRIPTION</button>
-            <button onClick={()=>scrollToRef(highRef)}>HIGHLIGHTS</button>
-            <button onClick={()=>scrollToRef(curriRef)}>CURRICULUM</button>
-            <button >REVIEWS</button>
+                <Row justify={'center'} className='blog' style={{borderStyle:'solid',borderColor:'#6A4E3D',borderWidth:0,borderBottomWidth:2,paddingTop:5,backgroundColor:'white'}} >
+                   <Link
+                       id={'description'}
+                       className={'links'}
+                    // activeClass="active"
+
+                    onClick={()=>{scroll.scrollToTop()}}
+                    spy={true}
+                     hashSpy={true}
+                    smooth={true}
+                    duration={500}
+                    style={{padding:10,fontWeight:'bolder',color:'#6A4E3D'}}
+                  >
+                    DESCRIPTION
+                  </Link>
+                 <Link
+                     id={'highlight'}
+                    activeClass="active"
+                    to="highlight"
+                    spy={true}
+                     hashSpy={true}
+                    smooth={true}
+                    duration={500}
+                    style={{padding:10,fontWeight:'bolder',color:'#6A4E3D'}}
+                  >
+                    HIGHLIGHTS
+                  </Link>
+                <Link
+
+                    activeClass="active"
+                    to="curriculum"
+                    spy={true}
+                     hashSpy={true}
+                    smooth={true}
+                    duration={500}
+                    style={{padding:10,fontWeight:'bolder',color:'#6A4E3D'}}
+                  >
+                    CURRICULUM
+                  </Link>
+
             </Row>
                     </div>
 
-                <Col style={{padding:30}}>
-                <div ref={descRef} style={{height:300}}>
-                    <p style={{color:'black'}}>{description}</p>
-                </div>
-                <div style={{height:1500}} />
-                <div ref={curriRef} >
-                    <Collapse style={{backgroundColor:'transparent',borderStyle:'none'}}>
+                <Col style={{padding:30,paddingTop:0}}>
+
+                    <Element name="description" className="element" style={{backgroundColor:'transparent',borderStyle:'none'}}>
+                        {description}
+                    </Element>
+                    <Element name="highlight"  className="element" style={{backgroundColor:'transparent',borderStyle:'none'}}>
+         {highlight}
+        </Element>
+                    <Element name="curriculum" id={"lastElement"} className="element" style={{backgroundColor:'transparent',borderStyle:'none'}}>
+                           <Collapse style={{backgroundColor:'transparent',borderStyle:'none'}}>
                     {curriculum}
                 </Collapse>
-                </div>
-                    <div style={{height:1500}} />
-                <div ref={highRef} style={{height:300}}>
-                    <p style={{color:'black'}}>{highlight}</p>
-                </div>
+                    </Element>
+
+
+
+
+
                     </Col>
 
         </Col>
 
-        <Col span={6}   className={'courseContents'}  >
+        <Col span={6}
+             className={'courseContents'}
+             id={'courseContents'}  >
 
-            <Col style={{margin:16}} id={'courseContents'} >
+            <Col style={{margin:16}}  >
 
             <YouTube videoId="zxsmT84nwLI"  opts={{width:'100%',height:'inherit'}}   />
 
@@ -114,6 +185,7 @@ const CourseDetail=(props)=>{
         </Col>
 
             </Row>
+        <Cfooter/>
 
     </Col>)
 }
