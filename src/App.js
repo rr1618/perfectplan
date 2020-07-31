@@ -4,7 +4,7 @@ import './home.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FullPage, Slide } from 'react-full-page';
 import {Col,Row} from 'antd'
-import {BrowserRouter, Route} from 'react-router-dom'
+import {BrowserRouter, Route,Switch} from 'react-router-dom'
 import Home from './components/home'
 import MobileHome from './components/mobileHome'
 import Middle from "./components/secondpage";
@@ -27,26 +27,34 @@ class App extends React.Component {
                   {console.log("device width",matches.small)}
                   <BrowserRouter >
                             <Route exact path="/"  component={MobileHome}/>
-                            <Route exact path="/dashboard" component={MobileCoursePage}/>
+                            <Route exact path="/course" component={MobileCoursePage}/>
                   </BrowserRouter>
               </Col>}
                 {matches.large &&
                     <Col>
                          <BrowserRouter >
 
-                             <Route exact  path="/">
+                          <Switch>
+                                 <Route exact  path="/">
                                  <FullPage>
                                      <Slide><Home/></Slide>
                                      <Slide><Row><Middle/></Row></Slide>
                                  </FullPage>
                                  </Route>
 
-                    <Route exact path="/dashboard" >
-                        <DetailPage/>
+                    <Route exact path="/course" >
+                        <CoursePage/>
+
                     </Route>
                     <Route exact path="/dashboard/detail/:courses" >
                         <CourseDetail />
                     </Route>
+                             <Route exact path="/:page" >
+                        <DetailPage/>
+                    </Route>
+
+
+                          </Switch>
 
 </BrowserRouter>
                 </Col>

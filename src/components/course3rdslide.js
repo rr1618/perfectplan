@@ -5,6 +5,7 @@ import People from "../images/people.png";
 import '../course3rdslide.css'
 import ScrollMenu from 'react-horizontal-scrolling-menu';
 import {DownloadOutlined} from '@ant-design/icons';
+import Recruitment from"../images/recruitment.png"
 
 
 const list =[
@@ -42,15 +43,16 @@ const ArrowRight = Arrow({ text: '>', className: 'arrow-next' });
 const Slider=(props)=>
 {
     return (
-                <Col style={{backgroundColor:'#E5D2C7',paddingBottom:'10px',paddingTop:'10px',marginTop:'6vh'}} justify="center" >
+                <Col style={{backgroundColor:'#E5D2C7',paddingBottom:'10px',paddingTop:'10px',marginTop:30}} justify="center" >
                             <Row justify={'center'}><h1 style={{color:'#796051',fontSize:'2vw'}}>{props.heading}</h1></Row>
                     <ScrollMenu
                                 data={props.detail}
                                 arrowLeft={ArrowLeft}
                                 arrowRight={ArrowRight}
                                 itemStyle={{outline:'none'}}
-                                innerWrapperStyle={{height:'300px',paddingTop:10}}
-                                wrapperStyle={{height:'300px'}}
+                                scrollBy={1}
+                                transition={1}
+
 
                             />
                 </Col>
@@ -62,13 +64,17 @@ const Card = (props)=>
     return ( <Col  className={'img-card' } key={props.name}   >
 
 
-                                <Row justify={'center'}>
-                                            <h2 className={'img-side'} >{props.heading1} </h2>
-                                        <img className={'img'} src={People} alt="" style={{}}/>
-                                         <h2 className={'img-side'} >{props.heading2}</h2>
-                                </Row>
-        {props.type?<Row>
-                                <Space size={'large'}>
+
+                                            <Col style={{marginBottom:30}}>
+                                                <Row justify={'center'} >
+                                                    <h2 className={'img-side'} style={{paddingRight:50,marginLeft:10}}>{props.heading1}  </h2>
+                                                    <h2 className={'img-side'} style={{paddingLeft:50,paddingRight:20}} >{props.heading2}</h2>
+                                            </Row>
+                                            <Row justify={'center'}>
+                                                    <img className={'img'}  src={People} alt=""/>
+                                            </Row>
+                                            </Col>
+                        {props.type?<Row >
                                     <Col>
                                         <img src={People} alt=""/>
                                     </Col>
@@ -78,9 +84,8 @@ const Card = (props)=>
                                         <h5>{props.name.company}</h5>
 
                                     </Col>
-                                </Space>
                         </Row>:
-                            <p>I am  perfet plan b<br/>
+                            <p style={{textAlign:'center'}}>I am  perfet plan b<br/>
                             I m a new startup and <br />
                             I m a new startup and <br />
 
@@ -112,8 +117,8 @@ const CoursePageSlide3=()=>
 const Companies=()=>
 {
 
-    return(
-        <Row justify={'center'} style={{backgroundColor:'#E5D2C7',marginTop:'2vh',width:'100%'}}>
+    return(<Col>
+            <Row justify={'center'} style={{backgroundColor:'#E5D2C7',marginTop:'2vh',width:'100%'}}>
                      <Row justify="center">
                                     <Button  icon={<DownloadOutlined />} style={{backgroundColor:'#796051',color:'white',width:'40vw',height:50,marginBottom:20}}>
           Download Placement Report
@@ -122,6 +127,11 @@ const Companies=()=>
 
 
         </Row>
+            <Row>
+                <img src={Recruitment} alt="" width="100%"/>
+            </Row>
+        </Col>
+
 
     )
 }

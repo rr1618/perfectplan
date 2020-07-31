@@ -32,10 +32,11 @@ return (
         </Row>
     </Col>
 
-        <Row  justify='center' style={{height:'75vh'}}>
+        <Row  justify='center'>
 
-            <Col className="home-boxes"  style={{marginRight:20,marginTop:'1vh'}}>
-                <h2   className='bold-heading' style={{textAlign:"right",}}><strong>Get Ready <br />For You<br/>Dream Career</strong></h2>
+            <Col className="home-boxes"  style={{marginRight:20,marginTop:40}}>
+                <h2   className='bold-heading' style={{textAlign:"right",}}>
+                    <strong>Get Ready <br />For You<br/>Dream Career</strong></h2>
                 <h4 style={{color:"white",textAlign:"right"}}>Learn, Grow and become leaders of Tomorrow</h4>
                 <p>Python<br/>
                     Data Structure<br/>
@@ -43,12 +44,12 @@ return (
                     Digital Marketing<br />
                     Enterpreneurship<br/>
                     Personal Development<br /></p>
-                <Link to='/dashboard'><Button className="homeButtons" size="large" style={{float:"right",marginTop:15,width:'12vw',borderColor: "#fffff"}}>
+                <Link to='/course'><Button className="homeButtons" size="large" style={{float:"right",marginTop:15,width:'12vw',borderColor: "#fffff"}}>
                 <strong style={{color:'white'}}>Enroll For Free</strong></Button></Link>
             </Col>
 
             <Col   className="strip" >
-            <div style={{marginTop: '1vh',marginLeft: 20 }}>
+            <div style={{marginLeft: 20,marginTop:40 }}>
                 <Button className="homeButtons" size="large" style={ {width:200,borderColor: "#fffff",marginBottom:10,color:"black" }} >
                     <strong>Get Plan B Now</strong></Button>
                     <p style={{lineHeight:"20px",fontSize:17}}>Website/App Development<br/>
@@ -62,7 +63,10 @@ return (
             </div>
             </Col>
             </Row>
-<Row justify="center" >
+
+            <Row justify={'center'}>
+                <Col  style={{position:'absolute',bottom:10}} >
+
         <TweenOne
             animation={{
                 y:'10px',
@@ -71,13 +75,17 @@ return (
                         }}
         >
 
-                <Col>
+                <Col >
                 <DownOutlined style={ { fontSize:60,color:"white", }} />
             </Col>
 
 
         </TweenOne>
-</Row>
+
+            </Col>
+            </Row>
+
+
         </Col>
 
 

@@ -37,35 +37,45 @@ const Parts = ()=>
 
         <animated.div style={trail}>
                 <Row   justify="center" >
-                <Col style={{position:'absolute',top:'12vh'}}  >
+                <Col style={{position:'absolute',top:100}}  >
                     <Row justify={'center'}>
                         <UpOutlined style={ { fontSize:'10vh',color:"white" }} />
                     </Row>
 
-                    <Row className='two-box' >
+                    <Row className='two-box' style={{borderStyle:'solid',borderColor:'white'}} >
 
-                        <Col  style={{backgroundImage:"url("+`${SecondBackground}`+")",height:'60vh',width:'22vw',marginRight:'1vw'}}>
-                            <Row justify={'center'}>
-                                <img src={icon2}  alt=""/>
-                          <h1 style={{}}><strong>E-LEARNING</strong></h1>
-                          <h4 style={{color:'white'}}>We help you learn,<br />
+                        <Col  style={{backgroundImage:"url("+`${SecondBackground}`+")",marginRight:80,padding:80,margin:10,paddingTop:20}}>
+
+                                <Row justify={'center'}>
+                                    <img src={icon2}  alt=""/>
+                                </Row>
+                          <h1 style={{textAlign:'center',marginBottom:10}}><strong>E-LEARNING</strong></h1>
+                          <h4 style={{color:'white',textAlign:'center',marginBottom:20}}>We help you learn,<br />
                           grow and become<br />
                           the leaders of<br />
                           tomorrow</h4>
-                          <Button className='start-now' style={{position:'absolute',bottom:'6vh'}} ><strong>Start Now</strong></Button>
+                            <Row justify={'center'}>
+                                <Button className='start-now' ><strong>Start Now</strong></Button>
                             </Row>
 
+
+
                       </Col>
-                    <Col  style={{backgroundImage:"url("+`${SecondBackground}`+")" ,height:'60vh',width:'22vw'}}>
-                        <Row justify={'center'}>
-                                <img src={icon1}  alt=""/>
-                          <h1 style={{}}><strong>E-BUSINESS</strong></h1>
-                          <h4 style={{color:'white'}}>We provide the <br />
+                    <Col  style={{backgroundImage:"url("+`${SecondBackground}`+")" ,padding:80,margin:10,paddingTop:20}}>
+
+                                <Row justify={'center'}>
+                                    <img src={icon1}  alt=""/>
+                                </Row>
+                          <h1 style={{textAlign:'center',marginBottom:10}}><strong>E-BUSINESS</strong></h1>
+                          <h4 style={{color:'white',textAlign:'center',marginBottom:20}}>We provide the <br />
                           one-step solution<br/>
                           to help grow your<br/>
                           business</h4>
-                          <Button  className="start-now"  style={{position:'absolute',bottom:'6vh'}}><strong>Start Now</strong></Button>
+                        <Row justify={'center'}>
+                            <Button  className="start-now"  ><strong>Start Now</strong></Button>
                         </Row>
+
+
 
                       </Col>
 

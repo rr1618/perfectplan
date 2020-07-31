@@ -1,5 +1,5 @@
 import {Row, Col, Button,Tabs} from 'antd';
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
 
 
 const { TabPane } = Tabs;
@@ -24,6 +24,9 @@ const Article=(props)=>
 }
 const Blog =(props)=>
 {
+    useEffect(() => {
+        window.scrollTo(0,0)
+    },[])
     const [blog,setBlog]=useState(0)
     return (
                     <Col>

@@ -34,7 +34,10 @@
     "react-scripts": "3.4.1",
     "react-scroll-parallax": "^2.3.3",
     "react-spring": "^8.0.27",
-    "react-twitter-auth": "0.0.13"
+    "react-sticky": "^6.0.3",
+    "react-tabs": "^3.1.1",
+    "react-twitter-auth": "0.0.13",
+    "react-youtube": "^7.11.3"
   },
   "scripts": {
     "start": "react-scripts start",

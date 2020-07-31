@@ -7,6 +7,7 @@ import CoursePage from "./course";
 import Laptop from "../images/brightlaptop.png";
 import Magnifier from "../images/magnifier.png";
 import LoginModal from "./login";
+import {useParams,Link} from "react-router-dom";
 import About from "./about";
 import Blog from "./blog";
 import {ModalContext, TokenContext} from "../index";
@@ -23,8 +24,8 @@ const customStyles = {
     marginRight           : '-50%',
     transform             : 'translate(-50%, -50%)',
       backgroundColor: '#F5E2CF',
-      height:'75vh',
-      width:'30vw'
+      height:550,
+      width:400
 
 
   }
@@ -79,7 +80,7 @@ const NavBar=()=>
                 sessionStorage.clear()
         })
     },[])
-    return(<Row >
+    return(<Row style={{position:'fixed',zIndex:1,backgroundColor:'white',width:'100%'}} >
             <Col className="navbar" >
                 <img  src={LogoDark} height={40} alt=""/>
             </Col>
@@ -105,24 +106,20 @@ const NavBar=()=>
 
 const DetailPage = ()=>
 {
+    let {page} = useParams()
     const [content,setContent] = useState(tabContent['home'])
-
+    useEffect(()=>{
+        setContent(tabContent[page])
+    },[page])
     const Background=(props)=>
         {
-    return (<Col>
+    return (<Col style={{paddingTop:60}}>
         <Row className={'background-nav'}>
-            <a key={'home'} id={'home'} style={{color:'white'}} onClick={(e)=>{setContent(tabContent[e.target.id])
-                                                            }}>Home</a>
-            <a key={'about'} id={'about'} style={{color:'white'}} onClick={(e)=>{setContent(tabContent[e.target.id])
-                                                            }}>About</a>
-            <a key={'blog'} id={'blog'} style={{color:'white'}} onClick={(e)=>{setContent(tabContent[e.target.id])
-                                                            }}>Blog</a>
-            <a key={'course'} id={'course'} style={{color:'white'}} onClick={(e)=>{setContent(tabContent[e.target.id])
-                                                                }}>Courses</a>
-            <a key={'career'} id={'career'} style={{color:'white'}} onClick={(e)=>{setContent(tabContent[e.target.id])
-                                                                }}>Career</a>
-            <a key={'help'} id={'help'} style={{color:'white'}} onClick={(e)=>{setContent(tabContent[e.target.id])
-                                                                }}>Help and Support</a>
+            <Link to={`/`} style={{color:'white'}} >Home</Link>
+            <Link to={`/about`} style={{color:'white'}} >About</Link>
+            <Link to={`/blog`} style={{color:'white'}} >Blog</Link>
+            <Link to={`/course`} style={{color:'white'}} >Courses</Link>
+            <Link to={`/help`} style={{color:'white'}} >Help and Support</Link>
         </Row>
          <Row>
 

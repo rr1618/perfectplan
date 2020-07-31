@@ -99,7 +99,7 @@ const CoursePageSlide2=()=>
                           </Row>
                       </Col>
                 </Row>
-                <Col style={{backgroundColor:'#E5D2C7',marginTop:'2vh',height:'35vh',position:'static'}} justify={'center'}>
+                <Col style={{backgroundColor:'#E5D2C7',marginTop:'2vh',position:'static'}} justify={'center'}>
                     <Row justify={'center'}>
                         <h3  style={{color:'#796051',fontSize:'2vw'}}>Course Categories</h3>
                     </Row>
@@ -108,11 +108,13 @@ const CoursePageSlide2=()=>
                                 data={listi.map((name)=><Link to={`/dashboard/detail/${name.heading}`}><CourseCards key={name.heading} name={name.heading} /></Link>)}
                                 arrowLeft={ArrowLeft}
                                 arrowRight={ArrowRight}
-                                style={{height:'30vh'}}
                                 itemStyle={{outline:'none'}}
+                                scrollBy={1}
+                                transition={1}
+
                             />}
                 </Col>
-        <Col style={{backgroundColor:'#E5D2C7',marginTop:'2vh',height:'35vh',position:'static'}} justify={'center'}>
+        <Col style={{backgroundColor:'#E5D2C7',marginTop:'2vh',position:'static'}} justify={'center'}>
                     <Row justify={'center'}>
                         <h3  style={{color:'#796051',fontSize:'2vw'}}>Lessons</h3>
                     </Row>
@@ -120,8 +122,9 @@ const CoursePageSlide2=()=>
                                 data={CourseLessons}
                                 arrowLeft={ArrowLeft}
                                 arrowRight={ArrowRight}
-                                style={{height:'30vh'}}
                                 itemStyle={{outline:'none'}}
+                                scrollBy={1}
+                                transition={1}
                             />
                 </Col>
     </Col>)

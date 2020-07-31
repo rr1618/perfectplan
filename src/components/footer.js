@@ -1,14 +1,12 @@
 import React from 'react'
 import Logo from './logo.png'
-import { Layout ,Row,Col,Button,Collapse,Space,Divider} from 'antd';
+import {Link} from "react-router-dom";
+import {Row,Col,Button,Collapse,Space,Divider} from 'antd';
 import {
     TwitterOutlined,
 FacebookFilled,
 InstagramFilled,
 LinkedinFilled,
-    MobileFilled ,
-    MailFilled ,
-    HomeFilled ,
 CaretRightFilled} from '@ant-design/icons';
 
 const { Panel } = Collapse;
@@ -23,20 +21,20 @@ const Cfooter = ()=>
             </Row>
             <Col className={'footer-anchors'} style={{color:'white'}}>
 
-                <a >About us</a>
-                <a >Blog</a>
-                <a >Featured Courses</a>
-                <a >Perfect PlanB for Business</a>
-                <a >Teach on Perfect Plan B</a>
-                <a >Career</a>
-                <a >Help and Support</a>
-                <a >Affliate</a>
-                <a >Terms</a>
-                <a >Privacy Policy</a>
-                <a >Cookie Policy</a>
-                <a >Cookie Refund Policy</a>
-                <a >Media Policy</a>
-                <a >Sitemap</a>
+                <Link to={`/about`}  >About us</Link>
+                <Link to={`/blog`} >Blog</Link>
+                <Link to={`/course`} >Featured Courses</Link>
+                <Link>Perfect PlanB for Business</Link>
+                <Link >Teach on Perfect Plan B</Link>
+                <Link >Career</Link>
+                <Link to={`/help`} >Help and Support</Link>
+                <Link >Affliate</Link>
+                <Link >Terms</Link>
+                <Link >Privacy Policy</Link>
+                <Link >Cookie Policy</Link>
+                <Link >Cookie Refund Policy</Link>
+                <Link>Media Policy</Link>
+                <Link>Sitemap</Link>
 
             </Col>
                 </Col>

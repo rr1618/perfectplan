@@ -2,12 +2,19 @@
 
 .img-card{
 background-color: #D5B08F ;
-    margin: 20px;
-    height: 35vh;
-    width: 30vw;
-    padding-left: 10px;
-    padding-right: 15px;
-    padding-bottom: 15px;
+    margin: 40px;
+    height: 250px;
+    width: 420px;
+}
+.img-side{
+    background-color:#B39275;
+    color:#D6BEA8;
+    border-radius:5px;
+    padding:7px;
+    margin-top:10px;
+
+
+
 }
 .img-card h2{
 
@@ -19,14 +26,14 @@ background-color: #D5B08F ;
 }
 .img{
     height:80px;
-width:80px;
-border-radius:50px;
-border-style:solid;
+    width:80px;
+    border-radius:50px;
+    border-style:solid;
     border-width: 5px;
     border-color:#8A7162;
-position:relative;
+    position:absolute;
+    top:-10px;
 
-    top:-3.2vh
 
 }
 
