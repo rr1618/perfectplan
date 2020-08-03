@@ -60,6 +60,7 @@ const Slider=(props)=>
                                 transition={1}
 
 
+
                             />
                 </Col>
     )

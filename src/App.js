@@ -16,6 +16,14 @@ import Section from "./components/scrollp";
 import MoblieHome from "./mobile/home";
 import {MobileDetailPage} from './mobile/detail'
 import MobileCourseDetail from "./mobile/courseDetail";
+import MediaPolicy from "./components/MediaPolicy";
+import MobileMediaPolicy from "./mobile/MediaPolicy";
+import PrivacyPolicy from "./components/PrivacyPolicy";
+import MobilePrivacyPolicy from "./mobile/PrivacyPolicy";
+import RefundPolicy from "./components/RefundPolicy";
+import MobileRefundPolicy from "./mobile/RefundPolicy";
+import Tnc from "./components/Terms";
+import MobileTnc from "./mobile/Terms";
 class App extends React.Component {
   render() {
     return (
@@ -52,6 +60,18 @@ class App extends React.Component {
                              <Route exact path="/:page" >
                         <MobileDetailPage/>
                     </Route>
+                              <Route exact path="/policy/privacy" >
+                        <MobilePrivacyPolicy/>
+                    </Route>
+                              <Route exact path="/policy/media" >
+                        <MobileMediaPolicy/>
+                    </Route>
+                     <Route exact path="/policy/refund" >
+                        <MobileRefundPolicy/>
+                    </Route>
+                              <Route exact path="/policy/terms" >
+                        <MobileTnc/>
+                    </Route>
 
 
                           </Switch>
@@ -85,6 +105,18 @@ class App extends React.Component {
                         <DetailPage/>
                     </Route>
 
+                              <Route exact path="/policy/privacy" >
+                        <PrivacyPolicy/>
+                    </Route>
+                              <Route exact path="/policy/media" >
+                        <MediaPolicy/>
+                    </Route>
+                     <Route exact path="/policy/refund" >
+                        <RefundPolicy/>
+                    </Route>
+                              <Route exact path="/policy/terms" >
+                        <Tnc/>
+                    </Route>
 
                           </Switch>
 

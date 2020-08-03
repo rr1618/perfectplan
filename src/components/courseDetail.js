@@ -107,7 +107,7 @@ const CourseDetail=(props)=>{
                    <Link
                        id={'description'}
                        className={'links'}
-                    // activeClass="active"
+
 
                     onClick={()=>{scroll.scrollToTop()}}
                     spy={true}

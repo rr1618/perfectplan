@@ -29,11 +29,11 @@ const Cfooter = ()=>
                 <Link >Career</Link>
                 <Link to={`/help`} >Help and Support</Link>
                 <Link >Affliate</Link>
-                <Link >Terms</Link>
-                <Link >Privacy Policy</Link>
+                <Link to={`/policy/terms`}>Terms</Link>
+                <Link to={`/policy/privacy`}>Privacy Policy</Link>
                 <Link >Cookie Policy</Link>
-                <Link >Cookie Refund Policy</Link>
-                <Link>Media Policy</Link>
+                <Link to={`/policy/refund`}>Refund Policy</Link>
+                <Link  to={`/policy/media`}>Media Policy</Link>
                 <Link>Sitemap</Link>
 
             </Col>

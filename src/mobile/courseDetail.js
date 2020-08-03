@@ -40,9 +40,7 @@ const MobileCourseDetail=(props)=>{
         const highlight = document.getElementById("highlight");
         const description = document.getElementById("description");
         const sticky = header.offsetTop
-        const contentSticky = header.offsetTop
-        const last = lastElement.offsetTop
-        const high = highlight.offsetTop
+
 
 
         const scrollCallBack=window.addEventListener("scroll",()=>{
@@ -91,6 +89,10 @@ const showModal = () => {
     console.log(e);
     setVisible(false)
   };
+  function callback(key) {
+  console.log(key);
+}
+
 
     return (<Col>
         <NavBar/>
@@ -133,6 +135,7 @@ const showModal = () => {
                 </Col>
         </Col>
         </Modal>
+
                 <div ref={navRef} id={'menus'} style={{zIndex:3}}>
                 <Row justify={'center'} className={'blog'}  style={{borderStyle:'solid',borderColor:'#6A4E3D',borderWidth:0,borderBottomWidth:2,paddingTop:5,backgroundColor:'white'}} >
                    <Link
@@ -190,31 +193,25 @@ const showModal = () => {
             </Row>
                     </div>
 
-                <Col style={{padding:30,paddingTop:0}}>
+                <Col style={{padding:15,paddingTop:0,position:'relative'}}>
 
                     <Element name="description" className="element" style={{backgroundColor:'transparent',borderStyle:'none'}}>
                         <p style={{color:'black',fontSize:20}}>{description}</p>
                     </Element>
-                    <Element name="highlight"  className="element" style={{backgroundColor:'transparent',borderStyle:'none'}}>
-         <p style={{color:'black',fontSize:20}}>{highlight}</p>
-        </Element>
                     <Element name="curriculum" id={"lastElement"} className="element" style={{backgroundColor:'transparent',borderStyle:'none'}}>
+
                            <Collapse style={{backgroundColor:'transparent',borderStyle:'none'}}>
                     {curriculum}
                 </Collapse>
                     </Element>
-
-
-
-
+                    <Element name="highlight"  className="element" style={{backgroundColor:'transparent',borderStyle:'none'}}>
+         <p style={{color:'black',fontSize:20}}>{highlight}</p>
+        </Element>
 
                     </Col>
-
         </Col>
-
-
-
             </Row>
+
         <Cfooter/>
 
     </Col>)
