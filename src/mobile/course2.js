@@ -36,7 +36,7 @@ const CourseCards=(props)=>
     )
 }
 
-const CoursePageSlide2=()=>
+const Course2=()=>
 {
     const [courseName,setCourseName]=useState('')
     const [topics,setTopics] = useState('')
@@ -64,35 +64,36 @@ const CoursePageSlide2=()=>
 
 
     return (<Col >
-                <Row style={{backgroundColor:'#E5D2C7',paddingBottom:'10px',paddingTop:'10px'}} justify="center" >
+                <Row className={'company-stats'} style={{backgroundColor:'#E5D2C7',paddingBottom:'10px',paddingTop:'10px'}} justify="center" >
                             <Col span={6}  style={{borderRightStyle:'solid',borderColor:'#CEB8AB',borderRightWidth:3,marginRight:'5vw'}} >
-                                <Row >
+                                <Row  justify={'center'}>
                                         <img  className={'img-slide1'} src={People} />
                                         <Col>
-                                                <h5 style={{color:'#836A5C'}}>Number of Students</h5>
-                                            <h3 style={{color:'#836A5C'}}>1120</h3>
+                                                <h6 style={{color:'#836A5C'}}>Number of Students</h6>
+                                            <h5 style={{color:'#836A5C'}}>1120</h5>
                                         </Col>
 
                                 </Row>
                                 </Col>
 
                       <Col span={6} style={{borderRightStyle:'solid',borderColor:'#CEB8AB',borderRightWidth:3,marginRight:'5vw'}}>
-                          <Row >
-                            <img  className={'img-slide1'}  src={ID} alt=""/>
+                          <Row justify={'center'} >
+                              <img  className={'img-slide1'}  src={ID} alt=""/>
+
                             <Col>
-                                <h5 style={{color:'#836A5C'}}>Placed Students</h5>
-                                <h3 style={{color:'#836A5C'}}>561</h3>
+                                <h6 style={{color:'#836A5C'}}>Placed Students</h6>
+                                <h5 style={{color:'#836A5C'}}>561</h5>
                             </Col>
                           </Row>
 
 
                       </Col>
                       <Col span={6}>
-                      <Row>
+                      <Row justify={'center'}>
                             <img  className={'img-slide1'}  src={Hand} alt=""/>
                             <Col>
-                                <h5 style={{color:'#836A5C'}}>Number of Students</h5>
-                                <h3 style={{color:'#836A5C'}}>101</h3>
+                                <h6 style={{color:'#836A5C'}}>Number of Students</h6>
+                                <h5 style={{color:'#836A5C'}}>101</h5>
                             </Col>
                           </Row>
                       </Col>
@@ -129,4 +130,4 @@ const CoursePageSlide2=()=>
 }
 
 
-export default CoursePageSlide2
+export default Course2

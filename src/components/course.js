@@ -37,7 +37,7 @@ const CoursePage =(props)=>
                 </Row>
                         <Row justify={'center'} style={{position: 'relative',bottom:-75}}>
                         <Col ><img src={Block1} style={
-                            {width:450,marginRight:'2vw',marginTop:0}
+                            {width:450,marginRight:50}
                         }/></Col>
 
                     <Col><img src={Block2}  style={ { width:450 }} alt=""/></Col>
@@ -45,17 +45,19 @@ const CoursePage =(props)=>
 
             </Col>
                     <Row justify="center" >
-            <Col   style={{position: 'absolute',bottom:0}}>
+            <Col   style={{
+                position: 'absolute',
+                bottom:0}}>
                      <Row justify={'center'} >
 
-                    <hr className="new" style={{width:'20%',marginRight:10}} /><h3 style={ { color:'#715335' }}>Get trained! Get certified! </h3>
-                <hr className="new" style={{width:'20%',marginLeft:10}} />
+                    <hr className="new" style={{width:'20%',marginRight:10,borderWidth:3}} /><h4 style={ { color:'#715335' }}>Get trained! Get certified! </h4>
+                <hr className="new" style={{width:'20%',marginLeft:10,borderWidth:3}} />
             </Row>
             <Col justify='center'>
 
-                <h3 style={ { color:'#715335' }}>Get your first job/internship or hike in your CTC by 40% to 60%</h3>
+                <h5 style={ { color:'#715335' }}>Get your first job/internship or hike in your CTC by 40% to 60%</h5>
                 <Row justify={'center'}>
-                    <DownOutlined style={ { fontSize:60,color:"#715335", }} />
+                    <DownOutlined style={ { fontSize:30,color:"#715335", }} />
                 </Row>
 
             </Col>

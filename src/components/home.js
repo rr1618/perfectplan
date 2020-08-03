@@ -1,6 +1,6 @@
 import {Row, Col, Button} from 'antd';
 import React,{useState} from 'react';
-import LoginModal from "./login";
+import LoginModal from "../login";
 import {Link} from 'react-router-dom'
 import TweenOne from 'rc-tween-one';
 import Background from '../images/background.png';
@@ -36,7 +36,7 @@ return (
 
             <Col className="home-boxes"  style={{marginRight:20,marginTop:40,paddingTop:40}}>
                 <h3   className='bold-heading' style={{textAlign:"right",}}>
-                    <strong>Get Ready <br />For You<br/>Dream Career</strong></h3>
+                    <strong>GET READY <br />FOR YOUR<br/>DREAM CAREER</strong></h3>
                 <h4 style={{textAlign:"right",color:'white'}}>Learn, Grow and become leaders of Tomorrow</h4>
                 <p>Python<br/>
                     Data Structure<br/>
@@ -61,7 +61,7 @@ return (
                     Tax Advisory<br />
                     Sales and Marketing</p>
                     <h4 style={{color:"white"}}>One Stop Solution to help Grow Your Business</h4>
-                    <h3 className='bold-heading' style={{color:'black'}} ><strong>Grow Your <br /> Business To <br/>10 Times</strong></h3>
+                    <h3 className='bold-heading' style={{color:'black'}} ><strong>GROW YOUR <br /> BUSINESS TO <br/>10 TIMESS</strong></h3>
             </div>
             </Col>
             </Row>

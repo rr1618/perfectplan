@@ -6,14 +6,16 @@ import { FullPage, Slide } from 'react-full-page';
 import {Col,Row} from 'antd'
 import {BrowserRouter, Route,Switch} from 'react-router-dom'
 import Home from './components/home'
-import MobileHome from './components/mobileHome'
 import Middle from "./components/secondpage";
 import CoursePage from "./components/course";
-import MobileCoursePage from "./components/mobileCourse";
+import MobileCoursePage from "./mobile/course";
 import Media from 'react-media';
 import {DetailPage} from "./components/detail";
 import CourseDetail from "./components/courseDetail";
 import Section from "./components/scrollp";
+import MoblieHome from "./mobile/home";
+import {MobileDetailPage} from './mobile/detail'
+import MobileCourseDetail from "./mobile/courseDetail";
 class App extends React.Component {
   render() {
     return (
@@ -26,10 +28,35 @@ class App extends React.Component {
             <Fragment>
               {matches.small && <Col>
                   {console.log("device width",matches.small)}
-                  <BrowserRouter >
-                            <Route exact path="/"  component={MobileHome}/>
-                            <Route exact path="/course" component={MobileCoursePage}/>
-                  </BrowserRouter>
+                   <BrowserRouter >
+
+                          <Switch>
+                                 <Route exact  path="/">
+
+                                     <Slide><MoblieHome/></Slide>
+
+
+                                 </Route>
+                              <Route exact path="/test" >
+                        <Section/>
+
+                    </Route>
+
+                    <Route exact path="/course" >
+                        <MobileCoursePage/>
+
+                    </Route>
+                    <Route exact path="/course/:courses" >
+                        <MobileCourseDetail />
+                    </Route>
+                             <Route exact path="/:page" >
+                        <MobileDetailPage/>
+                    </Route>
+
+
+                          </Switch>
+
+</BrowserRouter>
               </Col>}
                 {matches.large &&
                     <Col>

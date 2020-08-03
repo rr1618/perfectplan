@@ -73,21 +73,21 @@ const Card = (props)=>
 
                                             <Col style={{marginBottom:30}}>
                                                 <Row justify={'center'} >
-                                                    <h3 className={'img-side'} style={{paddingRight:40,color:'#D5B08F',fontWeight:'bolder'}}>{props.heading1}  </h3>
-                                                    <h3 className={'img-side'} style={{paddingLeft:40,color:'#D5B08F',fontWeight:'bolder'}} >{props.heading2}</h3>
+                                                    <h6 className={'img-side'} style={{paddingRight:23,color:'#D5B08F',fontWeight:'bold'}}>{props.heading1}  </h6>
+                                                    <h6 className={'img-side'} style={{paddingLeft:23,color:'#D5B08F',fontWeight:'bold'}} >{props.heading2}</h6>
                                             </Row>
                                             <Row justify={'center'}>
                                                     <img className={'img'}  src={People} alt=""/>
                                             </Row>
                                             </Col>
-                        {props.type?<Row >
-                                    <Col>
-                                        <img src={People} alt=""/>
+                        {props.type?<Row style={{position:'absolute'}}>
+                                    <Col style={{padding:5}}>
+                                        <img src={People} height={50} alt=""/>
                                     </Col>
-                                    <Col>
-                                        <h3>{props.name.name}</h3>
-                                        <h4>{props.name.exp} +years Experience</h4>
-                                        <h5>{props.name.company}</h5>
+                                    <Col  style={{marginLeft:10}}>
+                                        <h5>{props.name.name}</h5>
+                                        <h6>{props.name.exp} +years Experience</h6>
+                                        <h7>{props.name.company}</h7>
 
                                     </Col>
                         </Row>:
@@ -99,7 +99,7 @@ const Card = (props)=>
                         </Col>)
 }
 
-const CoursePageSlide3=()=>
+const Course3=()=>
 {
     const detail=( list.map((name)=><Card key={name.name} name={name.name} type={false} heading1={'STUDENT'} heading2={'REVIEWS'}/>))
 
@@ -128,15 +128,16 @@ const Companies=()=>
 
 
 
-                             <Col className={'hiring'} style={{margin:20}}><img src={Sapient}  alt=""/>
+                             <Row className={'hiring'} style={{margin:20}}>
+                                 <img src={Sapient}  alt=""/>
                              <img src={Hcl}  alt=""/>
                              <img src={Tcs}  alt=""/>
                              <img src={Adobe}  alt=""/>
                              <img src={Microsoft}  alt=""/>
                              <img src={Nagaro}  alt=""/>
-                             </Col>
+                             </Row>
                 <Row justify="center">
-                                    <Button  icon={<DownloadOutlined />} style={{backgroundColor:'#796051',color:'white',width:'40vw',height:50,marginBottom:20}}>
+                                    <Button  icon={<DownloadOutlined />} style={{backgroundColor:'#796051',color:'white',width:'100%',height:50,marginBottom:20}}>
           Download Placement Report
         </Button>
 
@@ -153,4 +154,4 @@ const Companies=()=>
     )
 }
 
-export default CoursePageSlide3
+export default Course3

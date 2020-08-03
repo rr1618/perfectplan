@@ -2,8 +2,8 @@
 
 .course-slide1{
     background-color: #AE998D;
-    height:25vh;
-    width:20vw;
+    height:200px;
+    width:250px;
     margin:40px;
     margin-right:40px;
     border-radius:5px;
@@ -92,35 +92,44 @@
 
 
 @media screen and (min-width: 100px)
-and (max-width:500px){
+and (max-width:500px)
+{
+    .company-stats {
+        padding: 5px;
+
+    }
+    .company-stats h6{
+        text-align: center;
+
+    }
+    .company-stats h5{
+        text-align: center;
+
+    }
+    .img-slide1{
+
+    margin-right: 0px;
+    margin-left: 0px;
+
+}
 .course-slide1{
-    background-color: #AE998D;
-    height:25vh;
-    width:45vw;
-    margin-right:20px;
-    margin-top: 10px;
-    border-radius:5px;
-    border-style: solid;
-    border-color: #AE998D;
-    transition: .5s;
-    z-index: 5;
-    outline: none;
+
+    height:200px;
+    width:200px;
+    margin:20px;
 
 }
-    .course-slide1-down{
-   background-color: #AE998D;
-    height:25vh;
-    width:45vw;
-    margin-right:20px;
-    margin-top: 10px;
-    margin-bottom: 30px;
-    border-radius:5px;
-    border-style: solid;
-    border-color: #AE998D;
-    transition: .5s;
-    z-index: 5;
+.course-slide1:hover{
+
+    background-color: #F3E3DA;
+    transform: scale(1.1);
+    border-radius:10px;
+    border-color: #796051 ;
+    z-index: 4;
 
 }
+
+
     .second-slide-icon-mobile p{
         font-size:12px;
         text-align:center;

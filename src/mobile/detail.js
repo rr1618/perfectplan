@@ -52,10 +52,10 @@ const tabContent={
     blog:{
         content: ()=>{return(<Blog/>)},
         background:blogBack,
-        img:blogBackImg,
-        title: ()=>{return (<h1 className='bold-heading' style={{color:'#6A4E3D'}} ><strong>Blog</strong></h1>)},
-        subtitle: ()=>{return(<h4 style={{color:'#6A4E3D'}}>Follow our blog and get to know about the latest upadates<br />
-                    in the fields of technology, enterpreneurship,etc</h4>)},
+        img:'',
+        title: ()=>{return (<h1 className='bold-heading' style={{color:'#6A4E3D',fontSize:'3em',marginBottom:0}} ><strong>Blog</strong></h1>)},
+        subtitle: ()=>{return(<h6 style={{color:'#6A4E3D',marginBottom:15}}>Follow our blog and get to know about the latest upadates<br />
+                    in the fields of technology, enterpreneurship,etc</h6>)},
         customButton: ()=>{return(<Link to='/course'><button className="homeButtons" style={{float:"left",width:220,borderStyle:'none',
             backgroundColor:'#6A4E3D',color:'white',padding:10,
             borderRadius:'10px'}}>
@@ -86,33 +86,45 @@ const NavBar=()=>
                 sessionStorage.clear()
         })
     },[])
-    return(<Row style={{position:'fixed',zIndex:1,backgroundColor:'white',width:'100%'}} >
-                <Col span={6} className={'navbar'}>
-                <img  src={LogoDark} height={40} alt=""/>
+    return(<Col>
+            <Row style={{zIndex:1,backgroundColor:'white',width:'100%'}} >
+                <Col  className={'navbar'}>
+                <img  src={LogoDark} height={30} alt=""/>
                 </Col>
-
-        <Col span={8}>
-            <input className='search-input' placeholder=' Explore our Courses' style={{backgroundImage:"url("+`${Magnifier}`+")",
-                 }} />
-        </Col>
-                    <Col span={8} style={{marginLeft:50,padding:10}}>
-                    <button className='course-button' ><strong>E-SCHOOL</strong></button>
-                {sessionToken?<button className='course-button' style={{backgroundColor: '#E5D2C7'}} onClick={() => {
+         <Col  style={{padding:10}}>
+                    <Row style={{margin:5}} >
+                        <button className='course-button' style={{borderRadius:10}} ><strong>E-SCHOOL</strong></button>
+                    </Row>
+                <Row>
+                    {sessionToken?<button className='course-button' style={{backgroundColor: '#E5D2C7',borderRadius:10}} onClick={() => {
                     sessionStorage.clear()
                     window.location.reload()
                 }}>
-                    <strong>Logout</strong></button>:<button className='course-button' style={{backgroundColor: '#E5D2C7'}} onClick={()=> {
+                    <strong>Logout</strong></button>:<button className='course-button' style={{backgroundColor: '#E5D2C7',borderRadius:10}} onClick={()=> {
                     setModal(true)
                 }}>
-                    <strong>LOGIN\ENROLL</strong></button>}</Col>
+                    <strong>LOGIN\ENROLL</strong></button>}
+                </Row></Col>
                 {modal&&<LoginModal show={modal} cstyle={customStyles}/>}
 
+        <Row>
+                <Col>
+                    <input className='search-input' placeholder=' Explore our Courses' style={{backgroundImage:"url("+`${Magnifier}`+")",
+                 }} />
+                </Col>
+        </Row>
+            </Row>
+        </Col>
 
-        </Row>)
+
+
+
+
+        )
 
 }
 
-const DetailPage = ()=>
+const MobileDetailPage = ()=>
 {
     let {page} = useParams()
     const [content,setContent] = useState(tabContent['home'])
@@ -121,7 +133,7 @@ const DetailPage = ()=>
     },[page])
     const Background=(props)=>
         {
-    return (<Col style={{paddingTop:60}}>
+    return (<Col>
         <Row className={'background-nav'}>
             <Link to={`/`} style={{color:'white'}} >Home</Link>
             <Link to={`/about`} style={{color:'white'}} >About</Link>
@@ -147,9 +159,9 @@ const DetailPage = ()=>
 
     return ( <Col>
             <NavBar />
-            <Col style={{backgroundImage: "url("+`${content.background}`+")",
+            <Col style={{backgroundImage: "url("+`${content.background}`+")",height:'400px',
 
-            backgroundRepeat: 'no-repeat',padding:35,paddingBottom:70}}>
+            backgroundRepeat: 'no-repeat',padding:35}}>
 
                <Background detail={content} />
 </Col>
@@ -160,4 +172,4 @@ const DetailPage = ()=>
         </Col>
     )
 }
-export  {DetailPage,NavBar}
+export  {MobileDetailPage,NavBar}
