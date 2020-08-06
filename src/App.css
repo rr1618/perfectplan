@@ -202,12 +202,11 @@ color:black;
 fontSize:16
 }
 .two-box img{
-  height:180px;
-  width:180px;
+  height:120px;
+  width:120px;
   margin-bottom:20px;
-  border-radius:60%;
-  border-style:solid;
   border-color:white;
+
 
 }
 .start-now:hover{
