@@ -1,5 +1,5 @@
 import {Row, Col} from 'antd';
-import React, {useEffect} from 'react';
+import React, {useContext, useEffect} from 'react';
 import CoursePageSlide2 from "./course2ndslide";
 import CoursePageSlide3 from "./course3rdslide";
 import Laptop from "../images/brightlaptop.png";
@@ -13,9 +13,13 @@ DownOutlined ,
 import {Link} from "react-router-dom";
 import Recruitment from "../images/recruitment.png";
 import Aos from "aos";
+import {ModalContext} from "../index";
 
 const CoursePage =(props)=>
 {
+    var sessionUser = sessionStorage.getItem('username')
+    const {modal,setModal} = useContext(ModalContext)
+    var sessionToken = sessionStorage.getItem('token')
     useEffect(() => {
         Aos.init({
       duration: 2000
@@ -36,8 +40,11 @@ const CoursePage =(props)=>
                     <Col  >
                     <div data-aos={'fade-right'} ><h1   className='bold-heading' style={{color:'#E5D2C7'}} ><strong>LEARN NOW<br />PAY LATER</strong></h1></div>
                         <div data-aos={'fade-left'}>
-                             <Link  to='/course'><button className="homeButtons" style={{float:"left",width:220,borderColor: "#fffff",padding:10}}>
-                <strong >ENROLL FOR FREE</strong></button></Link>
+                            {!sessionToken? <button className="homeButtons" style={{float:"left",width:220,borderColor: "#fffff",padding:10}}
+                            onClick={()=> {
+                    setModal(true)
+                }}>
+                <strong >ENROLL FOR FREE</strong></button>:<h4 style={{color:'white'}}>{sessionUser}</h4>}
                         </div>
 
                 </Col>

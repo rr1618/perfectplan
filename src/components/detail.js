@@ -96,7 +96,7 @@ const NavBar=()=>
                  }} />
         </Col>
                     <Col span={8} style={{marginLeft:50,padding:10}}>
-                    <button className='course-button' ><strong>E-SCHOOL</strong></button>
+
                 {sessionToken?<button className='course-button' style={{backgroundColor: '#E5D2C7'}} onClick={() => {
                     sessionStorage.clear()
                     window.location.reload()
@@ -104,7 +104,9 @@ const NavBar=()=>
                     <strong>Logout</strong></button>:<button className='course-button' style={{backgroundColor: '#E5D2C7'}} onClick={()=> {
                     setModal(true)
                 }}>
-                    <strong>LOGIN\ENROLL</strong></button>}</Col>
+                    <strong>LOGIN\ENROLL</strong></button>}
+                    <button className='course-button' ><strong>E-SCHOOL</strong></button>
+                    </Col>
                 {modal&&<LoginModal show={modal} cstyle={customStyles}/>}
 
 

@@ -25,17 +25,42 @@ const ArrowRight = Arrow({ text: '>', className: 'arrow-next' });
 
 const CourseCards=(props)=>
 {
-console.log(props.index)
+    if(props.height===1)
     return (
-        <Col  className={'course-slide1' }  key={props.name} style={props.index?{transform:'scale(2)'}:{transform:'scale(1)'}}  >
+
+        <Col  className={'course-slide1' }  key={props.name}   >
 
                             <Row justify={'center'}>
                                 <h5 className={'heading'}>{props.name}</h5>
                             </Row>
                             <h6 className={'details'} ></h6>
 
+                        </Col>)
+        else{
+            return(
+                <Col>
+                    <Col  className={'course-slide1' }  key={props.name} style={{height:100,marginBottom:0,paddingBottom:0}}   >
+
+                            <Row justify={'center'}>
+                                <h5 className={'heading'}>{props.name}</h5>
+                            </Row>
+                            <h6 className={'details'} ></h6>
+
+
                         </Col>
-    )
+                    <Col  className={'course-slide1' }  key={props.name} style={{height:100}}   >
+
+                            <Row justify={'center'}>
+                                <h5 className={'heading'}>{props.name}</h5>
+                            </Row>
+                            <h6 className={'details'} ></h6>
+
+
+                        </Col>
+                </Col>
+             )
+    }
+
 }
 
 
@@ -48,9 +73,10 @@ const CoursePageSlide2=()=>
     useEffect(() => {
             Aos.init({duration:2000})
         API.courseFetch('').then(res=>{
-            setCourseName(res.data.map((name)=>
-                <CourseCards onClick={()=>{CreateLesson(name.heading)
-                setCourse(name.heading)}}  key={name.heading} name={name.heading} />
+
+            setCourseName(res.data.map((name,index)=>
+                (<CourseCards onClick={()=>{CreateLesson(name.heading)
+                setCourse(name.heading)}}  key={name.heading } height={index%3?0:1} name={name.heading} />)
         ))
             CreateLesson('Python')
         })

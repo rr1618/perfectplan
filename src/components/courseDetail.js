@@ -1,5 +1,5 @@
 import {Col, Breadcrumb,Row,Collapse} from 'antd';
-import React,{useState,useEffect,useRef} from 'react';
+import React, {useState, useEffect, useRef, useContext} from 'react';
 import API from '../apiService'
 import YouTube from 'react-youtube';
 import {useParams} from "react-router-dom";
@@ -7,7 +7,6 @@ import blogBack from "../images/blogBack.png"
 import Cfooter from "./footer";
 import {
   Link,
-
   Element,
   Events,
   animateScroll as scroll,
@@ -15,11 +14,13 @@ import {
   scroller
 } from "react-scroll";
 import {NavBar} from './detail'
+import {ModalContext} from "../index";
 const { Panel } = Collapse;
-// const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)
-// const useMountEffect = (fun) => useEffect(fun, [])
+
 
 const CourseDetail=(props)=>{
+    const {modal,setModal} = useContext(ModalContext)
+    var sessionToken = sessionStorage.getItem('token')
     let {courses} = useParams();
     const [course,setCourse] =useState(false)
     const [description,setDescription] = useState('')
@@ -98,7 +99,10 @@ const CourseDetail=(props)=>{
             <h1 className='bold-heading' style={{color:'#6A4E3D'}} ><strong>{course} Certification</strong></h1>
             <h4 style={{color:'#6A4E3D'}}>Learn Python, right from the basics to the advanced and jumpstart<br />
             your programming career</h4>
-            <button style={{borderStyle:'none',color:'white',padding:8,borderRadius:5,backgroundColor:'#6A4E3D',fontWeight:'bolder'}}>ENROLL NOW</button>
+            {!sessionToken&&<button style={{borderStyle:'none',color:'white',padding:8,borderRadius:5,backgroundColor:'#6A4E3D',fontWeight:'bolder'}}
+            onClick={()=> {
+                    setModal(true)
+                }}>ENROLL NOW</button>}
         </Col>
         <Row>
             <Col span={16}>
@@ -123,6 +127,7 @@ const CourseDetail=(props)=>{
                     activeClass="active"
                     to="highlight"
                     spy={true}
+                     scrollSpy={true}
                      hashSpy={true}
                     smooth={true}
                     duration={500}
@@ -149,16 +154,20 @@ const CourseDetail=(props)=>{
                 <Col style={{padding:30,paddingTop:0}}>
 
                     <Element name="description" className="element" style={{backgroundColor:'transparent',borderStyle:'none'}}>
+                         <Collapse style={{backgroundColor:'transparent',borderStyle:'none'}}>
+                    {curriculum}
+                </Collapse>
                         {description}
                     </Element>
                     <Element name="highlight"  className="element" style={{backgroundColor:'transparent',borderStyle:'none'}}>
          {highlight}
         </Element>
-                    <Element name="curriculum" id={"lastElement"} className="element" style={{backgroundColor:'transparent',borderStyle:'none'}}>
+                    <div name="curriculum" id={"lastElement"} className="element" style={{backgroundColor:'transparent',borderStyle:'none'}}>
                            <Collapse style={{backgroundColor:'transparent',borderStyle:'none'}}>
                     {curriculum}
                 </Collapse>
-                    </Element>
+                    </div>
+
 
 
 

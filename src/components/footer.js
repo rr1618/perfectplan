@@ -1,18 +1,25 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import Logo from './logo.png'
 import {Link} from "react-router-dom";
-import {Row,Col,Button,Collapse,Space,Divider} from 'antd';
+import {Row,Col,Button,Collapse,Space} from 'antd';
 import {
     TwitterOutlined,
 FacebookFilled,
 InstagramFilled,
 LinkedinFilled,
-CaretRightFilled} from '@ant-design/icons';
-
+YoutubeFilled} from '@ant-design/icons';
+import drop from '../images/dropdown.png'
+import upi from '../images/upi.png'
+import paypal from '../images/paypal.png'
+import visa from '../images/visa.png'
+import mastercard from '../images/masrtercard.png'
+import {ModalContext} from "../index";
 const { Panel } = Collapse;
 
 const Cfooter = ()=>
 {
+    const {modal,setModal} = useContext(ModalContext)
+    var sessionToken = sessionStorage.getItem('token')
     return (
         <Col className={'footer'}  style={{backgroundColor:'#777676'}}>
             <Col style={{backgroundColor:'#9C8273',paddingLeft:30,paddingRight:30,paddingBottom:20}}>
@@ -43,7 +50,10 @@ const Cfooter = ()=>
                 <Space direction={'vertical'}>
                 <img src={Logo} height={50}/>
                 <h4 >Learn,Grow and Become Leaders of Tomorrow</h4>
-                <Button style={{backgroundColor:'#DDDDDD' ,width:250,height:45,marginBottom:20,marginTop:20}}><strong style={{color:'#777676',fontSize:'1.5em'}}>Enroll For Free</strong></Button>
+                    {!sessionToken&&<Button style={{backgroundColor:'#DDDDDD' ,width:250,height:45,marginBottom:20,marginTop:20}} onClick={()=> {
+                    setModal(true)
+                }}>
+                        <strong style={{color:'#777676',fontSize:'1.5em'}}>Enroll For Free</strong></Button>}
                     <h5  >"In a time of drastic change it is<br />
                     the learners who inherit the future.<br />
                     The learned usually find themselves<br/>
@@ -58,8 +68,8 @@ const Cfooter = ()=>
                         bordered={false}
                         destroyInactivePanel={true}
 
-                        expandIcon={({ isActive }) => <CaretRightFilled style={ { color:'white',fontSize:'2.5em' }} rotate={isActive ? 90 : 0} />}
-                        className="site-collapse-custom-collapse" style={{backgroundColor:'#777676'}}
+                        expandIcon={({ isActive }) => <img src={drop} height={30} style={ {transform:`rotate(${isActive?'90deg':'0deg'})` ,marginLeft:-10}} />}
+                        className="site-collapse-custom-collapse" style={{backgroundColor:'#777676',textAlign:'center'}}
                       ghost>
                         <Panel header={<h6>How Perfect Plan B would help<br/> me to get job after completing the<br/> Data Structure & Machine<br /> Learning course?</h6>} key="1" className="site-collapse-custom-panel" style={{color:'white'}} >
                           <p style={{color:'white'}} >On completing the Data Structure & Machine Learning<br />
@@ -99,7 +109,7 @@ const Cfooter = ()=>
                               - Project Management<br />
                           </p>
                         </Panel>
-                     <Panel header={<h6>Apart from the online courses,<br /> Will I get Live classes also?</h6>} key="3" className="site-collapse-custom-panel">
+                     <Panel header={<h6>Apart from the online courses,<br /> Will I get Live classes also?</h6>} key="4" className="site-collapse-custom-panel">
                           <p>
                               Yes, once anyone enrolls in the Master plan, he/she<br />
                              gets following features along with the online video<br />
@@ -116,7 +126,7 @@ const Cfooter = ()=>
                             -Live projects<br />
                           </p>
                         </Panel>
-                     <Panel header={<h6>How does P2B helps me in getting <br /> new projects / placements?</h6>} key="3" className="site-collapse-custom-panel">
+                     <Panel header={<h6>How does P2B helps me in getting <br /> new projects / placements?</h6>} key="5" className="site-collapse-custom-panel">
                           <p>
                               <br/>
                               Perfect Plan B will be pleased to support and guide<br/>
@@ -130,12 +140,13 @@ const Cfooter = ()=>
                 </Collapse>
                </Col>
 
-                <Row justify='center' >
+                <Row justify={'center'} >
                      <Space direction='horizontal'>
-                        <TwitterOutlined style={{fontSize:30,color: '#fff'}}/>
+                         <TwitterOutlined style={{fontSize:30,color: '#fff'}}/>
                      <FacebookFilled style={{fontSize:30,color: '#fff'}}/>
                      <InstagramFilled style={{fontSize:30,color: '#fff'}}/>
                      <LinkedinFilled style={{fontSize:30,color: '#fff'}}/>
+                     <YoutubeFilled style={{fontSize:30,color: '#fff'}}/>
                      </Space>
 
                  </Row>
@@ -159,6 +170,14 @@ const Cfooter = ()=>
                             121006</h6>
                  </div>
                      </Space>
+                <Row justify={'center'}>
+                    <Space>
+                        <img src={visa} height={40} />
+                    <img src={paypal} height={40} />
+                    <img src={upi} height={40}/>
+                    <img src={mastercard} height={40}/>
+                    </Space>
+                </Row>
 
              </Col>
 
