@@ -50,9 +50,9 @@ const ArrowRight = Arrow({ text: '>', className: 'arrow-next' });
 const Slider=(props)=>
 {
     useEffect(()=>{
-        Aos.init({duration:100})
+        Aos.init({duration:2000})
     })
-    return (
+    return (<div data-aos={'fade-left'}>
                 <Col style={{backgroundColor:'#E5D2C7',paddingBottom:'10px',paddingTop:'10px',marginTop:30}} justify="center" >
                             <Row justify={'center'}><h1 style={{color:'#796051',fontSize:'2em'}}>{props.heading}</h1></Row>
                     <ScrollMenu
@@ -66,6 +66,7 @@ const Slider=(props)=>
 
                             />
                 </Col>
+        </div>
     )
 }
 
@@ -116,9 +117,15 @@ const CoursePageSlide3=()=>
     const expertlist=( experlist.map((name)=><Card key={name.name} name={name} type={true} heading1={'EXPERT'} heading2={'GUIDES'}/>))
 
 
-    return (<Col data-aos={'fade-left'}>
-                <Slider detail={detail} heading={'Success Stories'}/>
-                <Slider detail={expertlist} heading={'Our Experts'}/>
+    return (<Col >
+
+            <Slider detail={detail} heading={'Success Stories'}/>
+
+
+             <Slider detail={expertlist} heading={'Our Experts'}/>
+
+
+
 
 
                 <Col style={{backgroundColor:'#E5D2C7',marginTop:20}} justify={'center'}>
@@ -133,7 +140,8 @@ const CoursePageSlide3=()=>
 const Companies=()=>
 {
 
-    return(<Col  data-aos={'fade-right'}>
+    return(<div data-aos={'fade-right'}>
+        <Col  >
             <Row justify={'center'} style={{backgroundColor:'#E5D2C7',marginTop:'2vh',width:'100%'}}>
 
 
@@ -158,6 +166,7 @@ const Companies=()=>
         </Row>
 
         </Col>
+        </div>
 
 
     )

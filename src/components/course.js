@@ -17,7 +17,9 @@ import Aos from "aos";
 const CoursePage =(props)=>
 {
     useEffect(() => {
-        Aos.init({duration:2000})
+        Aos.init({
+      duration: 2000
+      })
         window.scrollTo(0,0)
     },[])
     return (
@@ -31,11 +33,14 @@ const CoursePage =(props)=>
             paddingBottom:0}}>
 
                 <Row >
-                    <div ><Col  >
-                    <h1 data-aos={'fade-right'} data-aos-duration={1000} className='bold-heading' style={{color:'#E5D2C7'}} ><strong>LEARN NOW<br />PAY LATER</strong></h1>
-            <Link data-aos={'fade-left'} to='/course'><button className="homeButtons" style={{float:"left",width:220,borderColor: "#fffff",padding:10}}>
+                    <Col  >
+                    <div data-aos={'fade-right'} ><h1   className='bold-heading' style={{color:'#E5D2C7'}} ><strong>LEARN NOW<br />PAY LATER</strong></h1></div>
+                        <div data-aos={'fade-left'}>
+                             <Link  to='/course'><button className="homeButtons" style={{float:"left",width:220,borderColor: "#fffff",padding:10}}>
                 <strong >ENROLL FOR FREE</strong></button></Link>
-                </Col></div>
+                        </div>
+
+                </Col>
                 </Row>
                         <Row justify={'center'} style={{position: 'relative',bottom:-75}}>
                         <Col ><img data-aos={'fade-down'} src={Block1} style={

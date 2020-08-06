@@ -46,7 +46,7 @@ const CoursePageSlide2=()=>
     const [topics,setTopics] = useState('')
     const [course,setCourse]=useState('Python')
     useEffect(() => {
-            Aos.init({duration:100})
+            Aos.init({duration:2000})
         API.courseFetch('').then(res=>{
             setCourseName(res.data.map((name)=>
                 <CourseCards onClick={()=>{CreateLesson(name.heading)

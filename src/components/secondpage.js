@@ -45,7 +45,7 @@ const Parts = ()=>
 
                     <Row className='two-box' style={{borderStyle:'solid',borderColor:'white'}} >
 
-                        <Col  style={{backgroundImage:"url("+`${SecondBackground}`+")",marginRight:80,padding:80,margin:10,paddingTop:20}}>
+                        <Col  style={{backgroundImage:"url("+`${SecondBackground}`+")",marginRight:80,padding:80,margin:10,paddingTop:20,height:'70vh'}}>
 
                                 <Row justify={'center'}>
                                     <img src={icon2}  alt=""/>
@@ -57,14 +57,14 @@ const Parts = ()=>
                           tomorrow</h4>
                             <Row justify={'center'}>
                                 <Link to='/course'><button className="homeButtons" style={{float:"right",width:150,
-                                borderStyle:'none',backgroundColor:'#F3DDD1',padding:10,color:'#8A7162 '}}>
-                <strong >STRAT NOW</strong></button></Link>
+                                borderStyle:'none',backgroundColor:'#F3DDD1',padding:10,color:'#8A7162 ',margin:0}}>
+                <strong >START NOW</strong></button></Link>
                             </Row>
 
 
 
                       </Col>
-                    <Col  style={{backgroundImage:"url("+`${SecondBackground}`+")" ,padding:80,margin:10,paddingTop:20}}>
+                    <Col  style={{backgroundImage:"url("+`${SecondBackground}`+")" ,padding:80,margin:10,paddingTop:20,height:'70vh'}}>
 
                                 <Row justify={'center'}>
                                     <img src={icon1}  alt=""/>
@@ -77,7 +77,7 @@ const Parts = ()=>
                         <Row justify={'center'}>
                             <Link to='/course'><button className="homeButtons" style={{float:"right",width:150,
                                 borderStyle:'none',backgroundColor:'#F3DDD1',padding:10,color:'#8A7162 '}}>
-                <strong >STRAT NOW</strong></button></Link>
+                <strong >START NOW</strong></button></Link>
                         </Row>
 
 

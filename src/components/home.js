@@ -1,17 +1,21 @@
 import {Row, Col, Button} from 'antd';
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
 import LoginModal from "../login";
 import {Link} from 'react-router-dom'
 import TweenOne from 'rc-tween-one';
 import Background from '../images/background.png';
 import Logo from '../logo.png';
+import Aos from 'aos'
+import "aos/dist/aos.css"
 import {
 DownOutlined ,
 } from '@ant-design/icons';
 
 const Home =()=> {
-
-
+useEffect(()=>
+{
+     Aos.init({duration:1000})
+},[])
 return (
 
 
@@ -35,7 +39,7 @@ return (
         <Row  justify='center' >
 
             <Col className="home-boxes"  style={{marginRight:20,marginTop:40,paddingTop:40}}>
-                <h3   className='bold-heading' style={{textAlign:"right",}}>
+                <h3 data-aos={'fade-right'}   className='bold-heading' style={{textAlign:"right",}}>
                     <strong>GET READY <br />FOR YOUR<br/>DREAM CAREER</strong></h3>
                 <h4 style={{textAlign:"right",color:'white'}}>Learn, Grow and become leaders of Tomorrow</h4>
                 <p>Python<br/>
@@ -44,15 +48,17 @@ return (
                     Digital Marketing<br />
                     Enterpreneurship<br/>
                     Personal Development<br /></p>
-                <Link to='/course'><button className="homeButtons" style={{float:"right",width:220,borderColor: "#fffff",padding:10}}>
-                <strong >ENROLL FOR FREE</strong></button></Link>
+                <div data-aos={'fade-up'}><Link to='/course'><button className="homeButtons" style={{float:"right",width:220,borderColor: "#fffff",padding:10}}>
+                <strong  >ENROLL FOR FREE</strong></button></Link></div>
             </Col>
 
             <Col   className="strip" style={{paddingTop:50,paddingBottom:10}} >
             <div style={{marginLeft: 20,marginTop:40 }}>
                 <Row>
-                    <Link to='/course'><button className="homeButtons" style={{float:"left",width:250,borderColor: "black",padding:10,color:'black',marginBottom:15}}>
-                <strong >GET PLAN B NOW</strong></button></Link>
+                    <div data-aos={'fade-down'}>
+                        <Link to='/course'><button className="homeButtons" style={{float:"left",width:250,borderColor: "black",padding:10,color:'black',marginBottom:15}}>
+                <strong  >GET PLAN B NOW</strong></button></Link>
+                    </div>
                 </Row>
                     <p style={{lineHeight:"20px",fontSize:'1.2em'}}>Website/App Development<br/>
                     Digital Marketing<br/>
@@ -61,7 +67,7 @@ return (
                     Tax Advisory<br />
                     Sales and Marketing</p>
                     <h4 style={{color:"white"}}>One Stop Solution to help Grow Your Business</h4>
-                    <h3 className='bold-heading' style={{color:'black'}} ><strong>GROW YOUR <br /> BUSINESS TO <br/>10 TIMESS</strong></h3>
+                    <h3  data-aos={'fade-left'} className='bold-heading' style={{color:'black'}} ><strong>GROW YOUR <br /> BUSINESS TO <br/>10 TIMESS</strong></h3>
             </div>
             </Col>
             </Row>
