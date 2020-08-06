@@ -377,9 +377,26 @@ border-radius:10px;
 
 
 
+.course-slide-lesson{
+    background-color: #AE998D;
+    height:200px;
+    width:250px;
+    margin:40px;
+    margin-right:40px;
+    border-radius:5px;
+    border-style: solid;
+    border-color: #AE998D;
+    transition: .5s;
+    z-index: 5;
+    outline: none;
+  animation-name: example;
+  animation-duration: 1s;
 
-
-
+}
+@keyframes example {
+  from {transform: translateY(+100px);opacity: 0}
+  to {transform: translateY(0px);opacity: 1}
+}
 
 
 

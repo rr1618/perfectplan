@@ -24,6 +24,7 @@ import RefundPolicy from "./components/RefundPolicy";
 import MobileRefundPolicy from "./mobile/RefundPolicy";
 import Tnc from "./components/Terms";
 import MobileTnc from "./mobile/Terms";
+import Animation from "./components/hero";
 class App extends React.Component {
   render() {
     return (
@@ -90,7 +91,7 @@ class App extends React.Component {
                                  </FullPage>
                                  </Route>
                               <Route exact path="/test" >
-                        <Section/>
+                        <Animation/>
 
                     </Route>
 

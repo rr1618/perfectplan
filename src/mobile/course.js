@@ -19,6 +19,8 @@ import People from "../images/people.png";
 import ID from "../images/idcard.png";
 import Hand from "../images/hand.png";
 import ScrollMenu from "react-horizontal-scrolling-menu";
+import Aos from 'aos'
+import "aos/dist/aos.css"
 import '../course2slide.css'
 import '../course3rdslide.css'
 import {ModalContext, TokenContext} from "../index";
@@ -51,6 +53,7 @@ const MobileCoursePage =()=>
       const {token,setToken} = useContext(TokenContext)
     const {modal,setModal} = useContext(ModalContext)
     useEffect(()=>{
+        Aos.init({duration:2000})
         console.log("useeffetc",sessionToken,sessionUser)
         API.checkToken({'user':sessionUser,'token':sessionToken}).then(res=>{
             console.log(res.data)
@@ -90,12 +93,14 @@ const MobileCoursePage =()=>
             <Row>
                 <input className='search-input' placeholder=' Explore our Courses' style={{backgroundImage:"url("+`${Magnifier}`+")",
                  }} />
-                <Col span={24} style={{margin:15}}>
+                <div data-aos={'flip-left'}>
+                    <Col span={24} style={{margin:15}}>
                      <h3 style={{color:'white'}}>{sessionUser}</h3>
                 <h2 className='bold-heading' style={{color:'#e3d0c5',fontSize:35}} ><strong>LEARN NOW <br /> PAY LATER</strong><br /></h2>
                 <Link to='/course'><button className="homeButtons" style={{float:"left",width:200,borderColor: "#fffff",padding:6}}>
                 <strong >ENROLL FOR FREE</strong></button></Link>
             </Col>
+                </div>
             </Row>
             <Row justify='center'>
                 <Col span={22} style={{backgroundImage:"url("+`${SecondBackground}`+")",

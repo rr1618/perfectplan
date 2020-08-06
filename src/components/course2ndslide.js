@@ -6,9 +6,10 @@ import {Link} from 'react-router-dom'
 import People from "../images/people.png";
 import '../course2slide.css'
 import ScrollMenu from 'react-horizontal-scrolling-menu';
+import "aos/dist/aos.css"
 import API from "../apiService";
-
-
+import Aos from 'aos'
+import "aos/dist/aos.css"
 
 const Arrow = ({ text, className }) => {
   return (
@@ -24,8 +25,9 @@ const ArrowRight = Arrow({ text: '>', className: 'arrow-next' });
 
 const CourseCards=(props)=>
 {
+console.log(props.index)
     return (
-        <Col  className={'course-slide1' } key={props.name}  >
+        <Col  className={'course-slide1' }  key={props.name} style={props.index?{transform:'scale(2)'}:{transform:'scale(1)'}}  >
 
                             <Row justify={'center'}>
                                 <h5 className={'heading'}>{props.name}</h5>
@@ -36,12 +38,15 @@ const CourseCards=(props)=>
     )
 }
 
+
 const CoursePageSlide2=()=>
 {
+
     const [courseName,setCourseName]=useState('')
     const [topics,setTopics] = useState('')
     const [course,setCourse]=useState('Python')
     useEffect(() => {
+            Aos.init({duration:100})
         API.courseFetch('').then(res=>{
             setCourseName(res.data.map((name)=>
                 <CourseCards onClick={()=>{CreateLesson(name.heading)
@@ -52,18 +57,33 @@ const CoursePageSlide2=()=>
         .catch(err=>{console.log(err)})
 
     }, []);
+    const LessonCards=(props)=>
+{
+
+    return (
+        <Col  className={'course-slide-lesson' }  key={props.name}   >
+
+                            <Row justify={'center'}>
+                                <h5 className={'heading'}>{props.name}</h5>
+                            </Row>
+                            <h6 className={'details'} ></h6>
+
+                        </Col>
+    )
+}
+
     const CreateLesson=(courseName)=>
     {
 
-        API.courseFetch({course:courseName}).then(res=>{res.data[0].topics.map(c=>{
-            setTopics ([...topics,<Link to={`/course/${courseName}`}><CourseCards key={c.topics+"lesson"} name={c.topics}/></Link>])
-        })})
-
-
+        API.courseFetch({course:courseName}).then(
+            res=>{setTopics (res.data[0].topics.map((c)=>
+                    <Link to={`/course/${courseName}`}>
+                        <LessonCards key={c.topics + "lesson"} name={c.topics}/></Link>
+                ))})
     }
 
 
-    return (<Col >
+    return (<Col  >
                 <Row style={{backgroundColor:'#E5D2C7',paddingBottom:'10px',paddingTop:'10px'}} justify="center" >
                             <Col span={6}  style={{borderRightStyle:'solid',borderColor:'#CEB8AB',borderRightWidth:3,marginRight:'5vw'}} >
                                 <Row >
@@ -97,7 +117,8 @@ const CoursePageSlide2=()=>
                           </Row>
                       </Col>
                 </Row>
-                <Col style={{backgroundColor:'#E5D2C7',marginTop:'2vh',position:'static'}} justify={'center'}>
+                <div data-aos={'fade-left'}>
+                    <Col style={{backgroundColor:'#E5D2C7',marginTop:'2vh',position:'static'}} justify={'center'}>
                     <Row justify={'center'}>
                         <h3  style={{color:'#796051',fontSize:'2em'}}>Course Categories</h3>
                     </Row>
@@ -112,11 +133,13 @@ const CoursePageSlide2=()=>
 
                             />
                 </Col>
-        <Col style={{backgroundColor:'#E5D2C7',marginTop:'2vh',position:'static'}} justify={'center'}>
+                </div>
+        <div data-aos={'fade-right'}><Col
+            style={{backgroundColor:'#E5D2C7',marginTop:'2vh',position:'static'}} justify={'center'}>
                     <Row justify={'center'}>
                         <h3  style={{color:'#796051',fontSize:'2em'}}>{course}</h3>
                     </Row>
-                             <ScrollMenu
+                            <ScrollMenu
                                 data={topics}
                                 arrowLeft={ArrowLeft}
                                 arrowRight={ArrowRight}
@@ -125,6 +148,7 @@ const CoursePageSlide2=()=>
                                 transition={1}
                             />
                 </Col>
+        </div>
     </Col>)
 }
 

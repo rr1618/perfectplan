@@ -12,10 +12,12 @@ DownOutlined ,
 } from '@ant-design/icons';
 import {Link} from "react-router-dom";
 import Recruitment from "../images/recruitment.png";
+import Aos from "aos";
 
 const CoursePage =(props)=>
 {
     useEffect(() => {
+        Aos.init({duration:2000})
         window.scrollTo(0,0)
     },[])
     return (
@@ -29,18 +31,18 @@ const CoursePage =(props)=>
             paddingBottom:0}}>
 
                 <Row >
-                    <Col >
-                    <h1 className='bold-heading' style={{color:'#E5D2C7'}} ><strong>LEARN NOW<br />PAY LATER</strong></h1>
-            <Link to='/course'><button className="homeButtons" style={{float:"left",width:220,borderColor: "#fffff",padding:10}}>
+                    <div ><Col  >
+                    <h1 data-aos={'fade-right'} data-aos-duration={1000} className='bold-heading' style={{color:'#E5D2C7'}} ><strong>LEARN NOW<br />PAY LATER</strong></h1>
+            <Link data-aos={'fade-left'} to='/course'><button className="homeButtons" style={{float:"left",width:220,borderColor: "#fffff",padding:10}}>
                 <strong >ENROLL FOR FREE</strong></button></Link>
-                </Col>
+                </Col></div>
                 </Row>
                         <Row justify={'center'} style={{position: 'relative',bottom:-75}}>
-                        <Col ><img src={Block1} style={
+                        <Col ><img data-aos={'fade-down'} src={Block1} style={
                             {width:450,marginRight:50}
                         }/></Col>
 
-                    <Col><img src={Block2}  style={ { width:450 }} alt=""/></Col>
+                    <Col><img data-aos={'fade-up'} src={Block2}  style={ { width:450 }} alt=""/></Col>
                     </Row>
 
             </Col>
@@ -71,7 +73,7 @@ const CoursePage =(props)=>
                 </Col>
         <CoursePageSlide2/>
           <Row style={{marginTop:20}}>
-                <img src={Recruitment} alt="" width="100%"/>
+                <img data-aos={'fade-left'} src={Recruitment} alt="" width="100%"/>
             </Row>
         <CoursePageSlide3/>
         <Cfooter/>

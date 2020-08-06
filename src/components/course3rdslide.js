@@ -1,5 +1,5 @@
-import React from 'react'
-import {Row, Col,Button,Space} from 'antd';
+import React, {useEffect} from 'react'
+import {Row, Col,Button} from 'antd';
 
 import People from "../images/people.png";
 import '../course3rdslide.css'
@@ -12,7 +12,8 @@ import Microsoft from '../images/microsoft.png'
 import Sapient from '../images/sapient.png'
 import Nagaro from '../images/nagaro.png'
 import Tcs from '../images/tcs.png'
-
+import Aos from 'aos'
+import "aos/dist/aos.css"
 
 const list =[
     {name:'Machine Learning'},
@@ -48,6 +49,9 @@ const ArrowRight = Arrow({ text: '>', className: 'arrow-next' });
 
 const Slider=(props)=>
 {
+    useEffect(()=>{
+        Aos.init({duration:100})
+    })
     return (
                 <Col style={{backgroundColor:'#E5D2C7',paddingBottom:'10px',paddingTop:'10px',marginTop:30}} justify="center" >
                             <Row justify={'center'}><h1 style={{color:'#796051',fontSize:'2em'}}>{props.heading}</h1></Row>
@@ -67,6 +71,9 @@ const Slider=(props)=>
 
 const Card = (props)=>
 {
+    useEffect(()=>{
+        Aos.init({duration:100})
+    })
     return ( <Col  className={'img-card' } key={props.name}   >
 
 
@@ -101,12 +108,15 @@ const Card = (props)=>
 
 const CoursePageSlide3=()=>
 {
+    useEffect(()=>{
+        Aos.init({duration:100})
+    })
     const detail=( list.map((name)=><Card key={name.name} name={name.name} type={false} heading1={'STUDENT'} heading2={'REVIEWS'}/>))
 
     const expertlist=( experlist.map((name)=><Card key={name.name} name={name} type={true} heading1={'EXPERT'} heading2={'GUIDES'}/>))
 
 
-    return (<Col>
+    return (<Col data-aos={'fade-left'}>
                 <Slider detail={detail} heading={'Success Stories'}/>
                 <Slider detail={expertlist} heading={'Our Experts'}/>
 
@@ -123,7 +133,7 @@ const CoursePageSlide3=()=>
 const Companies=()=>
 {
 
-    return(<Col>
+    return(<Col  data-aos={'fade-right'}>
             <Row justify={'center'} style={{backgroundColor:'#E5D2C7',marginTop:'2vh',width:'100%'}}>
 
 
