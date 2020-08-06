@@ -38,7 +38,7 @@ return (
 
         <Row  justify='center' >
 
-            <Col className="home-boxes"  style={{marginRight:20,marginTop:40,paddingTop:40}}>
+            <Col className="home-boxes"  style={{marginRight:20,marginTop:20,paddingTop:20}}>
                 <h3 data-aos={'fade-right'}   className='bold-heading' style={{textAlign:"right",}}>
                     <strong>GET READY <br />FOR YOUR<br/>DREAM CAREER</strong></h3>
                 <h4 style={{textAlign:"right",color:'white'}}>Learn, Grow and become leaders of Tomorrow</h4>
@@ -52,8 +52,8 @@ return (
                 <strong  >ENROLL FOR FREE</strong></button></Link></div>
             </Col>
 
-            <Col   className="strip" style={{paddingTop:50,paddingBottom:10}} >
-            <div style={{marginLeft: 20,marginTop:40 }}>
+            <Col   className="strip" style={{paddingTop:35,paddingBottom:10}} >
+            <div style={{marginLeft: 20,marginTop:25 }}>
                 <Row>
                     <div data-aos={'fade-down'}>
                         <Link to='/course'><button className="homeButtons" style={{float:"left",width:250,borderColor: "black",padding:10,color:'black',marginBottom:15}}>
